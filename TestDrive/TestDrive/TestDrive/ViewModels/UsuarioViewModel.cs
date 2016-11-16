@@ -94,7 +94,7 @@ namespace TestDrive.ViewModels
             }
         }
 
-        DateTime dataAgendamento;
+        DateTime dataAgendamento = DateTime.Today;
         public DateTime DataAgendamento
         {
             get { return dataAgendamento; }
