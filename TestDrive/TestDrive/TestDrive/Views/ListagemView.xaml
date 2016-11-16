@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestDrive.Views.ListagemView"
+             Title="Test Drive">
+
+  <StackLayout Padding="25">
+    <ActivityIndicator IsVisible="{Binding IsRunning}" IsRunning="{Binding IsRunning}" />
+    <ListView ItemsSource="{Binding Veiculos}" SelectedItem="{Binding VeiculoSelecionado}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ViewCell.View>
+              <Label FontSize="20" FormattedText="{Binding ItemListagemLabel}"></Label>
+            </ViewCell.View>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>

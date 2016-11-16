@@ -1,0 +1,2 @@
+C:\Users\marce\Source\Repos\VSXamarin\TestDrive\TestDrive\TestDrive.Windows\TestDrive.Windows.csproj;neutral
+C:\Users\marce\Source\Repos\VSXamarin\TestDrive\TestDrive\TestDrive\TestDrive.csproj;neutral

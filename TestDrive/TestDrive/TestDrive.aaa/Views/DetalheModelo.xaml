@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TestDrive;assembly=TestDrive"
+             x:Class="TestDrive.Views.DetalheModelo">
+    <StackLayout Padding="25">
+        <Label Text="{Binding Modelo}" FontSize="18" LineBreakMode="NoWrap" />
+        <ListView ItemsSource="{Binding Acessorios}" VerticalOptions="Start">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout>
+                                <Grid Margin="25,0,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Text="{Binding Descricao}"></Label>
+                                    <Label Grid.Column="1" Text="{Binding Preco, Mode=TwoWay}" HorizontalTextAlignment="End"></Label>
+                                    <Switch Grid.Column="2" IsToggled="{Binding Selecionado, Mode=TwoWay}"></Switch>
+                                    <Switch Grid.Column="3" IsToggled="{Binding Selecionado, Mode=TwoWay}"></Switch>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label Text="{Binding PrecoTotal}" FontSize="18" LineBreakMode="NoWrap" />
+    </StackLayout>
+</ContentPage>

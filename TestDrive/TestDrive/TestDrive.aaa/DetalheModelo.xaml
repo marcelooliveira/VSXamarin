@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="using:TestDrive"
+             x:Class="TestDrive.DetalheModelo">
+    <StackLayout Padding="25">
+        <Label Text="{Binding Modelo}" FontSize="18" LineBreakMode="NoWrap" />
+        <Entry Text="{Binding Preco, Mode=TwoWay}"></Entry>
+        <Label Text="{Binding Preco, Mode=TwoWay}" FontSize="18" LineBreakMode="NoWrap" />
+
+        <ListView ItemsSource="{Binding Acessorios}" VerticalOptions="Start" Margin="25,0,0,0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Text="{Binding Descricao}"></Label>
+                                    <Label Grid.Column="1" Text="{Binding PrecoFormatado, Mode=TwoWay}" HorizontalTextAlignment="End"></Label>
+                                    <Switch Grid.Column="2" IsToggled="{Binding Selecionado, Mode=TwoWay}" x:Name="swt"></Switch>
+                                    <Switch Grid.Column="3" BindingContext="{x:Reference swt}" IsToggled="{Binding IsToggled}"></Switch>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <!--<Label Text="{Binding PrecoFormatado}" FontSize="18" LineBreakMode="NoWrap" />-->
+    </StackLayout>
+</ContentPage>

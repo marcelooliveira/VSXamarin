@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:TestDrive.ViewModels"
+             xmlns:sys="clr-namespace:System"
+             x:Class="TestDrive.Views.UsuarioView"
+             Title="{Binding Titulo}">
+    <StackLayout>
+        <TableView x:Name="tableView"
+               Intent="Form">
+
+            <!--<TableView.BindingContext>
+                <local:PersonalInformation />            
+            </TableView.BindingContext>-->
+
+            <TableRoot Title="Data Form">
+                <TableSection Title="Seus dados">
+                    <EntryCell Label="Nome:"
+                     Text="{Binding Nome}"
+                     Keyboard="Text" />
+
+                    <EntryCell Label="Endereço:"
+                      Text="{Binding Endereco}"
+                      Keyboard="Text" />
+
+                    <EntryCell Label="Email:"
+                     Text="{Binding Email}"
+                     Keyboard="Email" />
+
+                </TableSection>
+                
+                <TableSection Title="Agendamento">
+                    <ViewCell>
+                        <StackLayout Padding="16,0,16,0" Orientation="Horizontal">
+                            <Label Text="Data" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                            <DatePicker Date="{Binding DataAgendamento, Mode=TwoWay}" Format="d" HorizontalOptions="End">
+                            </DatePicker>
+                        </StackLayout>
+                    </ViewCell>
+
+                    <ViewCell>
+                        <StackLayout Padding="16,0,16,0" Orientation="Horizontal">
+                            <Label Text="Hora" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                            <TimePicker Time="{Binding HoraAgendamento, Mode=TwoWay}" Format="HH:mm" HorizontalOptions="End">
+                            </TimePicker>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+
+        <Button Text="Agendar" Command="{Binding FinalizarCommand}" IsEnabled="{Binding DadosValidos}"/>
+    </StackLayout>
+
+</ContentPage>

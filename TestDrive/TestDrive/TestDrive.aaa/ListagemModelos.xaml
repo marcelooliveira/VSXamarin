@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestDrive.ListagemModelos"
+             Title="Modelos">
+    <StackLayout Padding="25">
+        <!--cabeçalho-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Text="Modelo" FontSize="18" />
+            <Label Grid.Column="1" Text="Preco" HorizontalTextAlignment="End" FontSize="18" />
+        </Grid>
+        <!--separador-->
+        <StackLayout HeightRequest="1" BackgroundColor="Black"></StackLayout>
+        <!--listagem-->
+        <ListView ItemsSource="{Binding Veiculos}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Tapped="ViewCell_Tapped">
+                        <ViewCell.View>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="{Binding Modelo}" FontSize="18" LineBreakMode="NoWrap" />
+                                <Label Grid.Column="1" Text="{Binding PrecoFormatado}" FontSize="18" LineBreakMode="NoWrap" HorizontalTextAlignment="End" />
+                            </Grid>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
