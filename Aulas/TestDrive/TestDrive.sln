@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDrive.WinPhone", "TestD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDrive.Windows", "TestDrive\TestDrive.Windows\TestDrive.Windows.csproj", "{0E68ECFD-D2C1-4ED2-A166-83B2A4D2AA1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDrive.Aula1", "TestDrive\TestDrive.Aula1\TestDrive.Aula1.csproj", "{F3795A63-FA62-44B5-A4D6-8CBDD543EFF5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDrive.Aula2", "TestDrive\TestDrive.Aula2\TestDrive.Aula2.csproj", "{F3795A63-FA62-44B5-A4D6-8CBDD543EFF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
