@@ -113,9 +113,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TestDrive\TestDrive.csproj">
-      <Project>{4154a259-6843-4a06-a0c4-4e0fea5cf5ca}</Project>
-      <Name>TestDrive</Name>
+    <ProjectReference Include="..\TestDrive\TestDrive.Aula1.csproj">
+      <Project>{F3795A63-FA62-44B5-A4D6-8CBDD543EFF5}</Project>
+      <Name>TestDrive.Aula1</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

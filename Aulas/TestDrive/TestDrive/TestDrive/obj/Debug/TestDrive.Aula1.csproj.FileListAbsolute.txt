@@ -1,0 +1,2 @@
+C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive\obj\Debug\TestDrive.dll.mdb
+C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive\bin\Debug\TestDrive.dll.mdb
