@@ -5,12 +5,15 @@
              x:Class="TestDrive.MainPage">
 
     <StackLayout Padding="25">
-        <ListView x:Name="lvwVeiculos" ItemsSource="{Binding Veiculos}">
+        <ListView x:Name="lvwVeiculos" 
+                  ItemsSource="{Binding Veiculos}"
+                  ItemTapped="lvwVeiculos_ItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <ViewCell.View>
-                            <Label Text="{Binding nome}"></Label>
+                            <Label FontSize="20" 
+                                   FormattedText="{Binding ItemListagemLabel}"></Label>
                         </ViewCell.View>
                     </ViewCell>
                 </DataTemplate>

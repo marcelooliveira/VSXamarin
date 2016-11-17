@@ -11,6 +11,28 @@ namespace TestDrive
     {
         public string nome { get; set; }
         public decimal preco { get; set; }
+        public string PrecoFormatado
+        {
+            get
+            {
+                return string.Format("R$ {0}", preco);
+            }
+        }
+
+        public FormattedString ItemListagemLabel
+        {
+            get
+            {
+                return new FormattedString
+                {
+                    Spans = {
+                        new Span { Text = nome },
+                        new Span { Text = " - " },
+                        new Span { Text = PrecoFormatado, FontAttributes = FontAttributes.Bold } }
+                };
+            }
+            set { }
+        }
     }
 
     public partial class MainPage : ContentPage
@@ -39,6 +61,15 @@ namespace TestDrive
             };
 
             this.BindingContext = this;
+        }
+
+        private void lvwVeiculos_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var veiculo = (Veiculo)e.Item;
+
+            DisplayAlert("Título da Mensagem",
+                string.Format("Você tocou no veículo '{0}', que custa R$ {1}",
+                veiculo.nome, veiculo.preco), "Ok");
         }
     }
 }
