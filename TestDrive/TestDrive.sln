@@ -18,6 +18,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDrive.iOS", "TestDrive\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDrive.WinPhone", "TestDrive\TestDrive.WinPhone\TestDrive.WinPhone.csproj", "{F9ECEDCC-B714-4199-A591-F4FB737BFFE4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aulas", "Aulas", "{D4DDE3A5-C4AD-45A3-B9EC-A7595C2A068C}"
+	ProjectSection(SolutionItems) = preProject
+		Aula1.md = Aula1.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
@@ -338,5 +343,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D4DDE3A5-C4AD-45A3-B9EC-A7595C2A068C} = {773D3DE9-3D8E-4849-8765-EC8B934D08D5}
 	EndGlobalSection
 EndGlobal
