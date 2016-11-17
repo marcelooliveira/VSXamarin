@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5510BE19-0AA3-4386-B320-CC68436524E4}</ProjectGuid>
+    <ProjectGuid>{A6E27AC1-C5B1-4825-9951-A347EF4F5FF1}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <RootNamespace>TestDrive.iOS</RootNamespace>
@@ -139,7 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TestDrive\TestDrive.csproj">
-      <Project>{0D813F76-885B-479B-8458-C9CB4D738EEE}</Project>
+      <Project>{4154a259-6843-4a06-a0c4-4e0fea5cf5ca}</Project>
       <Name>TestDrive</Name>
     </ProjectReference>
   </ItemGroup>

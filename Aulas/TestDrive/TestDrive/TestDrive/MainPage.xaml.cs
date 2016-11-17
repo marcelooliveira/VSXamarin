@@ -37,6 +37,8 @@ namespace TestDrive
                 new Veiculo { nome = "Brasilia Amarela", preco = 9500 },
                 new Veiculo { nome = "Omega Hatch", preco = 8000 }
             };
+
+            this.BindingContext = this;
         }
     }
 }

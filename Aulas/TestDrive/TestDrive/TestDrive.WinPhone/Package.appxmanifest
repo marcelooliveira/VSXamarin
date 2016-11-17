@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
 
-  <Identity Name="6edfc116-cffd-456a-b404-43cbd3199187"
+  <Identity Name="47809c67-a93f-427d-a1dd-b79e9053fffe"
             Publisher="CN=marce"
             Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="6edfc116-cffd-456a-b404-43cbd3199187" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="47809c67-a93f-427d-a1dd-b79e9053fffe" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>TestDrive.WinPhone</DisplayName>

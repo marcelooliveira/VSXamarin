@@ -17,8 +17,12 @@ namespace TestDrive {
     public partial class MainPage : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.ListView lvwVeiculos;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(MainPage));
+            lvwVeiculos = this.FindByName<global::Xamarin.Forms.ListView>("lvwVeiculos");
         }
     }
 }

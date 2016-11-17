@@ -5,7 +5,7 @@
              x:Class="TestDrive.MainPage">
 
     <StackLayout Padding="25">
-        <ListView ItemsSource="{Binding Veiculos}">
+        <ListView x:Name="lvwVeiculos" ItemsSource="{Binding Veiculos}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -18,5 +18,3 @@
         </ListView>
     </StackLayout>
 </ContentPage>
-    
-    

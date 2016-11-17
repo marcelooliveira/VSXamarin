@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FC5A026D-4C3E-4056-878E-E1841727CAC0}</ProjectGuid>
+    <ProjectGuid>{0E68ECFD-D2C1-4ED2-A166-83B2A4D2AA1F}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TestDrive.Windows</RootNamespace>
@@ -137,7 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TestDrive\TestDrive.csproj">
-      <Project>{0D813F76-885B-479B-8458-C9CB4D738EEE}</Project>
+      <Project>{4154a259-6843-4a06-a0c4-4e0fea5cf5ca}</Project>
       <Name>TestDrive</Name>
     </ProjectReference>
   </ItemGroup>
