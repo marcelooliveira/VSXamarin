@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace TestDrive
+namespace TestDrive.Views
 {
     public class Veiculo
     {
@@ -35,11 +35,11 @@ namespace TestDrive
         }
     }
 
-    public partial class MainPage : ContentPage
+    public partial class ListagemView : ContentPage
     {
         public List<Veiculo> Veiculos { get; set; }
 
-        public MainPage()
+        public ListagemView()
         {
             InitializeComponent();
 
