@@ -136,12 +136,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TestDrive\TestDrive.Aula1.csproj">
-      <Project>{F3795A63-FA62-44B5-A4D6-8CBDD543EFF5}</Project>
-      <Name>TestDrive.Aula1</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.2.0.45\lib\win81\Xamarin.Forms.Core.dll</HintPath>
       <Private>True</Private>

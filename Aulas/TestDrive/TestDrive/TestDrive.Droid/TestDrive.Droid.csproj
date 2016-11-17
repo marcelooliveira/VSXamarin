@@ -121,8 +121,8 @@
     <AndroidResource Include="Resources\values\styles.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TestDrive\TestDrive.Aula1.csproj">
-      <Project>{F3795A63-FA62-44B5-A4D6-8CBDD543EFF5}</Project>
+    <ProjectReference Include="..\TestDrive.Aula1\TestDrive.Aula1.csproj">
+      <Project>{f3795a63-fa62-44b5-a4d6-8cbdd543eff5}</Project>
       <Name>TestDrive.Aula1</Name>
     </ProjectReference>
   </ItemGroup>
