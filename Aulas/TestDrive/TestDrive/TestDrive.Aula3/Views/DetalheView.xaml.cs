@@ -10,9 +10,13 @@ namespace TestDrive.Views
 {
     public partial class DetalheView : ContentPage
     {
-        public DetalheView()
+        public Veiculo Veiculo { get; set; }
+
+        public DetalheView(Veiculo veiculo)
         {
+            this.Veiculo = veiculo;
             InitializeComponent();
+            this.BindingContext = this;
         }
     }
 }
