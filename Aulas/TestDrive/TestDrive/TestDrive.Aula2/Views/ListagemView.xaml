@@ -6,15 +6,15 @@
              x:Class="TestDrive.Views.ListagemView">
 
     <StackLayout Padding="25">
-        <ListView x:Name="lvwVeiculos" 
+        <ListView x:Name="listViewVeiculos" 
                   ItemsSource="{Binding Veiculos}"
-                  ItemTapped="lvwVeiculos_ItemTapped">
+                  ItemTapped="listViewVeiculos_ItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <ViewCell.View>
                             <Label FontSize="20" 
-                                   FormattedText="{Binding ItemListagemLabel}"></Label>
+                                   FormattedText="{Binding VeiculoLabel}"></Label>
                         </ViewCell.View>
                     </ViewCell>
                 </DataTemplate>

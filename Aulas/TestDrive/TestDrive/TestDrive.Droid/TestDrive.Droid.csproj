@@ -121,9 +121,9 @@
     <AndroidResource Include="Resources\values\styles.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TestDrive.Aula3\TestDrive.Aula3.csproj">
-      <Project>{f3795a63-fa62-44b5-a4d6-8cbdd543eff5}</Project>
-      <Name>TestDrive.Aula3</Name>
+    <ProjectReference Include="..\TestDrive.Aula1\TestDrive.Aula1.csproj">
+      <Project>{7d673f94-75a5-48a7-a7c1-cc7e84df4098}</Project>
+      <Name>TestDrive.Aula1</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

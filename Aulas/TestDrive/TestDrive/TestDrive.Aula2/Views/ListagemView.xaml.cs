@@ -19,7 +19,7 @@ namespace TestDrive.Views
             }
         }
 
-        public FormattedString ItemListagemLabel
+        public FormattedString VeiculoLabel
         {
             get
             {
@@ -63,12 +63,12 @@ namespace TestDrive.Views
             this.BindingContext = this;
         }
 
-        private void lvwVeiculos_ItemTapped(object sender, ItemTappedEventArgs e)
+        private void listViewVeiculos_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             var veiculo = (Veiculo)e.Item;
 
-            DisplayAlert("Título da Mensagem",
-                string.Format("Você tocou no veículo '{0}', que custa R$ {1}",
+            DisplayAlert("Test Drive",
+                string.Format("Você selecionou o veículo '{0}', que custa R$ {1}",
                 veiculo.nome, veiculo.preco), "Ok");
         }
     }
