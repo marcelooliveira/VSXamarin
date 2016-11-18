@@ -8,8 +8,10 @@ C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Au
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Aula3\bin\Debug\Xamarin.Forms.Platform.pdb
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Aula3\bin\Debug\Xamarin.Forms.Xaml.pdb
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Aula3\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Aula3\obj\Debug\TestDrive.Aula3.csprojResolveAssemblyReference.cache
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Aula3\obj\Debug\TestDrive.Views.ListagemView.xaml.g.cs
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Aula3\obj\Debug\TestDrive.App.xaml.g.cs
+C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Aula3\obj\Debug\TestDrive.Views.DetalheView.xaml.g.cs
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Aula3\obj\Debug\TestDrive.dll
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Aula3\obj\Debug\TestDrive.pdb
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Aula3\obj\Debug\TestDrive.dll.mdb

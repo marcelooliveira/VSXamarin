@@ -67,9 +67,7 @@ namespace TestDrive.Views
         {
             var veiculo = (Veiculo)e.Item;
 
-            DisplayAlert("Test Drive",
-                string.Format("Você selecionou o veículo '{0}', que custa R$ {1}",
-                veiculo.nome, veiculo.preco), "Ok");
+            Navigation.PushAsync(new DetalheView());
         }
     }
 }
