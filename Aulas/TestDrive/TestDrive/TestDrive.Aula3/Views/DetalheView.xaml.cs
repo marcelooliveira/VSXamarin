@@ -18,5 +18,12 @@ namespace TestDrive.Views
             InitializeComponent();
             this.BindingContext = this;
         }
+
+        private void botaoProximo_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AgendamentoView());
+        }
     }
 }
+
+

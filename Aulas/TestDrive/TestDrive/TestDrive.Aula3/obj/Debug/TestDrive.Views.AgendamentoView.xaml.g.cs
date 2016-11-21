@@ -14,15 +14,11 @@ namespace TestDrive.Views {
     using Xamarin.Forms.Xaml;
     
     
-    public partial class DetalheView : global::Xamarin.Forms.ContentPage {
-        
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Button botaoProximo;
+    public partial class AgendamentoView : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
-            this.LoadFromXaml(typeof(DetalheView));
-            botaoProximo = this.FindByName<global::Xamarin.Forms.Button>("botaoProximo");
+            this.LoadFromXaml(typeof(AgendamentoView));
         }
     }
 }
