@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Messaging;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -45,8 +46,20 @@ namespace TestDrive.ViewModels
             {
                 veiculoSelecionado = value;
 
-                Navigation.PushAsync(new DetalheView(veiculoSelecionado));
+                Messenger.Default.Send(new VeiculoSelecionadoMessage(veiculoSelecionado));
             }
         }
     }
+
+
+    public class VeiculoSelecionadoMessage
+    {
+        public VeiculoSelecionadoMessage(Veiculo veiculo)
+        {
+            this.Veiculo = veiculo;
+        }
+
+        public Veiculo Veiculo { get; set; }
+    }
+
 }

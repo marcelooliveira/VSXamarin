@@ -1,6 +1,6 @@
 using GalaSoft.MvvmLight;
 
-namespace TestDrive.ViewModel
+namespace TestDrive.Droid.ViewModel
 {
     /// <summary>
     /// This class contains properties that the main View can data bind to.

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Messaging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,13 +20,12 @@ namespace TestDrive.Views
 
             ViewModel = new ListagemViewModel();
             this.BindingContext = ViewModel;
-        }
 
-        private void listViewVeiculos_ItemTapped(object sender, ItemTappedEventArgs e)
-        {
-            var veiculo = (Veiculo)e.Item;
-
-            Navigation.PushAsync(new DetalheView(veiculo));
+            Messenger.Default.Register<VeiculoSelecionadoMessage>(this,
+                (msg) =>
+                {
+                    Navigation.PushAsync(new DetalheView(msg.Veiculo));
+                });
         }
     }
 }
