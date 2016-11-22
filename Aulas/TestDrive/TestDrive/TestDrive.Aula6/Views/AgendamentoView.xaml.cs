@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestDrive.Models;
 using TestDrive.ViewModels;
 using Xamarin.Forms;
 
@@ -24,7 +25,7 @@ namespace TestDrive.Views
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("Salvar Agendamento", "Nome: " + this.ViewModel.Veiculo.nome, "Ok");
+            DisplayAlert("Salvar Agendamento", "Nome: " + this.ViewModel.Nome, "Ok");
         }
     }
 }
