@@ -37,7 +37,7 @@ namespace TestDrive.ViewModels
         }
     }
 
-    public class ListagemViewModel
+    public class ListagemViewModel : BaseViewModel
     {
         public List<Veiculo> Veiculos { get; set; }
 

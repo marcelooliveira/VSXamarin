@@ -8,15 +8,8 @@ using System.Threading.Tasks;
 
 namespace TestDrive.ViewModels
 {
-    public class DetalheViewModel : INotifyPropertyChanged
+    public class DetalheViewModel : BaseViewModel
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void OnPropertyChanged([CallerMemberName] string name = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
-
         public Veiculo Veiculo { get; set; }
 
         private const int VALOR_FREIO_ABS = 800;
