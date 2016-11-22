@@ -113,7 +113,7 @@ namespace TestDrive.Views
 
         private void botaoProximo_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new AgendamentoView());
+            Navigation.PushAsync(new AgendamentoView(this.Veiculo));
         }
     }
 }
