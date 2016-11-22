@@ -41,7 +41,6 @@ C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Dr
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\obj\Debug\R.cs.flag
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\obj\Debug\uploadflags.txt
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\bin\Debug\TestDrive.Droid.dll.mdb
-C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\bin\Debug\TestDrive.dll.mdb
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\bin\Debug\Java.Interop.dll.mdb
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\bin\Debug\Mono.Android.dll.mdb
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\bin\Debug\mscorlib.dll.mdb
@@ -53,6 +52,7 @@ C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Dr
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\bin\Debug\System.ServiceModel.Internals.dll.mdb
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\bin\Debug\System.Xml.dll.mdb
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\bin\Debug\System.Xml.Linq.dll.mdb
+C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\bin\Debug\TestDrive.dll.mdb
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\obj\Debug\android\assets\FormsViewGroup.dll.mdb
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\obj\Debug\android\assets\Java.Interop.dll.mdb
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\obj\Debug\android\assets\Mono.Android.dll.mdb
