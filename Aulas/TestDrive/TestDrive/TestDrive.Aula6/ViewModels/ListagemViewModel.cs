@@ -9,24 +9,37 @@ using Xamarin.Forms;
 
 namespace TestDrive.ViewModels
 {
-    public class ListagemViewModel
+    public class Veiculo
     {
-        public List<Veiculo> Veiculos { get; set; }
-
-        Veiculo veiculoSelecionado;
-        public Veiculo VeiculoSelecionado
+        public string nome { get; set; }
+        public decimal preco { get; set; }
+        public string PrecoFormatado
         {
             get
             {
-                return veiculoSelecionado;
-            }
-            set
-            {
-                veiculoSelecionado = value;
-                if (veiculoSelecionado != null)
-                    Navigation.PushAsync(new DetalheView(veiculoSelecionado));
+                return string.Format("R$ {0}", preco);
             }
         }
+
+        public FormattedString VeiculoLabel
+        {
+            get
+            {
+                return new FormattedString
+                {
+                    Spans = {
+                        new Span { Text = nome },
+                        new Span { Text = " - " },
+                        new Span { Text = PrecoFormatado, FontAttributes = FontAttributes.Bold } }
+                };
+            }
+            set { }
+        }
+    }
+
+    public class ListagemViewModel
+    {
+        public List<Veiculo> Veiculos { get; set; }
 
         public ListagemViewModel()
         {
@@ -46,7 +59,6 @@ namespace TestDrive.ViewModels
                 new Veiculo { nome = "Brasilia Amarela", preco = 9500 },
                 new Veiculo { nome = "Omega Hatch", preco = 8000 }
             };
-
         }
     }
 }
