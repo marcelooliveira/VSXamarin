@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Messaging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,9 +24,22 @@ namespace TestDrive.Views
             this.BindingContext = this.ViewModel;
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        protected override void OnAppearing()
         {
-            DisplayAlert("Salvar Agendamento", "Nome: " + this.ViewModel.Nome, "Ok");
+            Messenger.Default.Register<AgendamentoMessage>(this, async (msg) =>
+            {
+                var resposta = await DisplayAlert("Salvar Agendamento",
+                    "Deseja mesmo salvar o agendamento?", "Sim", "Não");
+                if (resposta)
+                    DisplayAlert("Agendamento", "Agendamento salvo com sucesso!", "Ok");
+            });
+            base.OnAppearing(); 
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            Messenger.Default.Unregister(this);
         }
     }
 }

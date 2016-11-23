@@ -23,12 +23,22 @@ namespace TestDrive.Views
 
             InitializeComponent();
             this.BindingContext = this.ViewModel;
+        }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
             Messenger.Default.Register<ProximoMessage>(this,
                 (msg) =>
                 {
                     Navigation.PushAsync(new AgendamentoView(this.ViewModel.Veiculo));
                 });
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            Messenger.Default.Unregister(this);
         }
     }
 }

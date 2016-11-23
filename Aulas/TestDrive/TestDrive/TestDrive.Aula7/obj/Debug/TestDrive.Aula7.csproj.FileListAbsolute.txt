@@ -23,3 +23,5 @@ C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Au
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Aula7\obj\Debug\TestDrive.pdb
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Aula7\obj\Debug\TestDrive.dll.mdb
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Aula7\bin\Debug\TestDrive.dll.mdb
+C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Aula7\obj\Debug\TestDrive.dll.mdb
+C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Aula7\bin\Debug\TestDrive.dll.mdb

@@ -20,12 +20,22 @@ namespace TestDrive.Views
 
             ViewModel = new ListagemViewModel();
             this.BindingContext = ViewModel;
+        }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
             Messenger.Default.Register<VeiculoSelecionadoMessage>(this,
                 (msg) =>
                 {
                     Navigation.PushAsync(new DetalheView(msg.Veiculo));
                 });
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            Messenger.Default.Unregister(this);
         }
     }
 }
