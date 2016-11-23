@@ -1,8 +1,11 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using TestDrive.Models;
@@ -13,26 +16,30 @@ namespace TestDrive.ViewModels
 {
     public class ListagemViewModel : BaseViewModel
     {
-        public List<Veiculo> Veiculos { get; set; }
+        public ObservableCollection<Veiculo> Veiculos { get; set; }
 
         public ListagemViewModel()
         {
-            Veiculos = new List<Veiculo>()
+            Veiculos = new ObservableCollection<Veiculo>();
+        }
+            
+        public async Task GetVeiculos()
+        {
+            Aguarde = true;
+            HttpClient client = new HttpClient();
+            var resultado = await client.GetStringAsync("https://aluracar.herokuapp.com/");
+            var veiculos = JsonConvert.DeserializeObject<Veiculo[]>(resultado);
+
+            foreach (var veiculo in veiculos)
             {
-                new Veiculo { nome = "Azera V6", preco = 85000 },
-                new Veiculo { nome = "Onix 1.6", preco = 35000 },
-                new Veiculo { nome = "Fiesta 2.0", preco = 52000 },
-                new Veiculo { nome = "C3 1.0", preco = 22000 },
-                new Veiculo { nome = "Uno Fire", preco = 11000 },
-                new Veiculo { nome = "Sentra 2.0", preco = 53000 },
-                new Veiculo { nome = "Astra Sedan", preco = 39000 },
-                new Veiculo { nome = "Vectra 2.0 Turbo", preco = 37000 },
-                new Veiculo { nome = "Hilux 4x4", preco = 90000 },
-                new Veiculo { nome = "Montana Cabine dupla", preco = 57000 },
-                new Veiculo { nome = "Outlander 2.4", preco = 99000 },
-                new Veiculo { nome = "Brasilia Amarela", preco = 9500 },
-                new Veiculo { nome = "Omega Hatch", preco = 8000 }
-            };
+                this.Veiculos.Add(new Veiculo
+                {
+                   nome = veiculo.nome,
+                   preco = veiculo.preco
+                });
+            }
+
+            Aguarde = false;
         }
 
         Veiculo veiculoSelecionado;
@@ -49,6 +56,20 @@ namespace TestDrive.ViewModels
                 Messenger.Default.Send(new VeiculoSelecionadoMessage(veiculoSelecionado));
             }
         }
+
+        bool aguarde;
+        public bool Aguarde
+        {
+            get
+            {
+                return aguarde;
+            }
+            set
+            {
+                aguarde = value;
+                OnPropertyChanged();
+            }
+        }
     }
 
 
@@ -61,5 +82,4 @@ namespace TestDrive.ViewModels
 
         public Veiculo Veiculo { get; set; }
     }
-
 }

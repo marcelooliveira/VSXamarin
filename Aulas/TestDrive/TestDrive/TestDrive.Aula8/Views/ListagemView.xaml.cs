@@ -22,7 +22,7 @@ namespace TestDrive.Views
             this.BindingContext = ViewModel;
         }
 
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
             Messenger.Default.Register<VeiculoSelecionadoMessage>(this,
@@ -30,6 +30,8 @@ namespace TestDrive.Views
                 {
                     Navigation.PushAsync(new DetalheView(msg.Veiculo));
                 });
+
+            await this.ViewModel.GetVeiculos();
         }
 
         protected override void OnDisappearing()
