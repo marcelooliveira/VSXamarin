@@ -1,16 +1,27 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Messaging;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using TestDrive.Models;
+using Xamarin.Forms;
 
 namespace TestDrive.ViewModels
 {
     public class DetalheViewModel : BaseViewModel
     {
+        public DetalheViewModel()
+        {
+            ProximoCommand = new Command(() =>
+                {
+                    Messenger.Default.Send(new ProximoMessage());
+                });
+        }
+
         public Veiculo Veiculo { get; set; }
 
         private const int VALOR_FREIO_ABS = 800;
@@ -105,5 +116,9 @@ namespace TestDrive.ViewModels
                 return string.Format("Total: R$ {0}", PrecoTotal);
             }
         }
+
+        public ICommand ProximoCommand { get; set; }
     }
+
+    public class ProximoMessage { }
 }

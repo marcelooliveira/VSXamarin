@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Messaging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,11 +23,12 @@ namespace TestDrive.Views
 
             InitializeComponent();
             this.BindingContext = this.ViewModel;
-        }
 
-        private void botaoProximo_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new AgendamentoView(this.ViewModel.Veiculo));
+            Messenger.Default.Register<ProximoMessage>(this,
+                (msg) =>
+                {
+                    Navigation.PushAsync(new AgendamentoView(this.ViewModel.Veiculo));
+                });
         }
     }
 }
