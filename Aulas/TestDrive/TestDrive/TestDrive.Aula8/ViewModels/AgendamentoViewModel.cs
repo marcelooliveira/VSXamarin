@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -112,6 +113,33 @@ namespace TestDrive.ViewModels
         }
 
         public ICommand AgendamentoCommand { get; set; }
+
+        public async void SalvarAgendamento()
+        {
+            HttpClient client = new HttpClient();
+
+            var dataHoraAgendamento
+                = new DateTime(DataAgendamento.Year, DataAgendamento.Month, DataAgendamento.Day,
+                DataAgendamento.Hour, DataAgendamento.Minute, DataAgendamento.Second);
+
+            var SALVAR_AGENDAMENTO_URL =
+                string.Format(
+"https://aluracar.herokuapp.com/salvarpedido?carro={0}&email={1}&endereco={2}&nome={3}&preco={4}&dataAgendamento={5}"
+, Veiculo.nome, email, fone, nome, Veiculo.preco, dataHoraAgendamento.ToString("yyyy/MM/dd"));
+
+            try
+            {
+                var httpResponseMessage = await client.GetAsync(SALVAR_AGENDAMENTO_URL);
+                if (httpResponseMessage.IsSuccessStatusCode)
+                    Messenger.Default.Send(new SucessoAgendamentoMessage());
+                else
+                    Messenger.Default.Send(new FalhaAgendamentoMessage());
+            }
+            catch (Exception exc)
+            {
+                Messenger.Default.Send(new FalhaAgendamentoMessage { Exception = exc });
+            }
+        }
     }
 
     public class AgendamentoMessage
@@ -138,5 +166,11 @@ namespace TestDrive.ViewModels
         public string Email { get; set; }
         public DateTime DataAgendamento { get; set; }
         public TimeSpan HoraAgendamento { get; set; }
+    }
+
+    public class SucessoAgendamentoMessage { }
+    public class FalhaAgendamentoMessage
+    {
+        public Exception Exception { get; set; }
     }
 }

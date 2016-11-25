@@ -31,7 +31,7 @@ namespace TestDrive.Views
                 var resposta = await DisplayAlert("Salvar Agendamento",
                     "Deseja mesmo salvar o agendamento?", "Sim", "Não");
                 if (resposta)
-                    DisplayAlert("Agendamento", "Agendamento salvo com sucesso!", "Ok");
+                    this.ViewModel.SalvarAgendamento();
             });
             base.OnAppearing(); 
         }

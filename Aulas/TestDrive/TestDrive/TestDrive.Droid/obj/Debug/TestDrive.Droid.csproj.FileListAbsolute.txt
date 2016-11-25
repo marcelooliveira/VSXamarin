@@ -91,8 +91,6 @@ C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Dr
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\obj\Debug\android\assets\GalaSoft.MvvmLight.Platform.dll.mdb
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\obj\Debug\android\assets\Microsoft.Practices.ServiceLocation.dll.mdb
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\bin\Debug\TestDrive.Droid.dll.config
-C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\bin\Debug\Newtonsoft.Json.dll
-C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\bin\Debug\Newtonsoft.Json.xml
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\bin\Debug\Microsoft.CSharp.dll.mdb
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\bin\Debug\Mono.CSharp.dll.mdb
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\obj\Debug\android\assets\Microsoft.CSharp.dll.mdb
