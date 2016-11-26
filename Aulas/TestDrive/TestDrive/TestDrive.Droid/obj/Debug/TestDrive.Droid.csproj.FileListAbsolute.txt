@@ -96,4 +96,3 @@ C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Dr
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\obj\Debug\android\assets\Microsoft.CSharp.dll.mdb
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\obj\Debug\android\assets\Mono.CSharp.dll.mdb
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\obj\Debug\TestDrive.Droid.dll.mdb
-C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\bin\Debug\TestDrive.Droid.dll.mdb

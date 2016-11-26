@@ -1,0 +1,5 @@
+C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.iOS\obj\iPhone\Debug\ibtool\_BundleResourceWithLogicalName.items
+C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.iOS\obj\iPhone\Debug\actool\_PartialAppManifest.items
+C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.iOS\obj\iPhone\Debug\actool\_BundleResourceWithLogicalName.items
+C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.iOS\obj\iPhone\Debug\optimized\
+C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.iOS\obj\iPhone\Debug\TestDrive.iOS.csprojResolveAssemblyReference.cache
