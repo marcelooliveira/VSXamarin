@@ -1,9 +1,6 @@
-﻿using GalaSoft.MvvmLight.Messaging;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -12,131 +9,98 @@ using Xamarin.Forms;
 
 namespace TestDrive.ViewModels
 {
-    public class AgendamentoViewModel : BaseViewModel
+    public class AgendamentoViewModel
     {
-        public AgendamentoViewModel()
+        public Agendamento Agendamento { get; set; }
+
+        public Veiculo Veiculo
         {
-            AgendamentoCommand = new Command(() =>
-            {
-                Messenger.Default.Send(new AgendamentoMessage(
-                    this.Veiculo,
-                    this.Nome,
-                    this.Fone,
-                    this.Email,
-                    this.DataAgendamento,
-                    this.HoraAgendamento));
-            }, 
-            () =>
-                {
-                    return
-                    !string.IsNullOrEmpty(this.Nome)
-                    && !string.IsNullOrEmpty(this.Fone)
-                    && !string.IsNullOrEmpty(this.Email);
-                });
-        }
-
-        public Veiculo Veiculo { get; set; }
-
-        string nome;
-        public string Nome {
             get
             {
-                return nome;
+                return Agendamento.Veiculo;
             }
             set
             {
-                nome = value;
-                OnPropertyChanged();
-                ((Command)AgendamentoCommand).ChangeCanExecute();
+                Agendamento.Veiculo = value;
             }
         }
 
-        string fone;
+        public string Nome
+        {
+            get
+            {
+                return Agendamento.Nome;
+            }
+
+            set
+            {
+                Agendamento.Nome = value;
+            }
+
+        }
         public string Fone
         {
             get
             {
-                return fone;
+                return Agendamento.Fone;
             }
+
             set
             {
-                fone = value;
-                OnPropertyChanged();
-                ((Command)AgendamentoCommand).ChangeCanExecute();
+                Agendamento.Fone = value;
             }
-        }
 
-        string email;
+        }
         public string Email
         {
             get
             {
-                return email;
+                return Agendamento.Email;
             }
+
             set
             {
-                email = value;
-                OnPropertyChanged();
-                ((Command)AgendamentoCommand).ChangeCanExecute();
+                Agendamento.Email = value;
             }
         }
 
-        DateTime dataAgendamento;
         public DateTime DataAgendamento
         {
             get
             {
-                return dataAgendamento;
+                return Agendamento.DataAgendamento;
             }
             set
             {
-                dataAgendamento = value;
-                OnPropertyChanged();
-                ((Command)AgendamentoCommand).ChangeCanExecute();
+                Agendamento.DataAgendamento = value;
             }
         }
 
-        TimeSpan horaAgendamento;
         public TimeSpan HoraAgendamento
         {
             get
             {
-                return horaAgendamento;
+                return Agendamento.HoraAgendamento;
             }
             set
             {
-                horaAgendamento = value;
-                OnPropertyChanged();
-                ((Command)AgendamentoCommand).ChangeCanExecute();
+                Agendamento.HoraAgendamento = value;
             }
         }
 
-        public ICommand AgendamentoCommand { get; set; }
-    }
 
-    public class AgendamentoMessage
-    {
-        public AgendamentoMessage(
-            Veiculo veiculo,
-            string nome,
-            string fone,
-            string email,
-            DateTime dataAgendamento,
-            TimeSpan horaAgendamento)
+        public AgendamentoViewModel(Veiculo veiculo)
         {
-            this.Veiculo = veiculo;
-            this.Nome = nome;
-            this.Fone = fone;
-            this.Email = email;
-            this.DataAgendamento = dataAgendamento;
-            this.HoraAgendamento = horaAgendamento;
+            this.Agendamento = new Agendamento();
+            this.Agendamento.Veiculo = veiculo;
+
+            AgendarCommand = new Command(() =>
+            {
+                MessagingCenter.Send<Agendamento>(this.Agendamento
+                    , "Agendamento");
+            });
         }
 
-        public Veiculo Veiculo { get; set; }
-        public string Nome { get; set; }
-        public string Fone { get; set; }
-        public string Email { get; set; }
-        public DateTime DataAgendamento { get; set; }
-        public TimeSpan HoraAgendamento { get; set; }
+        public ICommand AgendarCommand { get; set; }
     }
 }

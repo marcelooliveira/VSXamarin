@@ -137,6 +137,12 @@
     </Reference>
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TestDrive.Aula1\TestDrive.Aula1.csproj">
+      <Project>{7d673f94-75a5-48a7-a7c1-cc7e84df4098}</Project>
+      <Name>TestDrive.Aula1</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.2.0.45\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.2.0.45\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

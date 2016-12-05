@@ -2,7 +2,7 @@
 <Sdk>
   <AndroidApiLevel>25</AndroidApiLevel>
   <AndroidApiLevelName>25</AndroidApiLevelName>
-  <AndroidNdkPath>C:\Program Files\Android\ndk\android-ndk-r11c</AndroidNdkPath>
+  <AndroidNdkPath>C:\Program Files\Android\ndk\android-ndk-r13b</AndroidNdkPath>
   <AndroidSdkBuildToolsPath>C:\Users\marce\AppData\Local\Xamarin\MonoForAndroid\AndroidSDK\build-tools\23.0.2</AndroidSdkBuildToolsPath>
   <AndroidSdkBuildToolsBinPath>C:\Users\marce\AppData\Local\Xamarin\MonoForAndroid\AndroidSDK\build-tools\23.0.2</AndroidSdkBuildToolsBinPath>
   <AndroidSdkPath>C:\Users\marce\AppData\Local\Xamarin\MonoForAndroid\AndroidSDK</AndroidSdkPath>

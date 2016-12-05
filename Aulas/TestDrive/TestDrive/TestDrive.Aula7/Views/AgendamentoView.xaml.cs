@@ -1,5 +1,4 @@
-﻿using GalaSoft.MvvmLight.Messaging;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,33 +12,41 @@ namespace TestDrive.Views
     public partial class AgendamentoView : ContentPage
     {
         public AgendamentoViewModel ViewModel { get; set; }
+
         public AgendamentoView(Veiculo veiculo)
         {
-            this.ViewModel = new AgendamentoViewModel
-            {
-                 Veiculo = veiculo
-            };
-
             InitializeComponent();
+            this.ViewModel = new AgendamentoViewModel(veiculo);
             this.BindingContext = this.ViewModel;
         }
 
         protected override void OnAppearing()
         {
-            Messenger.Default.Register<AgendamentoMessage>(this, async (msg) =>
-            {
-                var resposta = await DisplayAlert("Salvar Agendamento",
-                    "Deseja mesmo salvar o agendamento?", "Sim", "Não");
-                if (resposta)
-                    DisplayAlert("Agendamento", "Agendamento salvo com sucesso!", "Ok");
-            });
-            base.OnAppearing(); 
+            base.OnAppearing();
+            MessagingCenter.Subscribe<Agendamento>(this, "Agendamento",
+                (msg) =>
+                {
+                    DisplayAlert("Agendamento",
+                    string.Format(
+@"Veiculo: {0}
+Nome: {1}
+Fone: {2}
+E-mail: {3}
+Data Agendamento: {4}
+Hora Agendamento: {5}",
+                    msg.Veiculo.Nome,
+                    msg.Nome,
+                    msg.Fone,
+                    msg.Email,
+                    msg.DataAgendamento.ToString("dd/MM/yyyy"),
+                    msg.HoraAgendamento), "OK");
+                });
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            Messenger.Default.Unregister(this);
+            MessagingCenter.Unsubscribe<Agendamento>(this, "Agendamento");
         }
     }
 }

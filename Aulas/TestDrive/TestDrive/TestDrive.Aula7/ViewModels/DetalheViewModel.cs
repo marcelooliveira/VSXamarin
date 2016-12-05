@@ -1,5 +1,4 @@
-﻿using GalaSoft.MvvmLight.Messaging;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -12,27 +11,15 @@ using Xamarin.Forms;
 
 namespace TestDrive.ViewModels
 {
-    public class DetalheViewModel : BaseViewModel
+    public class DetalheViewModel : INotifyPropertyChanged
     {
-        public DetalheViewModel()
-        {
-            ProximoCommand = new Command(() =>
-                {
-                    Messenger.Default.Send(new ProximoMessage());
-                });
-        }
-
         public Veiculo Veiculo { get; set; }
-
-        private const int VALOR_FREIO_ABS = 800;
-        private const int VALOR_AR_CONDICIONADO = 1000;
-        private const int VALOR_MP3_PLAYER = 500;
 
         public string TextoFreioABS
         {
             get
             {
-                return string.Format("Freio ABS - R$ {0}", VALOR_FREIO_ABS);
+                return string.Format("Freio ABS - R$ {0}", Veiculo.FREIO_ABS);
             }
         }
 
@@ -40,7 +27,7 @@ namespace TestDrive.ViewModels
         {
             get
             {
-                return string.Format("Ar Condicionado - R$ {0}", VALOR_AR_CONDICIONADO);
+                return string.Format("Ar Condicionado - R$ {0}", Veiculo.AR_CONDICIONADO);
             }
         }
 
@@ -48,77 +35,76 @@ namespace TestDrive.ViewModels
         {
             get
             {
-                return string.Format("MP3 Player - R$ {0}", VALOR_MP3_PLAYER);
+                return string.Format("MP3 Player - R$ {0}", Veiculo.MP3_PLAYER);
             }
         }
 
-        bool temFreioABS;
         public bool TemFreioABS
         {
             get
             {
-                return temFreioABS;
+                return Veiculo.TemFreioABS;
             }
             set
             {
-                temFreioABS = value;
+                Veiculo.TemFreioABS = value;
                 OnPropertyChanged();
-                OnPropertyChanged(nameof(PrecoTotalFormatado));
+                OnPropertyChanged(nameof(ValorTotal));
             }
         }
 
-        bool temArCondicionado;
         public bool TemArCondicionado
         {
             get
             {
-                return temArCondicionado;
+                return Veiculo.TemArCondicionado;
             }
             set
             {
-                temArCondicionado = value;
+                Veiculo.TemArCondicionado = value;
                 OnPropertyChanged();
-                OnPropertyChanged(nameof(PrecoTotalFormatado));
+                OnPropertyChanged(nameof(ValorTotal));
             }
         }
-
-        bool temMP3Player;
 
         public bool TemMP3Player
         {
             get
             {
-                return temMP3Player;
+                return Veiculo.TemMP3Player;
             }
             set
             {
-                temMP3Player = value;
+                Veiculo.TemMP3Player = value;
                 OnPropertyChanged();
-                OnPropertyChanged(nameof(PrecoTotalFormatado));
+                OnPropertyChanged(nameof(ValorTotal));
             }
         }
 
-        public decimal PrecoTotal
+        public string ValorTotal
         {
             get
             {
-                return Veiculo.preco
-                    + (TemFreioABS ? VALOR_FREIO_ABS : 0)
-                    + (TemArCondicionado ? VALOR_AR_CONDICIONADO : 0)
-                    + (TemMP3Player ? VALOR_MP3_PLAYER : 0);
+                return Veiculo.PrecoTotalFormatado;
             }
         }
 
-        public string PrecoTotalFormatado
+        public DetalheViewModel(Veiculo veiculo)
         {
-            get
+            this.Veiculo = veiculo;
+            ProximoCommand = new Command(() =>
             {
-                return string.Format("Total: R$ {0}", PrecoTotal);
-            }
+                MessagingCenter.Send(veiculo, "Proximo");
+            });
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged([CallerMemberName]string name = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
         public ICommand ProximoCommand { get; set; }
     }
-
-    public class ProximoMessage { }
 }
