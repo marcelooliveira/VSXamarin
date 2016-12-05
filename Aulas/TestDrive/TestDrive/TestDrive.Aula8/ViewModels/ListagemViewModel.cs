@@ -34,8 +34,8 @@ namespace TestDrive.ViewModels
             {
                 this.Veiculos.Add(new Veiculo
                 {
-                   nome = veiculo.nome,
-                   preco = veiculo.preco
+                   Nome = veiculo.Nome,
+                   Preco = veiculo.Preco
                 });
             }
 
@@ -52,8 +52,8 @@ namespace TestDrive.ViewModels
             set
             {
                 veiculoSelecionado = value;
-
-                Messenger.Default.Send(new VeiculoSelecionadoMessage(veiculoSelecionado));
+                if (value != null)
+                    MessagingCenter.Send(veiculoSelecionado, "VeiculoSelecionado");
             }
         }
 
@@ -70,16 +70,5 @@ namespace TestDrive.ViewModels
                 OnPropertyChanged();
             }
         }
-    }
-
-
-    public class VeiculoSelecionadoMessage
-    {
-        public VeiculoSelecionadoMessage(Veiculo veiculo)
-        {
-            this.Veiculo = veiculo;
-        }
-
-        public Veiculo Veiculo { get; set; }
     }
 }

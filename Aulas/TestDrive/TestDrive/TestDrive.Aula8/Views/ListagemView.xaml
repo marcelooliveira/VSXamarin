@@ -2,9 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TestDrive"
+             xmlns:vm="clr-namespace:TestDrive.ViewModels"
              Title="Test Drive"
              x:Class="TestDrive.Views.ListagemView">
-
     <StackLayout Padding="25">
         <ActivityIndicator IsRunning="{Binding Aguarde}"
                            IsVisible="{Binding Aguarde}">            
@@ -16,8 +16,11 @@
                 <DataTemplate>
                     <ViewCell>
                         <ViewCell.View>
-                            <Label FontSize="20" 
-                                   FormattedText="{Binding VeiculoLabel}"></Label>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Nome}" FontSize="20" VerticalTextAlignment="Center"></Label>
+                                <Label Text=" - " VerticalTextAlignment="Center"></Label>
+                                <Label Text="{Binding PrecoFormatado}" FontAttributes="Bold" VerticalTextAlignment="Center"></Label>
+                            </StackLayout>
                         </ViewCell.View>
                     </ViewCell>
                 </DataTemplate>

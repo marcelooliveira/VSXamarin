@@ -38,6 +38,7 @@ namespace TestDrive.ViewModels
             }
 
         }
+
         public string Fone
         {
             get
@@ -51,6 +52,7 @@ namespace TestDrive.ViewModels
             }
 
         }
+
         public string Email
         {
             get

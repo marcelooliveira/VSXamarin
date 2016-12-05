@@ -18,7 +18,7 @@ namespace TestDrive.ViewModels
         {
             ProximoCommand = new Command(() =>
                 {
-                    Messenger.Default.Send(new ProximoMessage());
+                    MessagingCenter.Send<Veiculo>(this.Veiculo, "Proximo");
                 });
         }
 
@@ -102,7 +102,7 @@ namespace TestDrive.ViewModels
         {
             get
             {
-                return Veiculo.preco
+                return Veiculo.Preco
                     + (TemFreioABS ? VALOR_FREIO_ABS : 0)
                     + (TemArCondicionado ? VALOR_AR_CONDICIONADO : 0)
                     + (TemMP3Player ? VALOR_MP3_PLAYER : 0);
@@ -119,6 +119,4 @@ namespace TestDrive.ViewModels
 
         public ICommand ProximoCommand { get; set; }
     }
-
-    public class ProximoMessage { }
 }

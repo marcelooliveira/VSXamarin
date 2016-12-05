@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F3795A63-FA62-44B5-A4D6-8CBDD543EFF5}</ProjectGuid>
+    <ProjectGuid>{7C8FBDE9-9956-4B9C-BDD1-A94ADAAD7ABA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TestDrive</RootNamespace>
@@ -38,7 +38,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\Agendamento.cs" />
+    <Compile Include="Models\ListagemVeiculos.cs" />
     <Compile Include="Models\Veiculo.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\AgendamentoViewModel.cs" />

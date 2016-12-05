@@ -1,5 +1,4 @@
-﻿using GalaSoft.MvvmLight.Messaging;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,18 +16,17 @@ namespace TestDrive.Views
         public ListagemView()
         {
             InitializeComponent();
-
-            ViewModel = new ListagemViewModel();
-            this.BindingContext = ViewModel;
+            this.ViewModel = new ListagemViewModel();
+            this.BindingContext = this.ViewModel;
         }
 
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            Messenger.Default.Register<VeiculoSelecionadoMessage>(this,
+            MessagingCenter.Subscribe<Veiculo>(this, "VeiculoSelecionado",
                 (msg) =>
                 {
-                    Navigation.PushAsync(new DetalheView(msg.Veiculo));
+                    Navigation.PushAsync(new DetalheView(msg));
                 });
 
             await this.ViewModel.GetVeiculos();
@@ -37,7 +35,7 @@ namespace TestDrive.Views
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            Messenger.Default.Unregister(this);
+            MessagingCenter.Unsubscribe<Veiculo>(this, "VeiculoSelecionado");
         }
     }
 }

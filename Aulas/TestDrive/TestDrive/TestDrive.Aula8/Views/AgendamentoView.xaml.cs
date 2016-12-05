@@ -15,10 +15,7 @@ namespace TestDrive.Views
         public AgendamentoViewModel ViewModel { get; set; }
         public AgendamentoView(Veiculo veiculo)
         {
-            this.ViewModel = new AgendamentoViewModel
-            {
-                 Veiculo = veiculo
-            };
+            this.ViewModel = new AgendamentoViewModel(veiculo);
 
             InitializeComponent();
             this.BindingContext = this.ViewModel;
@@ -26,7 +23,7 @@ namespace TestDrive.Views
 
         protected override void OnAppearing()
         {
-            Messenger.Default.Register<AgendamentoMessage>(this, async (msg) =>
+            MessagingCenter.Subscribe<Agendamento>(this, "Agendamento", async (msg) =>
             {
                 var resposta = await DisplayAlert("Salvar Agendamento",
                     "Deseja mesmo salvar o agendamento?", "Sim", "Não");
@@ -39,7 +36,7 @@ namespace TestDrive.Views
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            Messenger.Default.Unregister(this);
+            MessagingCenter.Unsubscribe<Agendamento>(this, "Agendamento");
         }
     }
 }

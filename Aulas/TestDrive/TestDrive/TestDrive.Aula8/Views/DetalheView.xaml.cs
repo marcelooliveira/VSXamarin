@@ -28,7 +28,7 @@ namespace TestDrive.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            Messenger.Default.Register<ProximoMessage>(this,
+            MessagingCenter.Subscribe<Veiculo>(this, "Proximo",
                 (msg) =>
                 {
                     Navigation.PushAsync(new AgendamentoView(this.ViewModel.Veiculo));
@@ -38,7 +38,7 @@ namespace TestDrive.Views
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            Messenger.Default.Unregister(this);
+            MessagingCenter.Unsubscribe<Veiculo>(this, "Proximo");
         }
     }
 }

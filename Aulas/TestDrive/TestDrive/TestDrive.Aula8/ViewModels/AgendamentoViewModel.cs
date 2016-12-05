@@ -15,17 +15,14 @@ namespace TestDrive.ViewModels
 {
     public class AgendamentoViewModel : BaseViewModel
     {
-        public AgendamentoViewModel()
+        public AgendamentoViewModel(Veiculo veiculo)
         {
+            this.Agendamento = new Agendamento();
+            this.Agendamento.Veiculo = veiculo;
+
             AgendamentoCommand = new Command(() =>
             {
-                Messenger.Default.Send(new AgendamentoMessage(
-                    this.Veiculo,
-                    this.Nome,
-                    this.Fone,
-                    this.Email,
-                    this.DataAgendamento,
-                    this.HoraAgendamento));
+                MessagingCenter.Send<Agendamento>(this.Agendamento, "Agendamento");
             }, 
             () =>
                 {
@@ -36,77 +33,84 @@ namespace TestDrive.ViewModels
                 });
         }
 
-        public Veiculo Veiculo { get; set; }
+        public Agendamento Agendamento { get; set; }
 
-        string nome;
-        public string Nome {
+        public Veiculo Veiculo
+        {
             get
             {
-                return nome;
+                return Agendamento.Veiculo;
             }
             set
             {
-                nome = value;
+                Agendamento.Veiculo = value;
+            }
+        }
+
+        public string Nome {
+            get
+            {
+                return Agendamento.Nome;
+            }
+            set
+            {
+                Agendamento.Nome = value;
                 OnPropertyChanged();
                 ((Command)AgendamentoCommand).ChangeCanExecute();
             }
         }
 
-        string fone;
         public string Fone
         {
             get
             {
-                return fone;
+                return Agendamento.Fone;
             }
             set
             {
-                fone = value;
+                Agendamento.Fone = value;
                 OnPropertyChanged();
                 ((Command)AgendamentoCommand).ChangeCanExecute();
             }
         }
 
-        string email;
         public string Email
         {
             get
             {
-                return email;
+                return Agendamento.Email;
             }
             set
             {
-                email = value;
+                Agendamento.Email = value;
                 OnPropertyChanged();
                 ((Command)AgendamentoCommand).ChangeCanExecute();
             }
         }
 
-        DateTime dataAgendamento;
         public DateTime DataAgendamento
         {
             get
             {
-                return dataAgendamento;
+                return Agendamento.DataAgendamento;
             }
             set
             {
-                dataAgendamento = value;
+                Agendamento.DataAgendamento = value;
                 OnPropertyChanged();
                 ((Command)AgendamentoCommand).ChangeCanExecute();
             }
         }
 
-        TimeSpan horaAgendamento;
         public TimeSpan HoraAgendamento
         {
             get
             {
-                return horaAgendamento;
+                return Agendamento.HoraAgendamento;
             }
             set
             {
-                horaAgendamento = value;
+                Agendamento.HoraAgendamento = value;
                 OnPropertyChanged();
                 ((Command)AgendamentoCommand).ChangeCanExecute();
             }
@@ -122,55 +126,23 @@ namespace TestDrive.ViewModels
                 = new DateTime(DataAgendamento.Year, DataAgendamento.Month, DataAgendamento.Day,
                 DataAgendamento.Hour, DataAgendamento.Minute, DataAgendamento.Second);
 
-            var SALVAR_AGENDAMENTO_URL =
-                string.Format(
-"https://aluracar.herokuapp.com/salvarpedido?carro={0}&email={1}&endereco={2}&nome={3}&preco={4}&dataAgendamento={5}"
-, Veiculo.nome, email, fone, nome, Veiculo.preco, dataHoraAgendamento.ToString("yyyy/MM/dd"));
+            var SALVAR_AGENDAMENTO_URL = "";
+//                string.Format(
+//"https://aluracar.herokuapp.com/salvarpedido?carro={0}&email={1}&endereco={2}&nome={3}&preco={4}&dataAgendamento={5}"
+//, Veiculo.nome, email, fone, nome, Veiculo.preco, dataHoraAgendamento.ToString("yyyy/MM/dd"));
 
             try
             {
                 var httpResponseMessage = await client.GetAsync(SALVAR_AGENDAMENTO_URL);
                 if (httpResponseMessage.IsSuccessStatusCode)
-                    Messenger.Default.Send(new SucessoAgendamentoMessage());
+                    MessagingCenter.Send<Agendamento>(this.Agendamento, "SucessoAgendamento");
                 else
-                    Messenger.Default.Send(new FalhaAgendamentoMessage());
+                    MessagingCenter.Send<HttpContent>(httpResponseMessage.Content, "FalhaAgendamentoHttpContent");
             }
             catch (Exception exc)
             {
-                Messenger.Default.Send(new FalhaAgendamentoMessage { Exception = exc });
+                MessagingCenter.Send<Exception>(exc, "FalhaAgendamento");
             }
         }
-    }
-
-    public class AgendamentoMessage
-    {
-        public AgendamentoMessage(
-            Veiculo veiculo,
-            string nome,
-            string fone,
-            string email,
-            DateTime dataAgendamento,
-            TimeSpan horaAgendamento)
-        {
-            this.Veiculo = veiculo;
-            this.Nome = nome;
-            this.Fone = fone;
-            this.Email = email;
-            this.DataAgendamento = dataAgendamento;
-            this.HoraAgendamento = horaAgendamento;
-        }
-
-        public Veiculo Veiculo { get; set; }
-        public string Nome { get; set; }
-        public string Fone { get; set; }
-        public string Email { get; set; }
-        public DateTime DataAgendamento { get; set; }
-        public TimeSpan HoraAgendamento { get; set; }
-    }
-
-    public class SucessoAgendamentoMessage { }
-    public class FalhaAgendamentoMessage
-    {
-        public Exception Exception { get; set; }
     }
 }
