@@ -12,20 +12,30 @@ namespace TestDrive.Views
     public partial class AgendamentoView : ContentPage
     {
         public AgendamentoViewModel ViewModel { get; set; }
+
         public AgendamentoView(Veiculo veiculo)
         {
-            this.ViewModel = new AgendamentoViewModel
-            {
-                 Veiculo = veiculo
-            };
-
             InitializeComponent();
+            this.ViewModel = new AgendamentoViewModel(veiculo);
             this.BindingContext = this.ViewModel;
         }
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("Salvar Agendamento", "Nome: " + this.ViewModel.Nome, "Ok");
+            DisplayAlert("Agendamento",
+            string.Format(
+            @"Veiculo: {0}
+            Nome: {1}
+            Fone: {2}
+            E-mail: {3}
+            Data Agendamento: {4}
+            Hora Agendamento: {5}",
+            ViewModel.Agendamento.Veiculo.Nome,
+            ViewModel.Agendamento.Nome,
+            ViewModel.Agendamento.Fone,
+            ViewModel.Agendamento.Email,
+            ViewModel.Agendamento.DataAgendamento.ToString("dd/MM/yyyy"),
+            ViewModel.Agendamento.HoraAgendamento), "OK");
         }
     }
 }

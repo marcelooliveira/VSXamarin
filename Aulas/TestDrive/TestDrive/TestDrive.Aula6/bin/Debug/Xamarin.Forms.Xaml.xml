@@ -83,6 +83,11 @@
             <value>To be added.</value>
             <remarks>To be added.</remarks>
         </member>
+        <member name="P:Xamarin.Forms.Xaml.BindingExtension.UpdateSourceEventName">
+            <summary>To be added.</summary>
+            <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
         <member name="M:Xamarin.Forms.Xaml.BindingExtension.Xamarin#Forms#Xaml#IMarkupExtension#ProvideValue(System.IServiceProvider)">
             <param name="serviceProvider">To be added.</param>
             <summary>For internal use by the XAML infrastructure.</summary>
@@ -369,6 +374,12 @@
         </member>
         <member name="C:Xamarin.Forms.Xaml.Internals.SimpleValueTargetProvider(System.Object[])">
             <param name="objectAndParents">To be added.</param>
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="C:Xamarin.Forms.Xaml.Internals.SimpleValueTargetProvider(System.Object[],System.Object)">
+            <param name="objectAndParents">To be added.</param>
+            <param name="targetProperty">To be added.</param>
             <summary>To be added.</summary>
             <remarks>To be added.</remarks>
         </member>

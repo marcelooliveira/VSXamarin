@@ -1,21 +1,96 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using TestDrive.Models;
 
 namespace TestDrive.ViewModels
 {
-    public class AgendamentoViewModel : BaseViewModel
+    public class AgendamentoViewModel
     {
-        public Veiculo Veiculo { get; set; }
-        public string Nome { get; set; }
-        public string Fone { get; set; }
-        public string Email { get; set; }
-        public DateTime DataAgendamento { get; set; }
-        public TimeSpan HoraAgendamento { get; set; }
+        public Agendamento Agendamento { get; set; }
+
+        public Veiculo Veiculo
+        {
+            get
+            {
+                return Agendamento.Veiculo;
+            }
+            set
+            {
+                Agendamento.Veiculo = value;
+            }
+        }
+
+        public string Nome
+        {
+            get
+            {
+                return Agendamento.Nome;
+            }
+
+            set
+            {
+                Agendamento.Nome = value;
+            }
+
+        }
+        public string Fone
+        {
+            get
+            {
+                return Agendamento.Fone;
+            }
+
+            set
+            {
+                Agendamento.Fone = value;
+            }
+
+        }
+        public string Email
+        {
+            get
+            {
+                return Agendamento.Email;
+            }
+
+            set
+            {
+                Agendamento.Email = value;
+            }
+        }
+
+        public DateTime DataAgendamento
+        {
+            get
+            {
+                return Agendamento.DataAgendamento;
+            }
+            set
+            {
+                Agendamento.DataAgendamento = value;
+            }
+        }
+
+        public TimeSpan HoraAgendamento
+        {
+            get
+            {
+                return Agendamento.HoraAgendamento;
+            }
+            set
+            {
+                Agendamento.HoraAgendamento = value;
+            }
+        }
+
+
+        public AgendamentoViewModel(Veiculo veiculo)
+        {
+            this.Agendamento = new Agendamento();
+            this.Agendamento.Veiculo = veiculo;
+        }
     }
 }

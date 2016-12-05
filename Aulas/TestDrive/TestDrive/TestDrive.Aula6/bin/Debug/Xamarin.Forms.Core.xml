@@ -487,6 +487,12 @@ var indicator = new ActivityIndicator {
             <summary>Identifies the Color bindable property.</summary>
             <remarks />
         </member>
+        <member name="M:Xamarin.Forms.ActivityIndicator.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
         <member name="T:Xamarin.Forms.Animation">
             <summary>Encapsulates an animation, a collection of functions that modify properties over a user-perceptible time period.</summary>
             <remarks>To be added.</remarks>
@@ -685,6 +691,12 @@ var indicator = new ActivityIndicator {
         </member>
         <member name="E:Xamarin.Forms.Application.ModalPushing">
             <summary>Event that is raised when a view is modally pushed.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Application.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
             <remarks>To be added.</remarks>
         </member>
         <member name="M:Xamarin.Forms.Application.OnAppLinkRequestReceived(System.Uri)">
@@ -2141,6 +2153,12 @@ namespace FormsGallery
             <summary>Identifies the Color bindable property.</summary>
             <remarks />
         </member>
+        <member name="M:Xamarin.Forms.BoxView.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
         <member name="M:Xamarin.Forms.BoxView.OnSizeRequest(System.Double,System.Double)">
             <param name="widthConstraint">To be added.</param>
             <param name="heightConstraint">To be added.</param>
@@ -2328,6 +2346,12 @@ namespace FormsGallery
             <summary>Backing store for the Image bindable property.</summary>
             <remarks />
         </member>
+        <member name="M:Xamarin.Forms.Button.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
         <member name="M:Xamarin.Forms.Button.OnBindingContextChanged">
             <summary>Method that is raised when the binding context changes.</summary>
             <remarks>
@@ -2485,6 +2509,12 @@ MainPage = new CarouselPage {
             <summary>Creates a default page, suitable for display in <c>this</c><see cref="T:Xamarin.Forms.CarouselPage" />, for an object.</summary>
             <returns>A page that is titled with the string value of <paramref name="item" />.</returns>
             <remarks>This returns a new <see cref="T:Xamarin.Forms.Page" /> object that has its <see cref="P:Xamarin.Forms.Page.Title" /> property set to the value of <see cref="M:Object.ToString" /> when called on <paramref name="item" />.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.CarouselPage.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
         </member>
         <member name="T:Xamarin.Forms.Cell">
             <summary>Provides base class and capabilities for all Forms cells. Cells are elements meant to be added to <see cref="T:Xamarin.Forms.ListView" /> or <see cref="T:Xamarin.Forms.TableView" />.</summary>
@@ -2718,7 +2748,7 @@ Content = new TableView
                 <para>Application developers can specify colors in XAML either as a hexadecimal number or as a valid color name.</para>
                 <para>When specifying a color with a hexadecimal number, app developers can use 3, 4, or 6 digits. If the developer specifies 3 digits, they are interpreted as RGB doublet data for a fully opaque color. For example, "#123" specifies the color that is represented by "#FF112233". If the developer provides a 4-digit hexadecimal number, then the data are interpreted as above, except that the first digit specifies the alpha channel. For example, "#1234" specifies the color that is represented by "#11223344". Finally, if the developer provides a 6 digit hexadecimal number, the data are interpreted as a fully opaque color with those RGB values. For example, "#112233" specifies the color that is represented by "#FF112233".</para>
                 <para>When specifying a color with a string, app developers can use color name in isolation, or prefix it with "Color.". For example, both <c>Purple</c> and <c>Color.Purple</c> are valid ways to specify the color purple. The following table describes the valid color names that can be used to specify colors in XAML.
-<list type="table"><listheader><term>Color</term><description>Short Name</description><description>RGB Value</description></listheader><item><term>Color.Transparent</term><description>Transparent</description><description>0, 0, 0 (With the alpha channel set to 0.)</description></item><item><term>Color.Aqua</term><description>Aqua</description><description>0, 255, 255</description></item><item><term>Color.Black</term><description>Black</description><description>0, 0, 0</description></item><item><term>Color.Blue</term><description>Blue</description><description>0, 0, 255</description></item><item><term>Color.Fuchsia</term><description>Fuchsia</description><description>255, 0, 255</description></item><item><term>Color.Gray</term><description>Gray</description><description>128, 128, 128</description></item><item><term>Color.Green</term><description>Green</description><description>0, 128, 0</description></item><item><term>Color.Lime</term><description>Lime</description><description>0, 255, 0</description></item><item><term>Color.Maroon</term><description>Maroon</description><description>128, 0, 0</description></item><item><term>Color.Navy</term><description>Navy</description><description>0, 0, 128</description></item><item><term>Color.Olive</term><description>Olive</description><description>128, 128, 0</description></item><item><term>Color.Purple</term><description>Purple</description><description>128, 0, 128</description></item><item><term>Color.Pink</term><description>Pink</description><description>255, 102, 255</description></item><item><term>Color.Red</term><description>Red</description><description>255, 0, 0</description></item><item><term>Color.Silver</term><description>Silver</description><description>192, 192, 192</description></item><item><term>Color.Teal</term><description>Teal</description><description>0, 128, 128</description></item><item><term>Color.White</term><description>White</description><description>255, 255, 255</description></item><item><term>Color.Yellow</term><description>Yellow</description><description>255, 255, 0</description></item></list></para>
+<list type="table"><listheader><term>Color</term><description>Short Name</description><description>RGB Value</description></listheader><item><term>Color.Transparent</term><description>Transparent</description><description>0, 0, 0 (With the alpha channel set to 0.)</description></item><item><term>Color.Aqua</term><description>Aqua</description><description>0, 255, 255</description></item><item><term>Color.Black</term><description>Black</description><description>0, 0, 0</description></item><item><term>Color.Blue</term><description>Blue</description><description>0, 0, 255</description></item><item><term>Color.Fuchsia</term><description>Fuchsia</description><description>255, 0, 255</description></item><item><term>Color.Gray</term><description>Gray</description><description>128, 128, 128</description></item><item><term>Color.Green</term><description>Green</description><description>0, 128, 0</description></item><item><term>Color.Lime</term><description>Lime</description><description>0, 255, 0</description></item><item><term>Color.Maroon</term><description>Maroon</description><description>128, 0, 0</description></item><item><term>Color.Navy</term><description>Navy</description><description>0, 0, 128</description></item><item><term>Color.Olive</term><description>Olive</description><description>128, 128, 0</description></item><item><term>Color.Orange</term><description>Orange</description><description>255, 165, 0</description></item><item><term>Color.Purple</term><description>Purple</description><description>128, 0, 128</description></item><item><term>Color.Pink</term><description>Pink</description><description>255, 102, 255</description></item><item><term>Color.Red</term><description>Red</description><description>255, 0, 0</description></item><item><term>Color.Silver</term><description>Silver</description><description>192, 192, 192</description></item><item><term>Color.Teal</term><description>Teal</description><description>0, 128, 128</description></item><item><term>Color.White</term><description>White</description><description>255, 255, 255</description></item><item><term>Color.Yellow</term><description>Yellow</description><description>255, 255, 0</description></item></list></para>
             </remarks>
         </member>
         <member name="C:Xamarin.Forms.Color(System.Double)">
@@ -2917,6 +2947,10 @@ Content = new TableView
             <summary>Returns <see langword="true" /> if <paramref name="color1" /> does not represent the same color as <paramref name="color1" />.</summary>
             <returns>To be added.</returns>
             <remarks>To be added.</remarks>
+        </member>
+        <member name="F:Xamarin.Forms.Color.Orange">
+            <summary>Orange, the color that is represented by the RGB value #ffa500.</summary>
+            <remarks />
         </member>
         <member name="F:Xamarin.Forms.Color.Pink">
             <summary>Pink, the color that is represented by the RGB value #ff66ff.</summary>
@@ -3201,6 +3235,28 @@ var button = new Button {
             <summary>Base class for conditions.</summary>
             <remarks>To be added.</remarks>
         </member>
+        <member name="T:Xamarin.Forms.Configuration`2">
+            <typeparam name="TPlatform">To be added.</typeparam>
+            <typeparam name="TElement">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="C:Xamarin.Forms.Configuration`2(TElement)">
+            <param name="element">To be added.</param>
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Configuration`2.Create(TElement)">
+            <param name="element">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="P:Xamarin.Forms.Configuration`2.Element">
+            <summary>To be added.</summary>
+            <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
         <member name="T:Xamarin.Forms.Constraint">
             <summary>A layout constraint used by <see cref="T:Xamarin.Forms.RelativeLayout" />s.</summary>
             <remarks>To be added.</remarks>
@@ -3303,9 +3359,21 @@ var button = new Button {
             <returns>To be added.</returns>
             <remarks>To be added.</remarks>
         </member>
+        <member name="M:Xamarin.Forms.ConstraintExpression.ProvideValue(System.IServiceProvider)">
+            <param name="serviceProvider">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
         <member name="P:Xamarin.Forms.ConstraintExpression.Type">
             <summary>Gets or sets the constraint type.</summary>
             <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.ConstraintExpression.Xamarin#Forms#Xaml#IMarkupExtension#ProvideValue(System.IServiceProvider)">
+            <param name="serviceProvider">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
             <remarks>To be added.</remarks>
         </member>
         <member name="T:Xamarin.Forms.ConstraintType">
@@ -3914,6 +3982,12 @@ DatePicker datePicker = new DatePicker
             <summary>Identifies the MinimumDate bindable property.</summary>
             <remarks />
         </member>
+        <member name="M:Xamarin.Forms.DatePicker.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
         <member name="P:Xamarin.Forms.DatePicker.TextColor">
             <summary>To be added.</summary>
             <value>To be added.</value>
@@ -4398,7 +4472,7 @@ button.HeightRequest = Device.OnPlatform (20,30,30);
             </remarks>
         </member>
         <member name="F:Xamarin.Forms.Easing.SinInOut">
-            <summary>Accelerates in and out.</summary>
+            <summary>Accelerates in and decelerates out.</summary>
             <remarks>
                 <para>
                     <img href="Easing.SinInOut.gif" />
@@ -4495,6 +4569,12 @@ var editor = new Editor {
         </member>
         <member name="F:Xamarin.Forms.Editor.FontSizeProperty">
             <summary>Backing store for the FontSize property.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Editor.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
             <remarks>To be added.</remarks>
         </member>
         <member name="P:Xamarin.Forms.Editor.Text">
@@ -4738,6 +4818,12 @@ var editor = new Editor {
             <value>To be added.</value>
             <remarks>To be added.</remarks>
         </member>
+        <member name="M:Xamarin.Forms.Element.Xamarin#Forms#IElementController#EffectIsAttached(System.String)">
+            <param name="name">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
         <member name="P:Xamarin.Forms.Element.Xamarin#Forms#IElementController#LogicalChildren">
             <summary>To be added.</summary>
             <value>To be added.</value>
@@ -4954,6 +5040,12 @@ View CreateLoginForm ()
         <member name="F:Xamarin.Forms.Entry.IsPasswordProperty">
             <summary>Identifies the IsPassword bindable property.</summary>
             <remarks />
+        </member>
+        <member name="M:Xamarin.Forms.Entry.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
         </member>
         <member name="P:Xamarin.Forms.Entry.Placeholder">
             <summary>Gets or sets the placeholder text shown when the entry <see cref="P:Xamarin.Forms.Entry.Text" /> is null or empty. This is a bindable property.</summary>
@@ -5653,6 +5745,12 @@ MainPage = new ContentPage () {
         <member name="F:Xamarin.Forms.Frame.HasShadowProperty">
             <summary>Identifies the HasShadow bindable property.</summary>
             <remarks />
+        </member>
+        <member name="M:Xamarin.Forms.Frame.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
         </member>
         <member name="P:Xamarin.Forms.Frame.OutlineColor">
             <summary>Gets or sets the color of the border of the Frame. This is a bindable property.</summary>
@@ -6490,6 +6588,20 @@ namespace FormsGallery
             <summary>To be added.</summary>
             <remarks>To be added.</remarks>
         </member>
+        <member name="T:Xamarin.Forms.IConfigElement`1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="P:Xamarin.Forms.IConfigElement`1.Element">
+            <summary>To be added.</summary>
+            <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="T:Xamarin.Forms.IConfigPlatform">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
         <member name="T:Xamarin.Forms.IDefinition">
             <summary>Interface defining the type of <see cref="T:Xamarin.Forms.RowDefinition" /> and <see cref="T:Xamarin.Forms.ColumnDefinition" />.</summary>
             <remarks>
@@ -6512,6 +6624,17 @@ namespace FormsGallery
             <summary>Registers the effect with the element by establishing the parent-child relations needed for rendering on the specific platform.</summary>
             <remarks>To be added.</remarks>
         </member>
+        <member name="T:Xamarin.Forms.IElementConfiguration`1">
+            <typeparam name="TElement">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.IElementConfiguration`1.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
         <member name="T:Xamarin.Forms.IElementController">
             <summary>When implemented in a derived class, sets the value on bound properties so that their bindings are preserved.</summary>
             <remarks>To be added.</remarks>
@@ -6519,6 +6642,12 @@ namespace FormsGallery
         <member name="P:Xamarin.Forms.IElementController.EffectControlProvider">
             <summary>When implemented in a derived class, gets or sets the provider that registers platform-specific effects.</summary>
             <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.IElementController.EffectIsAttached(System.String)">
+            <param name="name">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
             <remarks>To be added.</remarks>
         </member>
         <member name="P:Xamarin.Forms.IElementController.LogicalChildren">
@@ -6808,6 +6937,12 @@ indicator.BindingContext = image;]]></code>
         <member name="F:Xamarin.Forms.Image.IsOpaqueProperty">
             <summary>Identifies the IsOpaque bindable property.</summary>
             <remarks />
+        </member>
+        <member name="M:Xamarin.Forms.Image.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
         </member>
         <member name="M:Xamarin.Forms.Image.OnBindingContextChanged">
             <summary>Invoked when the BindingContext changes.</summary>
@@ -7365,6 +7500,12 @@ Debug.WriteLine (Object.ReferenceEquals (modalPage, poppedPage)); //prints "true
         <member name="M:Xamarin.Forms.IPlatform.SetPage(Xamarin.Forms.Page)">
             <param name="newRoot">To be added.</param>
             <summary>Sets the root page of the platform.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="T:Xamarin.Forms.IPlatformElementConfiguration`2">
+            <typeparam name="TPlatform">To be added.</typeparam>
+            <typeparam name="TElement">To be added.</typeparam>
+            <summary>To be added.</summary>
             <remarks>To be added.</remarks>
         </member>
         <member name="T:Xamarin.Forms.IPlatformEngine">
@@ -8159,6 +8300,12 @@ public class App : Application
         <member name="F:Xamarin.Forms.Label.LineBreakModeProperty">
             <summary>Backing store for the LineBreakMode bindable property.</summary>
             <remarks />
+        </member>
+        <member name="M:Xamarin.Forms.Label.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
         </member>
         <member name="P:Xamarin.Forms.Label.Text">
             <summary>Gets or sets the text for the Label. This is a bindable property.</summary>
@@ -9062,6 +9209,16 @@ ListView CreateListView()
             <summary>Event that is raised when an item is tapped.</summary>
             <remarks>To be added.</remarks>
         </member>
+        <member name="M:Xamarin.Forms.ListView.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.ListView.OnBindingContextChanged">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
         <member name="M:Xamarin.Forms.ListView.OnSizeRequest(System.Double,System.Double)">
             <param name="widthConstraint">To be added.</param>
             <param name="heightConstraint">To be added.</param>
@@ -9440,6 +9597,12 @@ namespace FormsGallery
         </member>
         <member name="F:Xamarin.Forms.MasterDetailPage.MasterBehaviorProperty">
             <summary>Backing store for the MasterBehavior property.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.MasterDetailPage.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
             <remarks>To be added.</remarks>
         </member>
         <member name="M:Xamarin.Forms.MasterDetailPage.OnAppearing">
@@ -10092,6 +10255,12 @@ Children = {
             <summary>Backing store for the HasNavigationBar property.</summary>
             <remarks>To be added.</remarks>
         </member>
+        <member name="M:Xamarin.Forms.NavigationPage.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
         <member name="M:Xamarin.Forms.NavigationPage.OnBackButtonPressed">
             <summary>Event that is raised when the hardware back button is pressed. This event is not raised on iOS.</summary>
             <returns>To be added.</returns>
@@ -10357,6 +10526,12 @@ namespace opengl
             <summary>Identifies the <see cref="P:Xamarin.Forms.OpenGLView.HasRenderLoop" /> bindable property.</summary>
             <remarks>To be added.</remarks>
         </member>
+        <member name="M:Xamarin.Forms.OpenGLView.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
         <member name="P:Xamarin.Forms.OpenGLView.OnDisplay">
             <summary>Overridden to create a custom rendering loop.</summary>
             <value>To be added.</value>
@@ -10592,7 +10767,9 @@ namespace MyFirstFormsApp.WinPhone
             <param name="buttons">Text labels for additional buttons. Must not be <see langword="null" />.</param>
             <summary>Displays a native platform action sheet, allowing the application user to choose from several buttons.</summary>
             <returns>An awaitable Task that displays an action sheet and returns the Text of the button pressed by the user.</returns>
-            <remarks>To be added.</remarks>
+            <remarks>
+                <para>Developers should be aware that Windows' line endings, CR-LF, only work on Windows systems, and are incompatible with iOS and Android. A particular consequence of this is that characters that appear after a CR-LF, (For example, in the title.) may not be displayed on non-Windows platforms. Developers must use the correct line endings for each of the targeted systems.</para>
+            </remarks>
         </member>
         <member name="M:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)">
             <param name="title">The title of the alert dialog.</param>
@@ -10643,6 +10820,12 @@ namespace MyFirstFormsApp.WinPhone
             <param name="width">Width of layout area.</param>
             <param name="height">Height of layout area.</param>
             <summary>Lays out children <see cref="T:Xamarin.Forms.Element" />s into the specified area.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Page.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
             <remarks>To be added.</remarks>
         </member>
         <member name="M:Xamarin.Forms.Page.OnAppearing">
@@ -10922,6 +11105,12 @@ namespace FormsGallery
             <summary>Gets the list of choices.</summary>
             <value>An IList&lt;string&gt; representing the Picker choices.</value>
             <remarks>This property is read-only, but exposes the IList&lt;&gt; interface, so items can be added using Add().</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Picker.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
         </member>
         <member name="P:Xamarin.Forms.Picker.SelectedIndex">
             <summary>Gets or sets the index of the slected item of the picker. This is a bindable property.</summary>
@@ -11235,6 +11424,12 @@ Debug.WriteLine ("Animation completed");
         <member name="C:Xamarin.Forms.ProgressBar">
             <summary>Initializes a new instance of the ProgressBar class</summary>
             <remarks />
+        </member>
+        <member name="M:Xamarin.Forms.ProgressBar.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
         </member>
         <member name="P:Xamarin.Forms.ProgressBar.Progress">
             <summary>Gets or sets the progress value. This is s bindable property.</summary>
@@ -12182,6 +12377,12 @@ MainPage = new ContentPage
             <summary>Positions and sizes the content of a ScrollView.</summary>
             <remarks />
         </member>
+        <member name="M:Xamarin.Forms.ScrollView.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
         <member name="M:Xamarin.Forms.ScrollView.OnSizeRequest(System.Double,System.Double)">
             <param name="widthConstraint">The available width for the element to use.</param>
             <param name="heightConstraint">The available height for the element to use.</param>
@@ -12392,6 +12593,12 @@ public class App : Application
         </member>
         <member name="F:Xamarin.Forms.SearchBar.HorizontalTextAlignmentProperty">
             <summary>Backing store for the <see cref="P:Xamarin.Forms.SearchBar.HorizontalTextAlignment" /> property.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.SearchBar.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
             <remarks>To be added.</remarks>
         </member>
         <member name="P:Xamarin.Forms.SearchBar.Placeholder">
@@ -12827,6 +13034,12 @@ namespace FormsGallery
             <summary>Identifies the Minimum bindable property.</summary>
             <remarks />
         </member>
+        <member name="M:Xamarin.Forms.Slider.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
         <member name="P:Xamarin.Forms.Slider.Value">
             <summary>Gets or sets the current value. This is a bindable property.</summary>
             <value>A double.</value>
@@ -13219,6 +13432,12 @@ var stackLayout = new StackLayout {
             <summary>Identifies the Minimum bindable property.</summary>
             <remarks>To be added.</remarks>
         </member>
+        <member name="M:Xamarin.Forms.Stepper.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
         <member name="P:Xamarin.Forms.Stepper.Value">
             <summary>Gets or sets the current value. This is a bindable property.</summary>
             <value>A double.</value>
@@ -13457,6 +13676,12 @@ namespace FormsGallery
         </member>
         <member name="F:Xamarin.Forms.Switch.IsToggledProperty">
             <summary>Backing store for the <see cref="P:Xamarin.Forms.Switch.IsToggled" /> property.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.Switch.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
             <remarks>To be added.</remarks>
         </member>
         <member name="E:Xamarin.Forms.Switch.Toggled">
@@ -13715,6 +13940,12 @@ class TabbedPageDemoPage2 : TabbedPage
             <summary>Creates a default page, suitable for display in <c>this</c><see cref="T:Xamarin.Forms.TabbedPage" /> page, for an object.</summary>
             <returns>A page that is titled with the string value of <paramref name="item" />.</returns>
             <remarks>This returns a new <see cref="T:Xamarin.Forms.Page" /> object that has its <see cref="P:Xamarin.Forms.Page.Title" /> property set to the value of <see cref="M:Object.ToString" /> when called on <paramref name="item" />.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.TabbedPage.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
         </member>
         <member name="M:Xamarin.Forms.TabbedPage.OnParentSet">
             <summary>Called when the parent is set.</summary>
@@ -14028,6 +14259,12 @@ public class App : Application
         <member name="P:Xamarin.Forms.TableView.Intent">
             <summary>Gets or sets the intent of the table.</summary>
             <value>To be added.</value>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.TableView.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
             <remarks>To be added.</remarks>
         </member>
         <member name="M:Xamarin.Forms.TableView.OnBindingContextChanged">
@@ -14583,6 +14820,12 @@ var beeroclock = new TimePicker () { Time = new TimeSpan (17,0,0) };
         <member name="F:Xamarin.Forms.TimePicker.FormatProperty">
             <summary>Identifies the Format bindable property.</summary>
             <remarks />
+        </member>
+        <member name="M:Xamarin.Forms.TimePicker.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
         </member>
         <member name="P:Xamarin.Forms.TimePicker.TextColor">
             <summary>To be added.</summary>
@@ -16045,6 +16288,12 @@ namespace FormsGallery
             <summary>Event that is raised when navigation starts.</summary>
             <remarks>To be added.</remarks>
         </member>
+        <member name="M:Xamarin.Forms.WebView.On``1">
+            <typeparam name="T">To be added.</typeparam>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
         <member name="M:Xamarin.Forms.WebView.OnBindingContextChanged">
             <summary>To be added.</summary>
             <remarks>To be added.</remarks>
@@ -16573,6 +16822,291 @@ namespace FormsGallery
             <value>To be added.</value>
             <remarks>To be added.</remarks>
         </member>
+        <member name="T:Xamarin.Forms.PlatformConfiguration.Android">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="C:Xamarin.Forms.PlatformConfiguration.Android">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="T:Xamarin.Forms.PlatformConfiguration.iOS">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="C:Xamarin.Forms.PlatformConfiguration.iOS">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="T:Xamarin.Forms.PlatformConfiguration.Windows">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="C:Xamarin.Forms.PlatformConfiguration.Windows">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="T:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.GetWindowSoftInputModeAdjust(Xamarin.Forms.BindableObject)">
+            <param name="element">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.GetWindowSoftInputModeAdjust(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application})">
+            <param name="config">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.SetWindowSoftInputModeAdjust(Xamarin.Forms.BindableObject,Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust)">
+            <param name="element">To be added.</param>
+            <param name="value">To be added.</param>
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.UseWindowSoftInputModeAdjust(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust)">
+            <param name="config">To be added.</param>
+            <param name="value">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="F:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.WindowSoftInputModeAdjustProperty">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="T:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="F:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Pan">
+            <summary>To be added.</summary>
+        </member>
+        <member name="F:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize">
+            <summary>To be added.</summary>
+        </member>
+        <member name="T:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="F:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Dark">
+            <summary>To be added.</summary>
+        </member>
+        <member name="F:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.ExtraLight">
+            <summary>To be added.</summary>
+        </member>
+        <member name="F:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Light">
+            <summary>To be added.</summary>
+        </member>
+        <member name="F:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.None">
+            <summary>To be added.</summary>
+        </member>
+        <member name="T:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.DisableTranslucentNavigationBar(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage})">
+            <param name="config">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.EnableTranslucentNavigationBar(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage})">
+            <param name="config">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.GetIsNavigationBarTranslucent(Xamarin.Forms.BindableObject)">
+            <param name="element">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.IsNavigationBarTranslucent(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage})">
+            <param name="config">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="F:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.IsNavigationBarTranslucentProperty">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.SetIsNavigationBarTranslucent(Xamarin.Forms.BindableObject,System.Boolean)">
+            <param name="element">To be added.</param>
+            <param name="value">To be added.</param>
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.SetIsNavigationBarTranslucent(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage},System.Boolean)">
+            <param name="config">To be added.</param>
+            <param name="value">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="T:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="F:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.BlurEffectProperty">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetBlurEffect(Xamarin.Forms.BindableObject)">
+            <param name="element">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetBlurEffect(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})">
+            <param name="config">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetBlurEffect(Xamarin.Forms.BindableObject,Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle)">
+            <param name="element">To be added.</param>
+            <param name="value">To be added.</param>
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.UseBlurEffect(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle)">
+            <param name="config">To be added.</param>
+            <param name="value">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="T:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="F:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Full">
+            <summary>To be added.</summary>
+        </member>
+        <member name="F:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Partial">
+            <summary>To be added.</summary>
+        </member>
+        <member name="T:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidth(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage})">
+            <param name="config">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidth(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage},System.Double)">
+            <param name="config">To be added.</param>
+            <param name="value">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="F:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidthProperty">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="F:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapseStyleProperty">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.GetCollapsedPaneWidth(Xamarin.Forms.BindableObject)">
+            <param name="element">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.GetCollapseStyle(Xamarin.Forms.BindableObject)">
+            <param name="element">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.GetCollapseStyle(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage})">
+            <param name="config">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.SetCollapsedPaneWidth(Xamarin.Forms.BindableObject,System.Double)">
+            <param name="element">To be added.</param>
+            <param name="collapsedPaneWidth">To be added.</param>
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.SetCollapseStyle(Xamarin.Forms.BindableObject,Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle)">
+            <param name="element">To be added.</param>
+            <param name="collapseStyle">To be added.</param>
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.SetCollapseStyle(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage},Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle)">
+            <param name="config">To be added.</param>
+            <param name="value">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.UsePartialCollapse(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage})">
+            <param name="config">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="T:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.GetToolbarPlacement(Xamarin.Forms.BindableObject)">
+            <param name="element">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.GetToolbarPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.Page})">
+            <param name="config">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.SetToolbarPlacement(Xamarin.Forms.BindableObject,Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement)">
+            <param name="element">To be added.</param>
+            <param name="toolbarPlacement">To be added.</param>
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="M:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.SetToolbarPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.Page},Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement)">
+            <param name="config">To be added.</param>
+            <param name="value">To be added.</param>
+            <summary>To be added.</summary>
+            <returns>To be added.</returns>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="F:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.ToolbarPlacementProperty">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="T:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement">
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="F:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Bottom">
+            <summary>To be added.</summary>
+        </member>
+        <member name="F:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Default">
+            <summary>To be added.</summary>
+        </member>
+        <member name="F:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Top">
+            <summary>To be added.</summary>
+        </member>
         <member name="T:Xamarin.Forms.Xaml.IMarkupExtension">
             <summary>Defines the interface for Xamarin.Forms XAML markup extensions.</summary>
             <remarks>
@@ -16691,6 +17225,13 @@ public class ColorMarkup : IMarkupExtension
         <member name="C:Xamarin.Forms.Xaml.XamlParseException(System.String,System.Xml.IXmlLineInfo)">
             <param name="message">To be added.</param>
             <param name="xmlInfo">To be added.</param>
+            <summary>To be added.</summary>
+            <remarks>To be added.</remarks>
+        </member>
+        <member name="C:Xamarin.Forms.Xaml.XamlParseException(System.String,System.Xml.IXmlLineInfo,System.Exception)">
+            <param name="message">To be added.</param>
+            <param name="xmlInfo">To be added.</param>
+            <param name="innerException">To be added.</param>
             <summary>To be added.</summary>
             <remarks>To be added.</remarks>
         </member>

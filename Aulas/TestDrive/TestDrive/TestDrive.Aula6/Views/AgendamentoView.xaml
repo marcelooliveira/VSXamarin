@@ -2,28 +2,26 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TestDrive.Views.AgendamentoView"
-             Title="{Binding Path=Veiculo.nome}">
-    <StackLayout Padding="25">
-        <TableView Intent="Form">
-            <TableRoot Title="Agendamento">
+             Title="{Binding Veiculo.Nome}">
+    <StackLayout>
+        <TableView>
+            <TableRoot>
                 <TableSection Title="Seus Dados">
-                    <EntryCell Label="Nome:" Keyboard="Text" Text="{Binding Nome}" />
-                    <EntryCell Label="Fone:" Keyboard="Telephone" Text="{Binding Fone}" />
-                    <EntryCell Label="E-mail:" Keyboard="Email" Text="{Binding Email}"/>
+                    <EntryCell Label="Nome:" Text="{Binding Nome}"></EntryCell>
+                    <EntryCell Label="Fone:" Keyboard="Telephone" Text="{Binding Fone}"></EntryCell>
+                    <EntryCell Label="E-mail:" Keyboard="Email" Text="{Binding Email}"></EntryCell>
                 </TableSection>
                 <TableSection Title="Agendamento">
                     <ViewCell>
-                        <StackLayout Orientation="Horizontal" Padding="16,0,16,0">
-                            <Label Text="Data:" HorizontalOptions="StartAndExpand"></Label>
-                            <DatePicker HorizontalOptions="End"
-                                    Date="{Binding DataAgendamento}"></DatePicker>
+                        <StackLayout Orientation="Horizontal" Margin="12,0,0,0">
+                            <Label Text="Data:"></Label>
+                            <DatePicker Date="{Binding DataAgendamento}"></DatePicker>
                         </StackLayout>
                     </ViewCell>
                     <ViewCell>
-                        <StackLayout Orientation="Horizontal" Padding="16,0,16,0">
-                            <Label Text="Hora:" HorizontalOptions="StartAndExpand"></Label>
-                            <TimePicker HorizontalOptions="End"
-                                    Time="{Binding HoraAgendamento}"></TimePicker>
+                        <StackLayout Orientation="Horizontal" Margin="12,0,0,0">
+                            <Label Text="Hora:"></Label>
+                            <TimePicker Time="{Binding HoraAgendamento}"></TimePicker>
                         </StackLayout>
                     </ViewCell>
                 </TableSection>
@@ -32,4 +30,3 @@
         <Button Text="Agendar" Clicked="Button_Clicked"></Button>
     </StackLayout>
 </ContentPage>
-
