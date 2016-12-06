@@ -26,7 +26,7 @@ namespace TestDrive.ViewModels
         public async Task GetVeiculos()
         {
             Aguarde = true;
-            HttpClient client = new HttpClient();
+            System.Net.Http.HttpClient client = new System.Net.Http.HttpClient();
             var resultado = await client.GetStringAsync("https://aluracar.herokuapp.com/");
             var veiculos = JsonConvert.DeserializeObject<Veiculo[]>(resultado);
 
@@ -64,7 +64,7 @@ namespace TestDrive.ViewModels
             {
                 return aguarde;
             }
-            set
+            set 
             {
                 aguarde = value;
                 OnPropertyChanged();

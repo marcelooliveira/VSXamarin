@@ -1,9 +1,10 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Net.Http;
+//using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -116,6 +117,15 @@ namespace TestDrive.ViewModels
             }
         }
 
+        public DateTime DataHoraAgendamento
+        {
+            get
+            {
+                return new DateTime(DataAgendamento.Year, DataAgendamento.Month, DataAgendamento.Day,
+                    HoraAgendamento.Hours, HoraAgendamento.Minutes, HoraAgendamento.Seconds);
+            }
+        }
+
         public ICommand AgendamentoCommand { get; set; }
 
         public async void SalvarAgendamento()
@@ -126,18 +136,27 @@ namespace TestDrive.ViewModels
                 = new DateTime(DataAgendamento.Year, DataAgendamento.Month, DataAgendamento.Day,
                 DataAgendamento.Hour, DataAgendamento.Minute, DataAgendamento.Second);
 
-            var SALVAR_AGENDAMENTO_URL = "";
-//                string.Format(
-//"https://aluracar.herokuapp.com/salvarpedido?carro={0}&email={1}&endereco={2}&nome={3}&preco={4}&dataAgendamento={5}"
-//, Veiculo.nome, email, fone, nome, Veiculo.preco, dataHoraAgendamento.ToString("yyyy/MM/dd"));
+            var SALVAR_AGENDAMENTO_URL = "https://aluracar.herokuapp.com/salvarpedido";
+
+            var json = JsonConvert.SerializeObject(new
+            {
+                carro = Veiculo.Nome
+                , email = Email
+                , fone = Fone
+                , nome = Nome
+                , preco = Veiculo.Preco
+                , dataAgendamento = dataHoraAgendamento
+            });
 
             try
             {
-                var httpResponseMessage = await client.GetAsync(SALVAR_AGENDAMENTO_URL);
-                if (httpResponseMessage.IsSuccessStatusCode)
+                var conteudo = new System.Net.Http.StringContent(json, Encoding.UTF8, "text/json");
+
+                var resposta = await client.PostAsync(SALVAR_AGENDAMENTO_URL, conteudo);
+                if (resposta.IsSuccessStatusCode)
                     MessagingCenter.Send<Agendamento>(this.Agendamento, "SucessoAgendamento");
                 else
-                    MessagingCenter.Send<HttpContent>(httpResponseMessage.Content, "FalhaAgendamentoHttpContent");
+                    MessagingCenter.Send<Exception>(new ArgumentException(), "FalhaAgendamento");
             }
             catch (Exception exc)
             {

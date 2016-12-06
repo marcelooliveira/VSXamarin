@@ -23,6 +23,8 @@ namespace TestDrive.Views
 
         protected override void OnAppearing()
         {
+            base.OnAppearing();
+
             MessagingCenter.Subscribe<Agendamento>(this, "Agendamento", async (msg) =>
             {
                 var resposta = await DisplayAlert("Salvar Agendamento",
@@ -30,13 +32,24 @@ namespace TestDrive.Views
                 if (resposta)
                     this.ViewModel.SalvarAgendamento();
             });
-            base.OnAppearing(); 
+
+            MessagingCenter.Subscribe<Agendamento>(this, "SucessoAgendamento", (msg) =>
+            {
+                DisplayAlert("Agendamento", "Agendamento salvo com sucesso!", "Ok");
+            });
+
+            MessagingCenter.Subscribe<Exception>(this, "FalhaAgendamento", (msg) =>
+            {
+                DisplayAlert("Agendamento", "Falha ao tentar agendar test drive! Verifique os dados e tente novamente mais tarde!", "Ok");
+            });
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
             MessagingCenter.Unsubscribe<Agendamento>(this, "Agendamento");
+            MessagingCenter.Unsubscribe<Agendamento>(this, "SucessoAgendamento");
+            MessagingCenter.Unsubscribe<Agendamento>(this, "FalhaAgendamento");
         }
     }
 }

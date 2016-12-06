@@ -38,6 +38,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FakeHttpClient.cs" />
     <Compile Include="Models\Agendamento.cs" />
     <Compile Include="Models\ListagemVeiculos.cs" />
     <Compile Include="Models\Veiculo.cs" />
