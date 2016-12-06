@@ -49,11 +49,3 @@ C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Dr
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\obj\Debug\android\assets\System.Collections.Concurrent.dll
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\obj\Debug\android\assets\System.Runtime.InteropServices.dll
 C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\obj\Debug\android\assets\System.Diagnostics.Tools.dll
-C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\obj\Debug\android\assets\Newtonsoft.Json.dll
-C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\obj\Debug\android\assets\System.Xml.XDocument.dll
-C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\obj\Debug\android\assets\System.Runtime.Serialization.Primitives.dll
-C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\obj\Debug\android\assets\System.Text.Encoding.dll
-C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\obj\Debug\android\assets\System.Text.Encoding.Extensions.dll
-C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\obj\Debug\android\assets\Microsoft.CSharp.dll
-C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\obj\Debug\android\assets\Mono.CSharp.dll
-C:\Users\marce\Documents\GitHub\VSXamarin\Aulas\TestDrive\TestDrive\TestDrive.Droid\obj\Debug\android\assets\System.Net.Primitives.dll
