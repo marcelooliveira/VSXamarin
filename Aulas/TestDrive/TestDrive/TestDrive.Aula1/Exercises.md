@@ -102,6 +102,55 @@ necessário que cada `Label` tivesse definido a propriedade
 `Grid.Row`, caso contrário os controles-filhos
 serão exibidos "amontoados" uns sobre os outros.
 
+### Problemas com Grids ###
+
+Uma colega desenvolvedora de `Xamarin` precisa criar 
+um `Grid` contendo 3 `Labels` organizados verticalmente. 
+Ela desenvolve o `Grid`, porem está dificuldades para fazê-lo
+funcionar corretamente. Ela relata que os `Labels` estão
+se sobrepondo, porém diz que criou as definições de linhas
+(RowDefinitions) corretamente.
+
+Ela chama você para ajudá-la. Ao ver o código **XAML**, 
+você encontra:
+
+```
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Text="Brasil"/>
+        <Label Text="Argentina"/>
+        <Label Text="Uruguai"/>
+    </Grid>
+```
+
+O que aconteceu?
+
+Qual seria a mudança necessária para fazer esse layout
+funcionar direito?
+
+OPINIÃO DA ALURA:
+Da maneira que está, Todos os `Labels` estão sendo exibidos
+na primeira Linha.
+É necessário definir a propriedade `Grid.Row` para cada
+um dos `Labels`, assim:
+
+```
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Text="Brasil"/>
+        <Label Grid.Row="1" Text="Argentina"/>
+        <Label Grid.Row="2" Text="Uruguai"/>
+    </Grid>
+```
+
 ### Trabalhando com Grids ###
 
 Considere os dados da eleição dos EUA de 2016:
@@ -154,8 +203,72 @@ e colunas adequadas:
 
 ### ListView - Definindo Origem dos Dados ###
 
+Considere o seguinte código XAML com a declaração
+de um `ListView`:
+
+```
+<ListView x:Name="listViewAlunos">
+</ListView>
+```
+
+Agora veja o código usado para criar uma lista chamada `alunos`:
+
+```
+var alunos = new string [] {
+    "Amanda Lorenzetti",
+    "Mario Hikari",
+    "William Bastos"
+};
+
+```
+
+Escolha o trecho de código C# necessário
+para preencher a ListView `listViewAlunos´
+com os elementos do array `alunos´:
+
+a. código
+```
+listViewVeiculos = new ListView(alunos);
+```
+
+> O controle `ListView` não possui um construtor
+> que aceite uma lista com a origem de dados dos
+> seus itens.
+
+b. código
+```
+listViewVeiculos.BindingContext = alunos;
+```
+
+> Definir somente a propriedade `BindingContext` 
+> sozinha no código C# não é suficiente. É necessário]
+> também definir o `Binding` da propriedade `ItemsSource`
+> do controle.
+
+c. código
+```
+listViewVeiculos = alunos;
+```
+
+> O controle `listViewVeiculos` é um controle da página
+> e deve utilizar a lista `alunos`, e não ser substituído
+> por ela, como faz o trecho acima.
+
+d. código
+```
+listViewVeiculos.ItemsSource = alunos;
+```
+> CORRETO: a propriedade `ItemsSource` do `ListView`
+> é usada para definir a origem de dados para os itens
+> do `ListView`.
+
+e. código
+```
+listViewVeiculos.Items = alunos;
+```
+> O controler `ListView` não possui uma propriedade
+> chamada `Items`.
 
 
 ### ListView Binding ###
 
-### ListView Template ###
