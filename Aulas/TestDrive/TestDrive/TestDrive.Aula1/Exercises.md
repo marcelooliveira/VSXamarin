@@ -272,3 +272,44 @@ listViewVeiculos.Items = alunos;
 
 ### ListView Binding ###
 
+Você desenvolveu uma página Mainpage.xaml
+do Xamarin Forms, para exibir uma listagem de países.
+
+```
+MainPage.xaml
+=============
+    <ListView x:Name="listViewPaises" ItemsSource="{Binding Paises}">
+    </ListView>
+
+MainPage.xaml.cs
+================
+
+    public partial class MainPage : ContentPage
+    {
+        public List<string> Paises { get; set; }
+
+        public MainPage()
+        {
+            InitializeComponent();
+
+            this.Paises = new List<string>()
+            {
+                "Brasil",
+                "Argentina",
+                "Colômbia"
+            };
+        }
+    }
+```
+
+Ao rodar a aplicação, a listagem não exibe os países.
+Como você resolveria esse problema?
+
+> OPINIÃO DA ALURA:
+> 
+> Faltou definir o contexto de binding da página no final do construtor da página:
+> ```
+> this.BindingContext = this;
+> ```
+> 
+> Esse é um erro muito comum!
