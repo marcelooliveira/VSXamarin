@@ -35,6 +35,7 @@ namespace TestDrive.Views
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
+
             MessagingCenter.Unsubscribe<Veiculo>(this, "VeiculoSelecionado");
         }
     }

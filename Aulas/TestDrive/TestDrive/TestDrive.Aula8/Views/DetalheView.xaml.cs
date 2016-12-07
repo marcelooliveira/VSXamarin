@@ -1,5 +1,4 @@
-﻿using GalaSoft.MvvmLight.Messaging;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,35 +11,29 @@ namespace TestDrive.Views
 {
     public partial class DetalheView : ContentPage
     {
-        public DetalheViewModel ViewModel { get; set; }
+        public Veiculo Veiculo { get; set; }
 
         public DetalheView(Veiculo veiculo)
         {
-            this.ViewModel = new DetalheViewModel
-            {
-                Veiculo = veiculo
-            };
-
             InitializeComponent();
-            this.BindingContext = this.ViewModel;
+            this.Veiculo = veiculo;
+            this.BindingContext = new DetalheViewModel(veiculo);
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            MessagingCenter.Subscribe<Veiculo>(this, "Proximo",
-                (msg) =>
-                {
-                    Navigation.PushAsync(new AgendamentoView(this.ViewModel.Veiculo));
-                });
+            MessagingCenter.Subscribe<Veiculo>(this, "Proximo", (msg) =>
+            {
+                Navigation.PushAsync(new AgendamentoView(msg));
+            });
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
+
             MessagingCenter.Unsubscribe<Veiculo>(this, "Proximo");
         }
     }
 }
-
-

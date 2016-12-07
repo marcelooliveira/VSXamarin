@@ -6,30 +6,15 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestDrive.ViewModels
+namespace TestDrive2.ViewModels
 {
     public abstract class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void OnPropertyChanged([CallerMemberName] string name = "")
+        public void OnPropertyChanged([CallerMemberName]string name = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
-
-
-        bool aguarde;
-        public bool Aguarde
-        {
-            get
-            {
-                return aguarde;
-            }
-            set
-            {
-                aguarde = value;
-                OnPropertyChanged();
-            }
         }
     }
 }

@@ -1,46 +1,22 @@
-﻿using GalaSoft.MvvmLight.Messaging;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using TestDrive.Models;
-using TestDrive.Views;
+using TestDrive2.ViewModels;
 using Xamarin.Forms;
 
 namespace TestDrive.ViewModels
 {
     public class ListagemViewModel : BaseViewModel
     {
+        const string URL_GET_VEICULOS = "http://aluracar.herokuapp.com/";
+
         public ObservableCollection<Veiculo> Veiculos { get; set; }
-
-        public ListagemViewModel()
-        {
-            Veiculos = new ObservableCollection<Veiculo>();
-        }
-            
-        public async Task GetVeiculos()
-        {
-            Aguarde = true;
-            System.Net.Http.HttpClient client = new System.Net.Http.HttpClient();
-            var resultado = await client.GetStringAsync("https://aluracar.herokuapp.com/");
-            var veiculos = JsonConvert.DeserializeObject<Veiculo[]>(resultado);
-
-            foreach (var veiculo in veiculos)
-            {
-                this.Veiculos.Add(new Veiculo
-                {
-                   Nome = veiculo.Nome,
-                   Preco = veiculo.Preco
-                });
-            }
-
-            Aguarde = false;
-        }
 
         Veiculo veiculoSelecionado;
         public Veiculo VeiculoSelecionado
@@ -56,5 +32,48 @@ namespace TestDrive.ViewModels
                     MessagingCenter.Send(veiculoSelecionado, "VeiculoSelecionado");
             }
         }
+
+        private bool aguarde;
+        public bool Aguarde
+        {
+            get { return aguarde; }
+            set
+            {
+                aguarde = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+        public ListagemViewModel()
+        {
+            this.Veiculos = new ObservableCollection<Veiculo>();
+        }
+
+        public async Task GetVeiculos()
+        {
+            Aguarde = true;
+            HttpClient cliente = new HttpClient();
+            var resultado = await cliente.GetStringAsync(URL_GET_VEICULOS);
+
+            var veiculosJson = JsonConvert.DeserializeObject<VeiculoJson[]>(resultado);
+
+            foreach (var veiculoJson in veiculosJson)
+            {
+                this.Veiculos.Add(new Veiculo
+                {
+                    Nome = veiculoJson.nome,
+                    Preco = veiculoJson.preco
+                });
+            }
+
+            Aguarde = false;
+        }
+    }
+
+    class VeiculoJson
+    {
+        public string nome { get; set; }
+        public int preco { get; set; }
     }
 }
