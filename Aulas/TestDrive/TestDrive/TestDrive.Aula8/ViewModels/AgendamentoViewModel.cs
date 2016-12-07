@@ -142,7 +142,6 @@ namespace TestDrive.ViewModels
             var json = JsonConvert.SerializeObject(new
             {
                 nome = Nome,
-                endereco = "xxxx",
                 fone = Fone,
                 email = Email,
                 carro = Veiculo.Nome,

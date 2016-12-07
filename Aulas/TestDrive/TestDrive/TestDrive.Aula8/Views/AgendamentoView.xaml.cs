@@ -27,9 +27,9 @@ namespace TestDrive.Views
 
             MessagingCenter.Subscribe<Agendamento>(this, "Agendamento", async (msg) =>
             {
-                var resposta = await DisplayAlert("Salvar Agendamento",
+                var confirma = await DisplayAlert("Salvar Agendamento",
                     "Deseja mesmo salvar o agendamento?", "Sim", "Não");
-                if (resposta)
+                if (confirma)
                     this.ViewModel.SalvarAgendamento();
             });
 
