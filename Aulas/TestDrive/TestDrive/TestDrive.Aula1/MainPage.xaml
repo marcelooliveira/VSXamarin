@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:TestDrive"
              x:Class="TestDrive.MainPage">
 
-    <StackLayout Padding="25">
+    <!--<StackLayout Padding="25">
         <ListView x:Name="listViewVeiculos" ItemsSource="{Binding Veiculos}">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -16,5 +16,35 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-    </StackLayout>
+    </StackLayout>-->
+
+    <Grid VerticalOptions="Start">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Text="Trump / Pence"/>
+        <Label Grid.Row="0" Grid.Column="1" Text="62.829.410"/>
+        <Label Grid.Row="0" Grid.Column="2" Text="46,10%"/>
+        
+        <Label Grid.Row="1" Grid.Column="0" Text="Clinton / Kaine"/>
+        <Label Grid.Row="1" Grid.Column="1" Text="65.483.780"/>
+        <Label Grid.Row="1" Grid.Column="2" Text="48,05%"/>
+        
+        <Label Grid.Row="2" Grid.Column="0" Text="Johnson / Weld"/>
+        <Label Grid.Row="2" Grid.Column="1" Text="4.476.220"/>
+        <Label Grid.Row="2" Grid.Column="2" Text="3,28%"/>
+        
+        <Label Grid.Row="3" Grid.Column="0" Text="Stein / Baraka"/>
+        <Label Grid.Row="3" Grid.Column="1" Text="1.449.726"/>
+        <Label Grid.Row="3" Grid.Column="2" Text="1,06%"/>
+    </Grid>
+    
 </ContentPage>

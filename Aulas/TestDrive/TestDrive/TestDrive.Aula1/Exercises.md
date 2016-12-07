@@ -1,4 +1,4 @@
-﻿### Organizando Controles na Página ###
+﻿### Empilhando Controles na Página ###
 
 Suponha que você tenha 4 controles `Label` numa página 
 **XAML**:
@@ -102,9 +102,59 @@ necessário que cada `Label` tivesse definido a propriedade
 `Grid.Row`, caso contrário os controles-filhos
 serão exibidos "amontoados" uns sobre os outros.
 
-### Grid ###
+### Trabalhando com Grids ###
 
-### ListView ItemsSource ###
+Considere os dados da eleição dos EUA de 2016:
+
+```
+Trump / Pence    62.829.410  46,10%
+Clinton / Kaine  65.483.780  48,05%
+Johnson / Weld	  4.476.220   3,28%
+Stein / Baraka	  1.449.726   1,06%
+```
+
+Crie um trecho de código **XAML** para organizar
+esses dados em forma de grade. Utilize `Grid` e `Labels`.
+
+OPINIÃO DA ALURA:
+Você pode organizar o `Grid` definindo três colunas
+e quatro linhas, e associando os `Labels` às linhas
+e colunas adequadas:
+
+```
+    <Grid VerticalOptions="Start">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Text="Trump / Pence"/>
+        <Label Grid.Row="0" Grid.Column="1" Text="62.829.410"/>
+        <Label Grid.Row="0" Grid.Column="2" Text="46,10%"/>
+        
+        <Label Grid.Row="1" Grid.Column="0" Text="Clinton / Kaine"/>
+        <Label Grid.Row="1" Grid.Column="1" Text="65.483.780"/>
+        <Label Grid.Row="1" Grid.Column="2" Text="48,05%"/>
+        
+        <Label Grid.Row="2" Grid.Column="0" Text="Johnson / Weld"/>
+        <Label Grid.Row="2" Grid.Column="1" Text="4.476.220"/>
+        <Label Grid.Row="2" Grid.Column="2" Text="3,28%"/>
+        
+        <Label Grid.Row="3" Grid.Column="0" Text="Stein / Baraka"/>
+        <Label Grid.Row="3" Grid.Column="1" Text="1.449.726"/>
+        <Label Grid.Row="3" Grid.Column="2" Text="1,06%"/>
+    </Grid>
+```
+
+### ListView - Definindo Origem dos Dados ###
+
+
 
 ### ListView Binding ###
 
