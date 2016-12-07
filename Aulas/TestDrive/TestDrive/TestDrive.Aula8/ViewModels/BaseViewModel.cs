@@ -16,5 +16,20 @@ namespace TestDrive.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
+
+
+        bool aguarde;
+        public bool Aguarde
+        {
+            get
+            {
+                return aguarde;
+            }
+            set
+            {
+                aguarde = value;
+                OnPropertyChanged();
+            }
+        }
     }
 }

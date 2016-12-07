@@ -56,19 +56,5 @@ namespace TestDrive.ViewModels
                     MessagingCenter.Send(veiculoSelecionado, "VeiculoSelecionado");
             }
         }
-
-        bool aguarde;
-        public bool Aguarde
-        {
-            get
-            {
-                return aguarde;
-            }
-            set 
-            {
-                aguarde = value;
-                OnPropertyChanged();
-            }
-        }
     }
 }

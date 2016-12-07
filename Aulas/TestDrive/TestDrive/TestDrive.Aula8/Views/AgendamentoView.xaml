@@ -4,6 +4,9 @@
              x:Class="TestDrive.Views.AgendamentoView"
              Title="{Binding Path=Veiculo.nome}">
     <StackLayout Padding="25">
+        <ActivityIndicator IsRunning="{Binding Aguarde}"
+                           IsVisible="{Binding Aguarde}">
+        </ActivityIndicator>
         <TableView Intent="Form">
             <TableRoot Title="Agendamento">
                 <TableSection Title="Seus Dados">
