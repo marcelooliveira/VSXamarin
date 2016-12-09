@@ -1,7 +1,34 @@
-﻿navigation pushasync navigationpage
+﻿### Navegação Entre Páginas ###
 
+Você está desenvolvendo um app de compras com Xamarin
+Forms. Em um dado momento, o cliente finaliza as compras
+na página `CarrinhoView` e precisa ir para a página
+de pagamento. Escolha a alternativa que contém o código
+C# correto para realizar essa navegação.
 
-pagetitle parametroconstrutorpagina agendamentoview
+a. código
+```
+Navigation.NavigateTo(new PagamentoView());
+```
+b. código
+```
+Navigation.Navigate(new PagamentoView());
+```
+c. código
+```
+PagamentoView.Navigate();
+```
+d. código (CORRETO)
+```
+Navigation.PushAsync(new PagamentoView());
+```
+e. código
+```
+NavigateTo(new PagamentoView());
+```
+OPINIÃO DA ALURA:
+O método `PushAsync` da classe `Navigation` adiciona
+uma página ao topo da pilha de navegação do Xamarin Forms.
 
 ### Binding Complexo ###
 
