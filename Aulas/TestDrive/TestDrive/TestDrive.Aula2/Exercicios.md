@@ -97,7 +97,90 @@ Orientation="Horizontal", da seguinte forma:
 
 ### listview itemtapped ###
 
-listview itemtapped
+Você desenvolveu uma página Mainpage.xaml
+do Xamarin Forms, para exibir uma listagem de países:
+
+```
+MainPage.xaml
+=============
+    <ListView x:Name="listViewPaises" 
+    ItemsSource="{Binding Paises}">
+    </ListView>
+
+MainPage.xaml.cs
+================
+
+    public partial class MainPage : ContentPage
+    {
+        public List<string> Paises { get; set; }
+
+        public MainPage()
+        {
+            InitializeComponent();
+
+            this.Paises = new List<string>()
+            {
+                "Brasil",
+                "Argentina",
+                "Colômbia"
+            };
+        }
+    }
+```
+
+Você precisa modificar o código XAML para que o `ListView`
+responda a um toque do usuário. Que evento você adicionaria
+ao `ListView` do XAML?
+
+a. código
+```
+    <ListView x:Name="listViewPaises" 
+    ItemsSource="{Binding Paises}"
+    Touched="listViewPaises_Touched">
+    </ListView>
+```
+> Não existe um evento `Touched` no controle `ListView`.
+> 
+
+b. código
+```
+    <ListView x:Name="listViewPaises" 
+    ItemsSource="{Binding Paises}"
+    Clicked="listViewPaises_Clicked">
+    </ListView>
+```
+> Não existe um evento `Clicked` no controle `ListView`.
+
+c. código
+```
+    <ListView x:Name="listViewPaises" 
+    ItemsSource="{Binding Paises}"
+    SelectedItem="listViewPaises_SelectedItem">
+    </ListView>
+```
+> `SelectedItem` é uma propriedade, e não um evento
+> do controle `ListView`.
+
+d. código
+```
+    <ListView x:Name="listViewPaises" 
+    ItemsSource="{Binding Paises}"
+    ItemTapped="listViewPaises_ItemTapped">
+    </ListView>
+```
+CORRETO: O evento `ItemTapped` corresponde à ação do
+usuário de tocar em um item do `ListView`.
+
+e. código
+```
+    <ListView x:Name="listViewPaises" 
+    ItemsSource="{Binding Paises}"
+    ItemTapped="{Binding ItemTapped}">
+    </ListView>
+```
+O evento `ItemTapped` é um evento, que deve ser associado
+a um nome de método (como "listViewPaises_ItemTapped"),
+e não a um _binding_ de uma propriedade
 
 ### displayalert ###
 
