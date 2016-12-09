@@ -77,7 +77,7 @@ e. código:
 > `FormattedText` e `FormattedString`.
 
 
-### stacklayout horizontal ###
+### Exibindo Labels Agrupados Horizontalmente ###
 
 Escreva um trecho de código XAML em que três labels
 diferentes com as palavras "Red", "Green" e "Blue" sejam exibidos 
@@ -95,7 +95,7 @@ Orientation="Horizontal", da seguinte forma:
 </StackLayout>
 ```
 
-### listview itemtapped ###
+### Respondendo a Toque com ListView ###
 
 Você desenvolveu uma página Mainpage.xaml
 do Xamarin Forms, para exibir uma listagem de países:
@@ -182,7 +182,7 @@ O evento `ItemTapped` é um evento, que deve ser associado
 a um nome de método (como "listViewPaises_ItemTapped"),
 e não a um _binding_ de uma propriedade
 
-### DisplayAlert ###
+### Exibindo Um Popup para o Usuário ###
 
 Você desenvolveu uma página Mainpage.xaml
 do Xamarin Forms, para exibir uma listagem de países:
