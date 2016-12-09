@@ -182,7 +182,55 @@ O evento `ItemTapped` é um evento, que deve ser associado
 a um nome de método (como "listViewPaises_ItemTapped"),
 e não a um _binding_ de uma propriedade
 
-### displayalert ###
+### DisplayAlert ###
 
-displayalert
+Você desenvolveu uma página Mainpage.xaml
+do Xamarin Forms, para exibir uma listagem de países:
 
+```
+MainPage.xaml
+=============
+    <ListView x:Name="listViewPaises" 
+    ItemsSource="{Binding Paises}">
+    </ListView>
+
+MainPage.xaml.cs
+================
+
+    public partial class MainPage : ContentPage
+    {
+        public List<string> Paises { get; set; }
+
+        public MainPage()
+        {
+            InitializeComponent();
+
+            this.Paises = new List<string>()
+            {
+                "Brasil",
+                "Argentina",
+                "Colômbia"
+            };
+        }
+
+        private void listViewPaises_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var veiculo = (Veiculo)e.Item;
+            //COLOQUE AQUI SEU CÓDIGO
+        }
+    }
+```
+
+Crie o código necessário para exibir um popup com 
+uma mensagem para o usuário com o nome do país selecionado.
+
+> OPINIÃO DA ALURA:
+> Você pode utilizar o método `DisplayAlert` para
+> exibir uma mensagem para o usuário 
+> 
+> ```
+> DisplayAlert("Atenção",
+> string.Format("Você selecionou o país '{0}', e.Item),
+> "Ok");
+> 
+> ```
