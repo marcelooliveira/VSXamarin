@@ -79,7 +79,21 @@ e. código:
 
 ### stacklayout horizontal ###
 
-stacklayout horizontal
+Escreva um trecho de código XAML em que três labels
+diferentes com as palavras "Red", "Green" e "Blue" sejam exibidos 
+horizontalmente, na mesma linha.
+
+OPINIÃO DA ALURA:
+Deve-se colocar os 3 Labels dentro de um StackLayout com 
+Orientation="Horizontal", da seguinte forma:
+
+```
+<StackLayout Orientation="Horizontal">
+    <Label Text="Red"/>
+    <Label Text="Green"/>
+    <Label Text="Blue"/>
+</StackLayout>
+```
 
 ### listview itemtapped ###
 
