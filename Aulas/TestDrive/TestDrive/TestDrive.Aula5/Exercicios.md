@@ -140,8 +140,8 @@ Modifique o código acima para melhorar a experiência do usuário.
 
 > OPINIÃO DA ALURA:
 > No controle `EntryCell`, você pode usar a propriedade `Keyboard` com o valor `Telephone` para mudar
-> o tipo de teclado e assim permitir que o usuário utilize um teclado mais
-> adequado e confortável para digitação dos telefones:
+> o tipo de teclado e assim permitir que o usuário utilize um teclado mais adequado 
+> e confortável para digitação dos telefones:
 > 
 > ```
 > <TableView Intent="Form">
@@ -157,7 +157,92 @@ Modifique o código acima para melhorar a experiência do usuário.
 > 
 ## Selecionando Data ## 
 
-## Selecionando Hora ## 
+Considere o seguinte `TableView`:
 
-## Exibindo Controles Comuns Dentro De Um TableView ## 
+```
+<TableView Intent="Form">
+    <TableRoot Title="Agendamento">
+        <TableSection Title="Agendamento">
+        </TableSection>
+    </TableRoot>
+</TableView>
+```
+
+O que é necessário para inserir os controles `Label` e `TimePicker` abaixo
+dentro de um `TableView`?
+
+```
+<Label Text="Hora:" HorizontalOptions="StartAndExpand"></Label>
+<TimePicker HorizontalOptions="End"
+    Time="{Binding HoraAgendamento}"></TimePicker>
+```
+
+> OPINIÃO DA ALURA:
+> É necessário utilizar um `ViewCell`, que cria um "sub-view", o que nos 
+> permite usar controles comuns dentro de um `TableView`:
+> 
+> ```
+> <TableView Intent="Form">
+>     <TableRoot Title="Agendamento">
+>         <TableSection Title="Agendamento">
+>             <ViewCell>
+>                 <Label Text="Hora:" HorizontalOptions="StartAndExpand"></Label>
+>                 <TimePicker HorizontalOptions="End"
+>                   Time="{Binding HoraAgendamento}"></TimePicker>
+>             </ViewCell>
+>         </TableSection>
+>     </TableRoot>
+> </TableView>
+> ```
+> 
+
+## Fazendo Binding com DatePicker e TimePicker ## 
+
+Uma view possui o seguinte trecho XAML contendo um `DatePicker` e um
+`TimePicker`. Note o binding nas propriedades `Date` e `Time`:
+
+```
+<StackLayout>
+    <Label Text="Data:"></Label>
+    <DatePicker Date="{Binding DataOcorrencia}"></DatePicker>
+    <Label Text="Hora:"></Label>
+    <TimePicker Time="{Binding HoraOcorrencia}"></TimePicker>
+</StackLayout>
+```
+
+Quais alternativas apresentam o código C# com as propriedades com os 
+tipos corretos para o binding do `DatePicker` e `TimePicker`?
+
+a. código
+```
+public TimeSpan DataOcorrencia { get; set; }
+public TimeSpan HoraOcorrencia { get; set; }
+```
+b. código
+```
+public DateTime DataOcorrencia { get; set; }
+public DateTime HoraOcorrencia { get; set; }
+```
+c. código
+```
+public Date DataOcorrencia { get; set; }
+public Time HoraOcorrencia { get; set; }
+```
+d. código
+```
+public DateTime DataOcorrencia { get; set; }
+public TimeSpan HoraOcorrencia { get; set; }
+```
+CORRETO!
+
+e. código
+```
+public TimeSpan DataOcorrencia { get; set; }
+public TimeSpan HoraOcorrencia { get; set; }
+```
+
+> OPINIÃO DA ALURA:
+> 
+> As propriedades `Date` e `Time` dos controles `DatePicker` e
+> `TimePicker` são do tipo `DateTime` e `TimeSpan`, respectivamente. 
 
