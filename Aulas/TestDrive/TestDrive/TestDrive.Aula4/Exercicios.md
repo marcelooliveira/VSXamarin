@@ -22,7 +22,73 @@ d. É uma view para exibir listas de configurações, formulários de dados ou d
 e. É usado para exibir conteúdo web e HTML na sua aplicação.
 > Essa é a definição de WebView
 
-### SwitchCell ###
+### Entrada de Dados de Valores Boolean ###
+
+Dentro de um `TableView`, qual o controle ideal para
+coletar dados do tipo `boolean`?
+
+> OPINIÃO DA ALURA:
+> O `SwitchCell` é um controle `Cell` com um label
+> e uma chave liga-desliga, ou seja, é o controle adequado
+> para entrada de dados do tipo boolean.
+> 
+
+### Exibindo Texto Dentro De Um TableView ###
+
+Selecione a alternativa com o código XAML correto para
+se exibir um `TableView` com um texto simples e somente-leitura.
+
+a. código
+```
+<TableView Intent="Settings">
+    O uso deste aplicativo enquanto estiver andando na rua pode provocar atropelamento.
+</TableView>
+```
+
+b. código
+```
+<TableView Intent="Settings">
+    <TableRoot>
+        <TableSection Title="Avisos">
+            <Label Text="O uso deste aplicativo enquanto estiver andando na rua pode provocar atropelamento."/>
+        </TableSection>
+    </TableRoot>
+</TableView>
+```
+
+c. código
+```
+<TableView Intent="Settings">
+    <TextCell Text="O uso deste aplicativo enquanto estiver andando na rua pode provocar atropelamento."/>
+</TableView>
+```
+
+d. código
+```
+<TableView Intent="Settings">
+    <TableRoot>
+        <TableSection Title="Avisos">
+            <TextCell Text="O uso deste aplicativo enquanto estiver andando na rua pode provocar atropelamento."/>
+        </TableSection>
+    </TableRoot>
+</TableView>
+```
+
+e. código
+```
+<TableView Intent="Settings">
+    <TableRoot>
+        <TableSection Title="Avisos">
+            <Text Text="O uso deste aplicativo enquanto estiver andando na rua pode provocar atropelamento."/>
+        </TableSection>
+    </TableRoot>
+</TableView>
+```
+
+> OPINIÃO DA ALURA: o controle `TextCell` é um controle `Cell` que pode exibir
+> texto e detalhe (TextCell.Text e TextCell.Detail).
+
+### Desenvolvendo Uma Tela de Configurações ###
 
 Você é o desenvolvedor Xamarin de uma grande rede de fast-food. Seu
 objetivo é desenvolver um aplicativo em que o cliente faz um pré-pedido
@@ -133,11 +199,4 @@ e. código
 ```
 Os controles `TextCell` e `SwitchCell` devem estar contidos
 entro de um `TableRoot`.
-
-### TextCell ###
-### TwoWay Binding ###
-
-
-
-
 
