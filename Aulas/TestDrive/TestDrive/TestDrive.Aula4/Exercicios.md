@@ -22,7 +22,118 @@ d. É uma view para exibir listas de configurações, formulários de dados ou d
 e. É usado para exibir conteúdo web e HTML na sua aplicação.
 > Essa é a definição de WebView
 
-### SwitchCel ###
+### SwitchCell ###
+
+Você é o desenvolvedor Xamarin de uma grande rede de fast-food. Seu
+objetivo é desenvolver um aplicativo em que o cliente faz um pré-pedido
+e escolhe os opcionais do hambúrguer Big Snack, que obrigatoriamente deve conter:
+* pão com gergelim
+* dois hambúrgueres 
+
+Escolha a alternativa com o código XAML necessário para implementar
+esses requisitos.
+
+a. código
+
+```
+<StackLayout>
+    <SwitchCell Text="Dois hambúrgueres" On="{Binding TemDoisHamburgueres}"/>
+    <SwitchCell Text="Alface" On="{Binding TemAlface}"/>
+    <SwitchCell Text="Queijo" On="{Binding TemQueijo}"/>
+    <SwitchCell Text="Molho especial" On="{Binding TemMolhoEspecial}"/>
+    <SwitchCell Text="Cebola" On="{Binding TemCebola}"/>
+    <SwitchCell Text="Pickles" On="{Binding TemPickles}"/>
+    <SwitchCell Text="Pão com gergelim" On="{Binding TemPaoComGergelim}"/>
+<\StackLayout>
+```
+> O controle `SwitchCell`, assim como todos os controles `Cell`, deve estar contido 
+> dentro de um `TableView`.
+> 
+b. código
+
+```
+<ListView>
+  <ListView.ItemTemplate>
+    <DataTemplate>
+      <ViewCell>
+        <StackLayout>
+            <Switch Text="Dois hambúrgueres" On="{Binding TemDoisHamburgueres}"/>
+            <Switch Text="Alface" On="{Binding TemAlface}"/>
+            <Switch Text="Queijo" On="{Binding TemQueijo}"/>
+            <Switch Text="Molho especial" On="{Binding TemMolhoEspecial}"/>
+            <Switch Text="Cebola" On="{Binding TemCebola}"/>
+            <Switch Text="Pickles" On="{Binding TemPickles}"/>
+            <Switch Text="Pão com gergelim" On="{Binding TemPaoComGergelim}"/>
+        </StackLayout>
+      </ViewCell>
+    </DataTemplate>
+  </ListView.ItemTemplate>
+</ListView>
+```
+> O controle `ListView` serve para repetição da visualização
+> de dados partir de uma lista. Como não há lista de dados associado
+> ao `ListView`, não faz sentido incluir os controles `Switch` no
+> template do `ListView`.
+> 
+c. código
+
+```
+<TableView Intent="Settings">
+    <TableRoot>
+        <TableSection Title="Opcionais">
+            <Switch Text="Dois hambúrgueres" On="{Binding TemDoisHamburgueres}"/>
+            <Switch Text="Alface" On="{Binding TemAlface}"/>
+            <Switch Text="Queijo" On="{Binding TemQueijo}"/>
+            <Switch Text="Molho especial" On="{Binding TemMolhoEspecial}"/>
+            <Switch Text="Cebola" On="{Binding TemCebola}"/>
+            <Switch Text="Pickles" On="{Binding TemPickles}"/>
+            <Switch Text="Pão com gergelim" On="{Binding TemPaoComGergelim}"/>
+        </TableSection>
+    </TableRoot>
+</TableView>
+```
+> De acordo com os requisitos, os ingredientes "Dois hambúrgueres" e "Pão com gergelim" 
+> não são opcionais, portanto não deveriam ser alterados pelo usuário, portanto não
+> deveriam estar em controles `SwitchCell` habilitados.
+
+d. código
+
+```
+<TableView Intent="Settings">
+    <TableRoot>
+        <TableSection Title="Big Snack">
+            <TextCell Text="Dois hambúrgueres"/>
+            <TextCell Text="Pão com gergelim"/>
+        </TableSection>
+        <TableSection Title="Opcionais">
+            <SwitchCell Text="Alface" On="{Binding TemAlface}"/>
+            <SwitchCell Text="Queijo" On="{Binding TemQueijo}"/>
+            <SwitchCell Text="Molho especial" On="{Binding TemMolhoEspecial}"/>
+            <SwitchCell Text="Cebola" On="{Binding TemCebola}"/>
+            <SwitchCell Text="Pickles" On="{Binding TemPickles}"/>
+        </TableSection>
+    </TableRoot>
+</TableView>
+```
+> CORRETO: Os ingredientes obrigatórios são somente-leitura estão em `TextCell`,
+> enquanto os opcionais estão em `SwitchCell`.
+> 
+e. código
+
+```
+<TableView Intent="Settings">
+    <TextCell Text="Dois hambúrgueres"/>
+    <TextCell Text="Pão com gergelim"/>
+    <SwitchCell Text="Alface" On="{Binding TemAlface}"/>
+    <SwitchCell Text="Queijo" On="{Binding TemQueijo}"/>
+    <SwitchCell Text="Molho especial" On="{Binding TemMolhoEspecial}"/>
+    <SwitchCell Text="Cebola" On="{Binding TemCebola}"/>
+    <SwitchCell Text="Pickles" On="{Binding TemPickles}"/>
+</TableView>
+```
+Os controles `TextCell` e `SwitchCell` devem estar contidos
+entro de um `TableRoot`.
+
 ### TextCell ###
 ### TwoWay Binding ###
 
