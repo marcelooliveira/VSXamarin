@@ -45,15 +45,24 @@ const string URL_GET_IMOVEIS = "http://aluraimoveis.com.br/imoveis";
 var resultado = new HttpClient(URL_GET_IMOVEIS);
 ```
 
-OPINIÃO DA ALURA:
-=================
-
-O método `GetStringAsync` da classe `System.Net.Http.HttpClient` 
-envia uma requisição GET para a Uri especificada e retorna o
-corpo da resposta como uma string numa operação assíncrona.
+> OPINIÃO DA ALURA:
+> =================
+> 
+> O método `GetStringAsync` da classe `System.Net.Http.HttpClient` 
+> envia uma requisição GET para a Uri especificada e retorna o
+> corpo da resposta como uma string numa operação assíncrona.
 
 ### Convertendo Json Para Objetos C# ###
 
+Ao fazer uma uma requisição HTTP Get a um serviço fictício 
+na url fictícia "http://aluraimoveis.com.br/imoveis", você
+recebe uma string com o seguinte resultado:
+
+```
+var resultado = await cliente.GetStringAsync(URL_GET_IMOVEIS);
+```
+
+```
 [{"nome":"Apto 2 dorms Botafogo R Janeiro","preco":485000},
 {"nome":"Casa 2 dorms Pituba Bahia","preco":735000},
 {"nome":"Flat 2 dorms Moema S Paulo","preco":552000},
@@ -67,17 +76,47 @@ corpo da resposta como uma string numa operação assíncrona.
 {"nome":"Apto 2 dorms Leblon R Janeiro","preco":899000},
 {"nome":"Flat Cruzeiro Belo Horizonte","preco":495000},
 {"nome":"Casa 3 dorms Itaigara Salvador","preco":880000}]
+```
 
-class ImovelJson
+Cada imóvel deve ser convertido para uma classe `Imovel`:
+
+```
+class Imovel
 {
     public string nome { get; set; }
     public int preco { get; set; }
 }
+```
 
-var vmoveisJson = JsonConvert.DeserializeObject<ImovelJson[]>(resultado);
+Escreva o código necessário para converter de forma simples a
+string acima para objetos da classe `Imovel`.
+
+> OPINIÃO DA ALURA:
+> =================
+> 
+> A string retornada pela chamada HTTP Get ao serviço está no formato
+> JSON, portanto devemos utilizar alguma biblioteca JSON para converter
+> o resultado em código C#.
+> 
+> Utilizando a bilbioteca NewtonSoft.JSON, podemos usar o método
+> `DeserializeObject` da classe `JsonConvert`, passando como
+> argumento a string contendo o texto em JSON e especificando
+> que queremos o resultado convertido em um array de objetos
+> do tipo `Imovel`:
+> 
+> ```
+> var imoveisJson = JsonConvert.DeserializeObject<Imovel[]>(resultado);
+> ```
+
 
 ### Fazendo Uma Requisição HTTP Post ###
 
+Considere o seguinte código C#, desenvolvido numa aplicação
+para uma imobiliária, com o objetivo de chamar um serviço
+HTTP Rest para salvar os dados de uma visita a um imóvel do 
+catálogo, utilizando para isso uma requisição HTTP Post:
+
+```
 HttpClient cliente = new HttpClient();
 
 var dataHoraVisita = new DateTime(
@@ -93,10 +132,53 @@ var json = JsonConvert.SerializeObject(new
     preco = Imovel.Preco,
     dataVisita = dataHoraVisita
 });
+```
 
+Escolha a alternativa que contém o código necessário para
+realizar a chamada HTTP Post e salvar os dados do agendamento
+da visita corretamente.
+
+a. ERRADA
+```
+var resposta = await cliente.PostAsync(URL_POST_AGENDAMENTO, json);
+```
+
+b. ERRADA
+```
+var resposta = cliente.Post(URL_POST_AGENDAMENTO, json);
+```
+
+c. ERRADA
+```
 var conteudo = new StringContent(json, Encoding.UTF8, "application/json");
+var resposta = cliente.PostAsync(URL_POST_AGENDAMENTO, conteudo);
+```
 
+d. CORRETA
+```
+var conteudo = new StringContent(json, Encoding.UTF8, "application/json");
 var resposta = await cliente.PostAsync(URL_POST_AGENDAMENTO, conteudo);
+```
+
+e. ERRADA
+```
+var conteudo = new StringContent(json, Encoding.UTF8, "application/json");
+var resposta = await cliente.Post(URL_POST_AGENDAMENTO, conteudo);
+```
+
+> OPINIÃO DA ALURA:
+> =================
+> 
+> Deve-se fazer uma chamada ao método assíncrono `PostAsync` 
+> da classe `HttpClient`, utilizando `await` para aguardar
+> a finalização da chamada. O método `PostAsync` recebe como
+> argumentos a Uri do serviço e também o conteúdo (HttpContent) 
+> contendo a string JSON:
+> 
+> ```
+> var conteudo = new StringContent(json, Encoding.UTF8, "application/json");
+> var resposta = await cliente.PostAsync(URL_POST_AGENDAMENTO, conteudo);
+> ```
 
 ### Indicando Que A Aplicação Está Ocupada ###
 
