@@ -182,24 +182,43 @@ var resposta = await cliente.Post(URL_POST_AGENDAMENTO, conteudo);
 
 ### Indicando Que A Aplicação Está Ocupada ###
 
-<ActivityIndicator IsRunning="{Binding Aguarde}"
-                    IsVisible="{Binding Aguarde}">            
-</ActivityIndicator>
+Numa aplicação de imobiliária, feita com Xamarin Forms,
+ao realizar uma chamada a um serviço HTTP Rest, você nota
+que a tela fica em branco por um tempo considerável.
 
-private bool aguarde;
-public bool Aguarde
-{
-    get { return aguarde; }
-    set
-    {
-        aguarde = value;
-        OnPropertyChanged();
-    }
-}
+Você imagina que seu cliente poderá entender que a tela em
+branco é sinal de algum bug no aplicativo, e para isso você
+quer avisá-lo de alguma forma de que a aplicação está aguardando
+o processamento de uma requisição.
 
-Aguarde = true;
-//chamada HTTP Get
-Aguarde = false;
+Assinale a alternativa mais adequada para dar esse feedback
+ao usuário.
+
+a. Quando a chamada iniciar, exibir uma página 
+com uma imagem de um relógio para indicar que
+há uma atividade sendo executada.
+
+b. Quando a chamada iniciar, exibir um controle `Label` 
+com um texto contendo uma mensagem para indicar que
+há uma atividade sendo executada. Quando a chamad HTTP Get
+terminar, ocultar o controle `Label` novamente.
+
+c. Quando a chamada iniciar, exibir um controle `ActivityIndicator` para indicar que
+há uma atividade sendo executada. Quando a chamad HTTP Get
+terminar, ocultar o controle `ActivityIndicator` novamente.
+CORRETA.
+
+d. Quando a chamada iniciar, chamar o método `DisplayAlert`
+com uma mensagem para indicar que
+há uma atividade sendo executada. Quando a chamad HTTP Get
+terminar, chamar o método `DisplayAlert` com outra mensagem
+para avisar que o serviço respondeu.
+
+> OPINIÃO DA ALURA:
+> =================
+> 
+> O `ActivityIndicator` é um controle visual, usado para indicar
+> que algo está sendo executado.
 
 ### Desabilitando Button Através de Validação ###
 
