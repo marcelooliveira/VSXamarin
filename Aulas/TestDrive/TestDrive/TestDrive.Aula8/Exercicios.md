@@ -219,16 +219,3 @@ para avisar que o serviço respondeu.
 > 
 > O `ActivityIndicator` é um controle visual, usado para indicar
 > que algo está sendo executado.
-
-### Desabilitando Button Através de Validação ###
-
-AgendarCommand = new Command(() =>
-{
-    MessagingCenter.Send<Visita>(this.Visita
-        , "Visita");
-}, ()=>
-{
-    return !string.IsNullOrEmpty(this.Nome)
-        && !string.IsNullOrEmpty(this.Fone)
-        && !string.IsNullOrEmpty(this.Email);
-});
