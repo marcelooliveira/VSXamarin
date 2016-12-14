@@ -214,5 +214,160 @@ public class CalculadoraViewModel
 }
 ```
 
-### button command icommand ###
+### Botões e Comandos ###
 
+Considere o seguinte trecho de código XAML, contendo um botão para realizar
+uma compra num aplicativo de e-commerce:
+
+```
+<Button x:Name="buttonComprar" Text="Comprar" 
+Clicked="buttonComprar_Clicked"></Button>
+```
+
+Note que o botão aciona o evento `Click`, que chama o método `buttonComprar_Clicked`
+no code behind.
+
+Você deseja modificar o código para substituir o método `buttonComprar_Clicked`
+por um comando chamado `ComprarCommand`, localizado no View Model.
+
+Marque a alternativa que representa o código XAML correto para realizar essa
+mudança.
+
+a. código
+```
+<Button x:Name="buttonComprar" Text="Comprar" 
+ComprarCommand="buttonComprar_Clicked"></Button>
+```
+
+b. código
+```
+<Button x:Name="buttonComprar" Text="Comprar" 
+Clicked="ComprarCommand"></Button>
+```
+
+c. código
+```
+<Button x:Name="buttonComprar" Text="Comprar" 
+Clicked="{Binding ComprarCommand}"></Button>
+```
+
+d. código
+```
+<Button x:Name="buttonComprar" Text="Comprar" 
+Command="{Binding ComprarCommand}"></Button>
+```
+CORRETO.
+
+e. código
+```
+<Button x:Name="buttonComprar" Text="Comprar" 
+Command="ComprarCommand"></Button>
+```
+
+> OPINIÃO DA ALURA:
+> =================
+> 
+> Uma vez que se usa um comando (Command), deve-se eliminar o evento
+> `Clicked` do botão. Além disso, a proprieade `Command` deve ser
+> associada a uma propriedade do ViewModel do tipo _ICommand_ (`ComprarCommand`)
+> através de um binding no XAML:
+> 
+> ```
+> <Button x:Name="buttonComprar" Text="Comprar" 
+> Command="{Binding ComprarCommand}"></Button>
+> ```
+
+### Definindo Comandos ###
+
+O seguinte trecho de código XAML contém um botão para realizar
+uma compra num aplicativo de e-commerce:
+
+```
+<Button x:Name="buttonComprar" Text="Comprar" 
+Command="{Binding ComprarCommand}"></Button>
+```
+
+Você deve implementar no View Model desse aplicativo a configuração desse
+comando (`ComprarCommand`), fazendo uma chamada a um método de uma biblioteca
+externa: `ECommerce.SubmeterCompra(DadosDaCompra)`.
+
+Marque a alternativa com o treco de código C# que representa a implementação 
+correta do comando `ComprarCommand`.
+
+
+a. código
+```
+public DadosDaCompra DadosDaCompra { get; set; }
+public ICommand ComprarCommand { get; set; }
+public ECommerceViewModel()
+{
+    ComprarCommand = ()=>
+    {
+        ECommerce.SubmeterCompra(DadosDaCompra);
+    };
+}
+```
+
+b. código
+```
+public DadosDaCompra DadosDaCompra { get; set; }
+public ICommand ComprarCommand { get; set; }
+public ECommerceViewModel()
+{
+    ComprarCommand = ECommerce.SubmeterCompra;
+}
+```
+
+c. código
+```
+public DadosDaCompra DadosDaCompra { get; set; }
+public ICommand ComprarCommand { get; set; }
+public ECommerceViewModel()
+{
+    ComprarCommand = new Command(ECommerce.SubmeterCompra(DadosDaCompra));
+}
+```
+
+d. código
+```
+public DadosDaCompra DadosDaCompra { get; set; }
+public ICommand ComprarCommand { get; set; }
+public ECommerceViewModel()
+{
+    ComprarCommand = new Command(() =>
+    {
+        ECommerce.SubmeterCompra(DadosDaCompra);
+    });
+}
+```
+CORRETO.
+
+e. código
+```
+public DadosDaCompra DadosDaCompra { get; set; }
+public ICommand ComprarCommand { get; set; }
+public ECommerceViewModel()
+{
+    ComprarCommand = ECommerce.SubmeterCompra(DadosDaCompra);
+}
+
+```
+
+> OPINIÃO DA ALURA:
+> =================
+> 
+> O comando `ComprarCommand` deve ser definido como uma nova instância da
+> classe `Command`, passando-se como parâmetro uma _Action_ (ou expressão lambda
+> com método anônimo) contendo a chamada para `ECommerce.SubmeterCompra(DadosDaCompra)`.
+> 
+> ```
+> public DadosDaCompra DadosDaCompra { get; set; }
+> public ICommand ComprarCommand { get; set; }
+> public ECommerceViewModel()
+> {
+>     ComprarCommand = new Command(() =>
+>     {
+>         ECommerce.SubmeterCompra(DadosDaCompra);
+>     });
+> }
+> ```
