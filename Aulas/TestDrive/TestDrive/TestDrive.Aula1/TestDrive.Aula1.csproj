@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Exercicios.md" />
     <None Include="Exercises.md" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config" />
