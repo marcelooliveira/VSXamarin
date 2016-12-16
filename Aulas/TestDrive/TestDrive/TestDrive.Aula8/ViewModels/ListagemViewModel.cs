@@ -53,18 +53,26 @@ namespace TestDrive.ViewModels
         public async Task GetVeiculos()
         {
             Aguarde = true;
-            HttpClient cliente = new HttpClient();
-            var resultado = await cliente.GetStringAsync(URL_GET_VEICULOS);
-
-            var veiculosJson = JsonConvert.DeserializeObject<VeiculoJson[]>(resultado);
-
-            foreach (var veiculoJson in veiculosJson)
+            try
             {
-                this.Veiculos.Add(new Veiculo
+                HttpClient cliente = new HttpClient();
+
+                var resultado = await cliente.GetStringAsync(URL_GET_VEICULOS);
+
+                var veiculosJson = JsonConvert.DeserializeObject<VeiculoJson[]>(resultado);
+
+                foreach (var veiculoJson in veiculosJson)
                 {
-                    Nome = veiculoJson.nome,
-                    Preco = veiculoJson.preco
-                });
+                    this.Veiculos.Add(new Veiculo
+                    {
+                        Nome = veiculoJson.nome,
+                        Preco = veiculoJson.preco
+                    });
+                }
+            }
+            catch (Exception exc)
+            {
+                MessagingCenter.Send<Exception>(exc, "FalhaListagem");
             }
 
             Aguarde = false;

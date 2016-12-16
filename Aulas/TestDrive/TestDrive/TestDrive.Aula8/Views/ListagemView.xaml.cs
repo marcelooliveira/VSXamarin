@@ -29,6 +29,12 @@ namespace TestDrive.Views
                     Navigation.PushAsync(new DetalheView(msg));
                 });
 
+            MessagingCenter.Subscribe<Exception>(this, "FalhaListagem",
+                (msg) =>
+                {
+                    DisplayAlert("Erro", "Ocorreu um erro ao obter a listagem de veículos. Por favor tente novamente mais tarde.", "Ok");
+                });
+
             await this.ViewModel.GetVeiculos();
         }
 
@@ -37,6 +43,7 @@ namespace TestDrive.Views
             base.OnDisappearing();
 
             MessagingCenter.Unsubscribe<Veiculo>(this, "VeiculoSelecionado");
+            MessagingCenter.Unsubscribe<Exception>(this, "FalhaListagem");
         }
     }
 }
