@@ -25,6 +25,7 @@ C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2\obj\D
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2\obj\Debug\TestDrive2.Views.ListagemView.xaml.g.cs
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2\obj\Debug\TestDrive2.dll
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2\obj\Debug\TestDrive2.pdb
+C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2\obj\Debug\TestDrive2.csprojResolveAssemblyReference.cache
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2\obj\Debug\TestDrive2.dll.mdb
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2\bin\Debug\TestDrive2.dll.mdb
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2\obj\Debug\TestDrive2.dll.mdb
