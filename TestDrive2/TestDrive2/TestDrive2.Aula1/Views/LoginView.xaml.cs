@@ -15,9 +15,29 @@ namespace TestDrive2.Views
             InitializeComponent();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        protected override void OnAppearing()
         {
-            Navigation.PushAsync(new ListagemView());
+            base.OnAppearing();
+
+            MessagingCenter.Subscribe<Login>(this, "SucessoLogin", 
+                (msg) =>
+                {
+                    Navigation.PushAsync(new ListagemView());
+                });
+
+            MessagingCenter.Subscribe<Exception>(this, "FalhaLogin",
+                (msg) =>
+                {
+                    DisplayAlert("Login", "Erro ao validar usuário e senha!", "Ok");
+                });
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+
+            MessagingCenter.Unsubscribe<Login>(this, "SucessoLogin");
+            MessagingCenter.Unsubscribe<Login>(this, "FalhaLogin");
         }
     }
 }

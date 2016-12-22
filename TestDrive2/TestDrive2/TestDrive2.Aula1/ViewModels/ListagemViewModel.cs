@@ -61,6 +61,7 @@ namespace TestDrive.ViewModels
 
                 var veiculosJson = JsonConvert.DeserializeObject<VeiculoJson[]>(resultado);
 
+                this.Veiculos.Clear();
                 foreach (var veiculoJson in veiculosJson)
                 {
                     this.Veiculos.Add(new Veiculo
