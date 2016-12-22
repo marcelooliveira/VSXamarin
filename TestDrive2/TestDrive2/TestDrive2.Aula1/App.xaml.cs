@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TestDrive.Views;
+using TestDrive2.Views;
 using Xamarin.Forms;
 
 namespace TestDrive2
@@ -13,7 +14,7 @@ namespace TestDrive2
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new ListagemView());
+            MainPage = new NavigationPage(new LoginView());
         }
 
         protected override void OnStart()
