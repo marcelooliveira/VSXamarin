@@ -1,8 +1,7 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
-    <LocalAssembly PathName="c:\users\marce\documents\github\vsxamarin\testdrive2\testdrive2\testdrive2.winphone\obj\debug\intermediatexaml\testdrive2.winphone.exe" HashGuid="69f35565-cb53-d6b4-c3ab-20299414734b" />
     <ReferenceAssembly PathName="c:\users\marce\documents\github\vsxamarin\testdrive2\packages\newtonsoft.json.9.0.1\lib\portable-net45+wp80+win8+wpa81\newtonsoft.json.dll" HashGuid="424e6aa8-ba94-c678-e707-af9fe9838e1a" />
-    <ReferenceAssembly PathName="c:\users\marce\documents\github\vsxamarin\testdrive2\testdrive2\testdrive2.aula1\bin\debug\testdrive2.dll" HashGuid="7a9cd421-4713-3883-4733-e0eabc6c1b61" />
+    <ReferenceAssembly PathName="c:\users\marce\documents\github\vsxamarin\testdrive2\testdrive2\testdrive2.aula2\bin\debug\testdrive2.dll" HashGuid="977ec4ca-3c8a-ff28-bf84-4d00e9d98841" />
     <ReferenceAssembly PathName="c:\users\marce\documents\github\vsxamarin\testdrive2\packages\xamarin.forms.2.3.3.175\lib\wpa81\xamarin.forms.core.dll" HashGuid="c782f70f-077f-7e2d-5bd4-f6b5da067f8a" />
     <ReferenceAssembly PathName="c:\users\marce\documents\github\vsxamarin\testdrive2\packages\xamarin.forms.2.3.3.175\lib\wpa81\xamarin.forms.platform.dll" HashGuid="6b938cd4-44c0-2618-7eb6-4caa3f482076" />
     <ReferenceAssembly PathName="c:\users\marce\documents\github\vsxamarin\testdrive2\packages\xamarin.forms.2.3.3.175\lib\wpa81\xamarin.forms.platform.winrt.dll" HashGuid="fe4acc44-27ba-0e4e-a08b-26ae7dccb678" />

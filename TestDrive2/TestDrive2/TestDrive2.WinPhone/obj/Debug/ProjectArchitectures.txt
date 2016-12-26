@@ -1,2 +1,0 @@
-C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Aula1\TestDrive2.Aula1.csproj;neutral
-C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.WinPhone\TestDrive2.WinPhone.csproj;neutral
