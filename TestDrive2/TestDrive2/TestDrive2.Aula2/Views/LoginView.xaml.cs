@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TestDrive.Views;
-using TestDrive2;
 using Xamarin.Forms;
 
 namespace TestDrive.Views

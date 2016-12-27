@@ -7,15 +7,12 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using TestDrive2;
 using Xamarin.Forms;
 
 namespace TestDrive.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
-        const string URL_GET_LOGIN = "https://aluracar.herokuapp.com/login";
-
         private string usuario;
         public string Usuario
         {

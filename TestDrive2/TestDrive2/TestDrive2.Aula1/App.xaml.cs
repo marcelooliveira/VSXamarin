@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TestDrive.Views;
-using TestDrive2.Views;
 using Xamarin.Forms;
 
-namespace TestDrive2
+namespace TestDrive
 {
     public partial class App : Application
     {

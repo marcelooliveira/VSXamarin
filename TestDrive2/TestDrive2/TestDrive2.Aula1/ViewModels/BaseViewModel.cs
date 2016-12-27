@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestDrive2.ViewModels
+namespace TestDrive.ViewModels
 {
     public abstract class BaseViewModel : INotifyPropertyChanged
     {

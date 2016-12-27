@@ -7,14 +7,13 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using TestDrive.ViewModels;
 using Xamarin.Forms;
 
-namespace TestDrive2.ViewModels
+namespace TestDrive.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
-        const string URL_GET_LOGIN = "https://aluracar.herokuapp.com/login";
-
         private string usuario;
         public string Usuario
         {
@@ -58,7 +57,7 @@ namespace TestDrive2.ViewModels
             EntrarCommand = new Command(async () =>
             {
                 await DoLogin(new Login(usuario, senha));
-            }, 
+            },
             () =>
             {
                 return !string.IsNullOrEmpty(usuario)
@@ -73,14 +72,19 @@ namespace TestDrive2.ViewModels
 
             try
             {
-                var resultado = 
-                    await cliente.GetStringAsync(
-                        string.Format("{0}?email={1}&senha={2}", 
-                            URL_GET_LOGIN, 
-                            login.Usuario, 
-                            login.Senha)
-                        );
-                MessagingCenter.Send<Login>(login, "SucessoLogin");
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("https://aluracar.herokuapp.com");
+                    var content = new FormUrlEncodedContent(new[]
+                    {
+                        new KeyValuePair<string, string>("email", "joao@alura.com.br"),
+                        new KeyValuePair<string, string>("senha", "alura123")
+                    });
+                    var result = await client.PostAsync("/login", content);
+                    string resultContent = result.Content.ReadAsStringAsync().Result;
+                    LoginResult loginResult = JsonConvert.DeserializeObject<LoginResult>(resultContent);
+                    MessagingCenter.Send<Usuario>(loginResult.usuario, "SucessoLogin");
+                }
             }
             catch (Exception exc)
             {

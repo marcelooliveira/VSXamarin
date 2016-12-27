@@ -5,6 +5,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using TestDrive.Droid;
+using TestDrive2;
 using TestDrive2.Droid;
 
 namespace TestDrive.Droid
