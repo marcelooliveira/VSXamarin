@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using TestDrive.Models;
-using TestDrive2.ViewModels;
+using TestDrive.ViewModels;
 using Xamarin.Forms;
 
 namespace TestDrive.ViewModels

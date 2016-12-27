@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace TestDrive2
+namespace TestDrive
 {
     public partial class MainPage : ContentPage
     {

@@ -14,7 +14,7 @@
   <mp:PhoneIdentity PhoneProductId="7a72b161-b50a-4879-bb1a-87c1f973c9d2" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>TestDrive2.UWP</DisplayName>
+    <DisplayName>TestDrive.UWP</DisplayName>
     <PublisherDisplayName>marce</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -30,12 +30,12 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="TestDrive2.UWP.App">
+      EntryPoint="TestDrive.UWP.App">
       <uap:VisualElements
-        DisplayName="TestDrive2.UWP"
+        DisplayName="TestDrive.UWP"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="TestDrive2.UWP"
+        Description="TestDrive.UWP"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />

@@ -13,7 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace TestDrive2.UWP
+namespace TestDrive.UWP
 {
     public sealed partial class MainPage
     {
@@ -21,7 +21,7 @@ namespace TestDrive2.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new TestDrive2.App());
+            LoadApplication(new TestDrive.App());
         }
     }
 }

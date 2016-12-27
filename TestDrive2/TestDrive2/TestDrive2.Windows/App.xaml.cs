@@ -18,7 +18,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
 
-namespace TestDrive2.Windows
+namespace TestDrive.Windows
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.

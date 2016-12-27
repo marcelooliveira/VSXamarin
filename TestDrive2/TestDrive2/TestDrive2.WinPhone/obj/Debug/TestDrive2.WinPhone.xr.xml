@@ -6,6 +6,6 @@
       <RootProperty Name="Background" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
-    <RootType FullName="TestDrive2.WinPhone.MainPage" />
+    <RootType FullName="TestDrive.WinPhone.MainPage" />
   </Roots.RootTypes>
 </Roots>

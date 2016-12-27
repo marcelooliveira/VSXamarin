@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace TestDrive2.iOS
+namespace TestDrive.iOS
 {
     public class Application
     {

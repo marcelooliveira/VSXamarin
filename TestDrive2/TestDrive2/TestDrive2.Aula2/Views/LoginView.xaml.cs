@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TestDrive.Views;
+using TestDrive2;
 using Xamarin.Forms;
 
-namespace TestDrive2.Views
+namespace TestDrive.Views
 {
     public partial class LoginView : ContentPage
     {
@@ -19,9 +20,10 @@ namespace TestDrive2.Views
         {
             base.OnAppearing();
 
-            MessagingCenter.Subscribe<Login>(this, "SucessoLogin", 
-                (msg) =>
+            MessagingCenter.Subscribe<Usuario>(this, "SucessoLogin", 
+                (usuario) =>
                 {
+                    //Navigation.PushAsync(new MasterDetailView());
                     Navigation.PushAsync(new ListagemView());
                 });
 
@@ -36,8 +38,8 @@ namespace TestDrive2.Views
         {
             base.OnDisappearing();
 
-            MessagingCenter.Unsubscribe<Login>(this, "SucessoLogin");
-            MessagingCenter.Unsubscribe<Login>(this, "FalhaLogin");
+            MessagingCenter.Unsubscribe<Usuario>(this, "SucessoLogin");
+            MessagingCenter.Unsubscribe<Exception>(this, "FalhaLogin");
         }
     }
 }

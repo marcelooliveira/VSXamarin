@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestDrive2 {
+namespace TestDrive {
     using System;
     using Xamarin.Forms;
     using Xamarin.Forms.Xaml;

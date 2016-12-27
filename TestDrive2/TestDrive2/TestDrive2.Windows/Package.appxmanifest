@@ -6,7 +6,7 @@
             Version="1.0.0.0" />
 
   <Properties>
-    <DisplayName>TestDrive2.Windows</DisplayName>
+    <DisplayName>TestDrive.Windows</DisplayName>
     <PublisherDisplayName>marce</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -23,12 +23,12 @@
   <Applications>
     <Application Id="App"
         Executable="$targetnametoken$.exe"
-        EntryPoint="TestDrive2.Windows.App">
+        EntryPoint="TestDrive.Windows.App">
       <m2:VisualElements
-          DisplayName="TestDrive2.Windows"
+          DisplayName="TestDrive.Windows"
           Square150x150Logo="Assets\Logo.png"
           Square30x30Logo="Assets\SmallLogo.png"
-          Description="TestDrive2.Windows"
+          Description="TestDrive.Windows"
           ForegroundText="light"
           BackgroundColor="#464646">
         <m2:SplashScreen Image="Assets\SplashScreen.png" />
