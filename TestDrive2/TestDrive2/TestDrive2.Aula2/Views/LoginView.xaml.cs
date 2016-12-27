@@ -19,13 +19,6 @@ namespace TestDrive.Views
         {
             base.OnAppearing();
 
-            MessagingCenter.Subscribe<Usuario>(this, "SucessoLogin", 
-                (usuario) =>
-                {
-                    //Navigation.PushAsync(new MasterDetailView());
-                    Navigation.PushAsync(new ListagemView());
-                });
-
             MessagingCenter.Subscribe<Exception>(this, "FalhaLogin",
                 (msg) =>
                 {
@@ -37,7 +30,6 @@ namespace TestDrive.Views
         {
             base.OnDisappearing();
 
-            MessagingCenter.Unsubscribe<Usuario>(this, "SucessoLogin");
             MessagingCenter.Unsubscribe<Exception>(this, "FalhaLogin");
         }
     }

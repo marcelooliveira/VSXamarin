@@ -13,13 +13,19 @@ namespace TestDrive
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginView());
+            //MainPage = new MasterDetailView();
+            MainPage = new LoginView();
             //MainPage = new MasterDetailPageNavigation.MainPage();
         }
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            MessagingCenter.Subscribe<Usuario>(this, "SucessoLogin",
+                (usuario) =>
+                {
+                    //MainPage = new NavigationPage(new MasterDetailPageDemoPage(usuario));
+                    MainPage = new MasterDetailPageDemoPage(usuario);
+                });
         }
 
         protected override void OnSleep()

@@ -58,9 +58,12 @@
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\MasterDetailPageDemoPage.cs" />
     <Compile Include="Views\MasterDetailView.xaml.cs">
       <DependentUpon>MasterDetailView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\NamedColor.cs" />
+    <Compile Include="Views\NamedColorPage.cs" />
     <Compile Include="Views\UserView.xaml.cs">
       <DependentUpon>UserView.xaml</DependentUpon>
     </Compile>
