@@ -8,8 +8,8 @@
     <ProjectGuid>{E89A5E0A-86EB-4756-9C49-8B9CC2692A03}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestDrive2</RootNamespace>
-    <AssemblyName>TestDrive2</AssemblyName>
+    <RootNamespace>TestDrive</RootNamespace>
+    <AssemblyName>TestDrive</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
@@ -38,6 +38,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\NegateBooleanConverter.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -52,15 +53,18 @@
     <Compile Include="ViewModels\DetalheViewModel.cs" />
     <Compile Include="ViewModels\ListagemViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MasterViewModel.cs" />
     <Compile Include="Views\AgendamentoView.xaml.cs" />
     <Compile Include="Views\DetalheView.xaml.cs" />
     <Compile Include="Views\ListagemView.xaml.cs" />
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MasterDetailPageDemoPage.cs" />
     <Compile Include="Views\MasterDetailView.xaml.cs">
       <DependentUpon>MasterDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MasterView.xaml.cs">
+      <DependentUpon>MasterView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\NamedColor.cs" />
     <Compile Include="Views\NamedColorPage.cs" />
@@ -140,6 +144,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\UserView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\MasterView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

@@ -23,8 +23,7 @@ namespace TestDrive
             MessagingCenter.Subscribe<Usuario>(this, "SucessoLogin",
                 (usuario) =>
                 {
-                    //MainPage = new NavigationPage(new MasterDetailPageDemoPage(usuario));
-                    MainPage = new MasterDetailPageDemoPage(usuario);
+                    MainPage = new MasterDetailView(usuario);
                 });
         }
 

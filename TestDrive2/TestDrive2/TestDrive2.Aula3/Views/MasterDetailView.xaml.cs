@@ -10,9 +10,11 @@ namespace TestDrive.Views
 {
     public partial class MasterDetailView : MasterDetailPage
     {
-        public MasterDetailView()
+        public MasterDetailView(Usuario usuario)
         {
             InitializeComponent();
+
+            this.Master = new MasterView(usuario);
         }
     }
 }

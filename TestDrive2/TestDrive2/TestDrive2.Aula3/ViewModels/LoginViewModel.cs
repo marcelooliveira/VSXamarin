@@ -87,9 +87,17 @@ namespace TestDrive.ViewModels
             }
             catch (Exception exc)
             {
-                MessagingCenter.Send<Exception>(exc, "FalhaLogin");
+                MessagingCenter.Send<LoginException>(new LoginException(exc.Message, exc), "FalhaLogin");
             }
             Aguarde = false;
+        }
+    }
+
+    public class LoginException : Exception
+    {
+        public LoginException(string message, Exception innerException) : base(message, innerException)
+        {
+            
         }
     }
 }

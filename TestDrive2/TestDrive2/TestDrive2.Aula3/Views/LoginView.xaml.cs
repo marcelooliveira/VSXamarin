@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestDrive.ViewModels;
 using TestDrive.Views;
 using Xamarin.Forms;
 
@@ -19,7 +20,7 @@ namespace TestDrive.Views
         {
             base.OnAppearing();
 
-            MessagingCenter.Subscribe<Exception>(this, "FalhaLogin",
+            MessagingCenter.Subscribe<LoginException>(this, "FalhaLogin",
                 (msg) =>
                 {
                     DisplayAlert("Login", "Erro ao validar usuário e senha!", "Ok");
@@ -30,7 +31,7 @@ namespace TestDrive.Views
         {
             base.OnDisappearing();
 
-            MessagingCenter.Unsubscribe<Exception>(this, "FalhaLogin");
+            MessagingCenter.Unsubscribe<LoginException>(this, "FalhaLogin");
         }
     }
 }
