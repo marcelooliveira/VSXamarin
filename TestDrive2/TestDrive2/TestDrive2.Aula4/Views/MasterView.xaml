@@ -25,18 +25,14 @@
         <ContentPage Title="Editar">
             <Frame OutlineColor="Silver" VerticalOptions="CenterAndExpand" HorizontalOptions="Fill" Margin="15">
                 <StackLayout>
+                    <Image Source="{Binding FotoPerfil}" HeightRequest="120">
+                    </Image>
+                    <Button Text="Tirar Foto" Command="{Binding TirarFotoCommand}"/>
                     <TableView>
                         <TableRoot>
-                            <TableSection Title="Foto">
-                                <ImageCell ImageSource="{Binding FotoPerfil}" Height="120">                                    
-                                </ImageCell>
-                                <ViewCell>
-                                    <ViewCell.View>
-                                        <Button Text="Tirar Foto" Command="{Binding TirarFotoCommand}"/>
-                                    </ViewCell.View>
-                                </ViewCell>
-                            </TableSection>
-                            <TableSection Title="{Binding Nome}">
+                            <TableSection Title="Dados Pessoais">
+                                <EntryCell Placeholder="Nome" Text="{Binding Nome}"
+                                   IsEnabled="{Binding Editando}"></EntryCell>
                                 <EntryCell Placeholder="Data de Nascimento" Text="{Binding DataNascimento}"
                                    IsEnabled="{Binding Editando}"></EntryCell>
                                 <EntryCell Placeholder="Telefone" Keyboard="Telephone" Text="{Binding Telefone}"

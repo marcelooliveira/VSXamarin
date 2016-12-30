@@ -104,7 +104,7 @@ namespace TestDrive.ViewModels
             }
         }
 
-        private ImageSource fotoPerfil;
+        private ImageSource fotoPerfil = "none.png";
 
         public ImageSource FotoPerfil
         {

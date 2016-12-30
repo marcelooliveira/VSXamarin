@@ -26,8 +26,6 @@ namespace TestDrive.Droid
             public static Bitmap bitmap;
         }
 
-        //ImageView _imageView = null;
-
         protected override void OnCreate(Bundle bundle)
         {
             TabLayoutResource = TestDrive2.Droid.Resource.Layout.Tabbar;
@@ -38,10 +36,6 @@ namespace TestDrive.Droid
             if (IsThereAnAppToTakePictures())
             {
                 CreateDirectoryForPictures();
-
-                //Button button = FindViewById<Button>(TestDrive2.Droid.Resource.Id.myButton);
-                //_imageView = FindViewById<ImageView>(TestDrive2.Droid.Resource.Id.imageView1);
-                //button.Click += TakeAPicture;
             }
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
@@ -67,7 +61,6 @@ namespace TestDrive.Droid
             return availableActivities != null && availableActivities.Count > 0;
         }
 
-        //private void TakeAPicture(object sender, EventArgs eventArgs)
         public void TirarFoto()
         {
             Intent intent = new Intent(MediaStore.ActionImageCapture);
@@ -101,54 +94,8 @@ namespace TestDrive.Droid
             stream.Read(bytes);
             MessagingCenter.Send<byte[]>(bytes, "TakePicture");
 
-            //App.bitmap = App._file.Path.LoadAndResizeBitmap(width, height);
-            //if (App.bitmap != null)
-            //{
-            //    ImageSource imgSrc = null;
-            //    //_imageView.SetImageBitmap(App.bitmap);
-            //    imgSrc = ImageSource.FromStream(() =>
-            //    {
-            //        System.IO.MemoryStream ms = new System.IO.MemoryStream();
-            //        App.bitmap.Compress(Bitmap.CompressFormat.Jpeg, 100, ms);
-            //        byte[] bitmapData = ms.ToArray();
-            //        ms.Seek(0L, System.IO.SeekOrigin.Begin);
-            //        return ms;
-            //    });
-            //    App.bitmap = null;
-            //}
-
             // Dispose of the Java side bitmap.
             GC.Collect();
-        }
-    }
-
-    public static class BitmapHelpers
-    {
-        public static Bitmap LoadAndResizeBitmap(this string fileName, int width, int height)
-        {
-            // First we get the the dimensions of the file on disk
-            BitmapFactory.Options options = new BitmapFactory.Options { InJustDecodeBounds = true };
-            BitmapFactory.DecodeFile(fileName, options);
-
-            // Next we calculate the ratio that we need to resize the image by
-            // in order to fit the requested dimensions.
-            int outHeight = options.OutHeight;
-            int outWidth = options.OutWidth;
-            int inSampleSize = 1;
-
-            if (outHeight > height || outWidth > width)
-            {
-                inSampleSize = outWidth > outHeight
-                                   ? outHeight / height
-                                   : outWidth / width;
-            }
-
-            // Now we will load the image and have BitmapFactory resize it for us.
-            options.InSampleSize = inSampleSize;
-            options.InJustDecodeBounds = false;
-            Bitmap resizedBitmap = BitmapFactory.DecodeFile(fileName, options);
-
-            return resizedBitmap;
         }
     }
 }

@@ -51,6 +51,7 @@ C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\obj\Debug\res\layout\tabbar.xml
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\obj\Debug\res\layout\toolbar.xml
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\obj\Debug\res\values\styles.xml
+C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\obj\Debug\res\drawable\none.png
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\obj\Debug\R.cs.flag
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\obj\Debug\uploadflags.txt
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\bin\Debug\TestDrive2.Droid.dll.mdb
