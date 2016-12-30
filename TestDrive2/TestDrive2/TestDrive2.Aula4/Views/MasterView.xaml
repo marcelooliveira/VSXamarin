@@ -27,6 +27,15 @@
                 <StackLayout>
                     <TableView>
                         <TableRoot>
+                            <TableSection Title="Foto">
+                                <ImageCell ImageSource="{Binding FotoPerfil}" Height="120">                                    
+                                </ImageCell>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <Button Text="Tirar Foto" Command="{Binding TirarFotoCommand}"/>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </TableSection>
                             <TableSection Title="{Binding Nome}">
                                 <EntryCell Placeholder="Data de Nascimento" Text="{Binding DataNascimento}"
                                    IsEnabled="{Binding Editando}"></EntryCell>

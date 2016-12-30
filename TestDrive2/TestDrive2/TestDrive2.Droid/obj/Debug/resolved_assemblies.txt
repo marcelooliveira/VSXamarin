@@ -1,6 +1,9 @@
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\obj\Debug\android\assets\TestDrive2.Droid.dll
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\obj\Debug\android\assets\FormsViewGroup.dll
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\obj\Debug\android\assets\Newtonsoft.Json.dll
+C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\obj\Debug\android\assets\Plugin.CurrentActivity.dll
+C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\obj\Debug\android\assets\Plugin.Permissions.Abstractions.dll
+C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\obj\Debug\android\assets\Plugin.Permissions.dll
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\obj\Debug\android\assets\Xamarin.Android.Support.Animated.Vector.Drawable.dll
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\obj\Debug\android\assets\Xamarin.Android.Support.Design.dll
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\obj\Debug\android\assets\Xamarin.Android.Support.v4.dll
@@ -46,9 +49,9 @@ C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\obj\Debug\android\assets\System.Text.Encoding.Extensions.dll
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\obj\Debug\android\assets\Microsoft.CSharp.dll
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\obj\Debug\android\assets\Mono.CSharp.dll
+C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\obj\Debug\android\assets\System.Resources.ResourceManager.dll
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\obj\Debug\android\assets\System.ComponentModel.dll
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\obj\Debug\android\assets\System.Net.Http.dll
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\obj\Debug\android\assets\System.Collections.Concurrent.dll
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\obj\Debug\android\assets\System.Runtime.InteropServices.dll
-C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\obj\Debug\android\assets\System.Resources.ResourceManager.dll
 C:\Users\marce\Documents\GitHub\VSXamarin\TestDrive2\TestDrive2\TestDrive2.Droid\obj\Debug\android\assets\System.Diagnostics.Tools.dll
