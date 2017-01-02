@@ -100,10 +100,13 @@ namespace TestDrive.ViewModels
         }
 
 
-        public AgendamentoViewModel(Veiculo veiculo)
+        public AgendamentoViewModel(Veiculo veiculo, Usuario usuario)
         {
             this.Agendamento = new Agendamento();
             this.Agendamento.Veiculo = veiculo;
+            this.Agendamento.Nome = usuario.nome;
+            this.Agendamento.Fone = usuario.telefone;
+            this.Agendamento.Email = usuario.email;
 
             AgendarCommand = new Command(() =>
             {

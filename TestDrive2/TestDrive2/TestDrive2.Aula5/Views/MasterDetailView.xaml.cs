@@ -15,6 +15,7 @@ namespace TestDrive.Views
             InitializeComponent();
 
             this.Master = new MasterView(usuario);
+            this.Detail = new NavigationPage(new ListagemView(usuario));
         }
     }
 }

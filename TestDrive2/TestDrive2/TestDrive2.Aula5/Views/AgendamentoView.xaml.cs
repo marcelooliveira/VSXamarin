@@ -12,11 +12,13 @@ namespace TestDrive.Views
     public partial class AgendamentoView : ContentPage
     {
         public AgendamentoViewModel ViewModel { get; set; }
+        private readonly Usuario usuario;
 
-        public AgendamentoView(Veiculo veiculo)
+        public AgendamentoView(Veiculo veiculo, Usuario usuario)
         {
             InitializeComponent();
-            this.ViewModel = new AgendamentoViewModel(veiculo);
+            this.ViewModel = new AgendamentoViewModel(veiculo, usuario);
+            this.usuario = usuario;
             this.BindingContext = this.ViewModel;
         }
 
