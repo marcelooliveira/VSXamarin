@@ -153,13 +153,13 @@
     <AndroidResource Include="Resources\values\styles.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TestDrive2.Aula4\TestDrive2.Aula4.csproj">
-      <Project>{e89a5e0a-86eb-4756-9c49-8b9cc2692a03}</Project>
-      <Name>TestDrive2.Aula4</Name>
-    </ProjectReference>
+    <AndroidResource Include="Resources\drawable\none.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\none.png" />
+    <ProjectReference Include="..\TestDrive2.Aula5\TestDrive2.Aula5.csproj">
+      <Project>{e89a5e0a-86eb-4756-9c49-8b9cc2692a03}</Project>
+      <Name>TestDrive2.Aula5</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />
