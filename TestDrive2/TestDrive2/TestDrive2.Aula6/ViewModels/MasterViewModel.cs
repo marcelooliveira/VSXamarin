@@ -16,6 +16,7 @@ namespace TestDrive.ViewModels
         public ICommand EditarCommand { get; private set; }
         public ICommand SalvarCommand { get; private set; }
         public ICommand TirarFotoCommand { get; private set; }
+        public ICommand AgendamentosCommand { get; private set; }
 
         private Usuario usuario;
         public Usuario Usuario
@@ -141,6 +142,11 @@ namespace TestDrive.ViewModels
             TirarFotoCommand = new Command(() =>
             {
                 DependencyService.Get<ICamera>().TirarFoto();
+            });
+
+            AgendamentosCommand = new Command(() =>
+            {
+                //MessagingCenter.Send<Usuario>(this, "MensagemAgendamento");
             });
 
             MessagingCenter.Subscribe<byte[]>(this, "TakePicture",
