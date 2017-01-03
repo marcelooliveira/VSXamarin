@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:TestDrive.ViewModels"
+             xmlns:converters="clr-namespace:TestDrive.Converters"
+             x:Class="TestDrive.Views.AgendamentosUsuarioView"
+             Title="Agendamentos Realizados">
+    <ContentPage.BindingContext>
+        <vm:AgendamentosUsuarioViewModel></vm:AgendamentosUsuarioViewModel>
+    </ContentPage.BindingContext>
+    <TabbedPage.Resources>
+        <ResourceDictionary>
+            <converters:AgendamentoConfirmadoConverter x:Key="converter"/>
+        </ResourceDictionary>
+    </TabbedPage.Resources>
+    <ListView x:Name="listViewAgendamentos" ItemsSource="{Binding Lista}" Margin="25"
+        SelectedItem="{Binding AgendamentoSelecionado}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.View>
+                        <Grid>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Modelo}" FontSize="20" VerticalTextAlignment="Center" TextColor="{Binding Confirmado, Converter={StaticResource Key=converter}}"></Label>
+                                <Label Text=" - " VerticalTextAlignment="Center" TextColor="{Binding Confirmado, Converter={StaticResource Key=converter}}"></Label>
+                                <Label Text="{Binding PrecoFormatado}" FontAttributes="Bold" VerticalTextAlignment="Center" TextColor="{Binding Confirmado, Converter={StaticResource Key=converter}}"></Label>
+                            </StackLayout>
+                            <Button Text="Reenviar" IsVisible="{Binding MostrarReenviar}"></Button>
+                        </Grid>
+                    </ViewCell.View>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

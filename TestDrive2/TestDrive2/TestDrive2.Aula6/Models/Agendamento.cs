@@ -44,6 +44,9 @@ namespace TestDrive.Models
         public decimal Preco { get; set; }
         public bool Confirmado { get; set; }
 
+        [Ignore]
+        public bool MostrarReenviar { get; set; }
+
         DateTime dataAgendamento = DateTime.Today;
         public DateTime DataAgendamento
         {
@@ -58,5 +61,10 @@ namespace TestDrive.Models
         }
 
         public TimeSpan HoraAgendamento { get; set; }
+
+        public string PrecoFormatado
+        {
+            get { return string.Format("R$ {0}", Preco); }
+        }
     }
 }
