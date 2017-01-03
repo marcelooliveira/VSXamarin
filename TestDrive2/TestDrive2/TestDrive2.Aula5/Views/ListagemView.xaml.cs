@@ -17,7 +17,7 @@ namespace TestDrive.Views
         public ListagemView(Usuario usuario)
         {
             InitializeComponent();
-            this.ViewModel = new ListagemViewModel(usuario);
+            this.ViewModel = new ListagemViewModel();
             this.usuario = usuario;
             this.BindingContext = this.ViewModel;
         }

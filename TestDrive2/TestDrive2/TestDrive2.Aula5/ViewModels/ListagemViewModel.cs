@@ -45,7 +45,7 @@ namespace TestDrive.ViewModels
         }
 
 
-        public ListagemViewModel(Usuario usuario)
+        public ListagemViewModel()
         {
             this.Veiculos = new ObservableCollection<Veiculo>();
         }
