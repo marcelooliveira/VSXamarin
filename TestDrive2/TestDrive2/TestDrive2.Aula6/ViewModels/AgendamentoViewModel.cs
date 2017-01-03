@@ -17,8 +17,6 @@ namespace TestDrive.ViewModels
 {
     public class AgendamentoViewModel : BaseViewModel
     {
-        const string URL_POST_AGENDAMENTO = "https://aluracar.herokuapp.com/salvaragendamento";
-
         public Agendamento Agendamento { get; set; }
 
         public string Modelo
@@ -80,7 +78,7 @@ namespace TestDrive.ViewModels
 
         public DateTime DataAgendamento
         {
-            get
+            get 
             {
                 return Agendamento.DataAgendamento;
             }
@@ -101,7 +99,6 @@ namespace TestDrive.ViewModels
                 Agendamento.HoraAgendamento = value;
             }
         }
-
 
         public AgendamentoViewModel(Veiculo veiculo, Usuario usuario)
         {
@@ -126,43 +123,10 @@ namespace TestDrive.ViewModels
 
         public ICommand AgendarCommand { get; set; }
 
-        public async void SalvarAgendamento()
+        public void SalvarAgendamento()
         {
-            HttpClient cliente = new HttpClient();
-
-            var dataHoraAgendamento = new DateTime(
-                DataAgendamento.Year, DataAgendamento.Month, DataAgendamento.Day,
-                HoraAgendamento.Hours, HoraAgendamento.Minutes, HoraAgendamento.Seconds);
-
-            var json = JsonConvert.SerializeObject(new
-            {
-                nome = Nome,
-                fone = Fone,
-                email = Email,
-                carro = Modelo,
-                preco = Preco,
-                dataAgendamento = dataHoraAgendamento
-            });
-
-            var conteudo = new StringContent(json, Encoding.UTF8, "application/json");
-
-            var resposta = await cliente.PostAsync(URL_POST_AGENDAMENTO, conteudo);
-
-            SalvarAgendamento(resposta);
-
-            if (resposta.IsSuccessStatusCode)
-                MessagingCenter.Send<Agendamento>(this.Agendamento, "SucessoAgendamento");
-            else
-                MessagingCenter.Send<ArgumentException>(new ArgumentException(), "FalhaAgendamento");
-        }
-
-        private void SalvarAgendamento(HttpResponseMessage resposta)
-        {
-            using (SQLiteConnection con = DependencyService.Get<ISQLite>().GetConnection())
-            {
-                AgendamentoDAO dao = new AgendamentoDAO(con);
-                dao.Salvar(new Agendamento(Nome, Fone, Email, Modelo, Preco, resposta.IsSuccessStatusCode));
-            }
+            var agendamentoService = new AgendamentoService();
+            agendamentoService.Post(Agendamento);
         }
     }
 }

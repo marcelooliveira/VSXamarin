@@ -36,14 +36,15 @@ namespace TestDrive.Data
 
         public void Salvar(Agendamento agendamento)
         {
-            conexao.Insert(agendamento);
-            Lista.Add(agendamento);
-        }
-
-        public void Remover(Agendamento agendamento)
-        {
-            conexao.Delete<Agendamento>(agendamento.ID);
-            Lista.Remove(agendamento);
+            if (conexao.Find<Agendamento>(agendamento.ID) == null)
+            {
+                conexao.Insert(agendamento);
+                Lista.Add(agendamento);
+            }
+            else
+            {
+                conexao.Update(agendamento);
+            }
         }
 
         public ObservableCollection<Agendamento> GetAll()

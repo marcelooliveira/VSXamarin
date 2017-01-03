@@ -53,8 +53,25 @@ namespace TestDrive.ViewModels
             }
         }
 
+        private bool aguarde;
+        public bool Aguarde
+        {
+            get { return aguarde; }
+            set
+            {
+                aguarde = value;
+                OnPropertyChanged();
+            }
+        }
+
         public AgendamentosUsuarioViewModel()
         {
+            AtualizarLista();
+        }
+
+        public void AtualizarLista()
+        {
+            Lista.Clear();
             using (SQLiteConnection con = DependencyService.Get<ISQLite>().GetConnection())
             {
                 AgendamentoDAO dao = new AgendamentoDAO(con);
