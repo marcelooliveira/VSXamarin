@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using AluraNutricao.Data;
+using Newtonsoft.Json;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +8,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using TestDrive.Data;
 using TestDrive.Models;
 using TestDrive.ViewModels;
 using Xamarin.Forms;
@@ -18,16 +21,16 @@ namespace TestDrive.ViewModels
 
         public Agendamento Agendamento { get; set; }
 
-        public Veiculo Veiculo
+        public string Modelo
         {
-            get
-            {
-                return Agendamento.Veiculo;
-            }
-            set
-            {
-                Agendamento.Veiculo = value;
-            }
+            get { return Agendamento.Modelo; }
+            set { Agendamento.Modelo = value; }
+        }
+
+        public decimal Preco
+        {
+            get { return Agendamento.Preco; }
+            set { Agendamento.Preco = value; }
         }
 
         public string Nome
@@ -103,7 +106,8 @@ namespace TestDrive.ViewModels
         public AgendamentoViewModel(Veiculo veiculo, Usuario usuario)
         {
             this.Agendamento = new Agendamento();
-            this.Agendamento.Veiculo = veiculo;
+            this.Agendamento.Modelo = veiculo.Nome;
+            this.Agendamento.Preco = veiculo.Preco;
             this.Agendamento.Nome = usuario.nome;
             this.Agendamento.Fone = usuario.telefone;
             this.Agendamento.Email = usuario.email;
@@ -135,18 +139,30 @@ namespace TestDrive.ViewModels
                 nome = Nome,
                 fone = Fone,
                 email = Email,
-                carro = Veiculo.Nome,
-                preco = Veiculo.Preco,
+                carro = Modelo,
+                preco = Preco,
                 dataAgendamento = dataHoraAgendamento
             });
 
             var conteudo = new StringContent(json, Encoding.UTF8, "application/json");
 
             var resposta = await cliente.PostAsync(URL_POST_AGENDAMENTO, conteudo);
+
+            SalvarAgendamento(resposta);
+
             if (resposta.IsSuccessStatusCode)
                 MessagingCenter.Send<Agendamento>(this.Agendamento, "SucessoAgendamento");
             else
                 MessagingCenter.Send<ArgumentException>(new ArgumentException(), "FalhaAgendamento");
+        }
+
+        private void SalvarAgendamento(HttpResponseMessage resposta)
+        {
+            using (SQLiteConnection con = DependencyService.Get<ISQLite>().GetConnection())
+            {
+                AgendamentoDAO dao = new AgendamentoDAO(con);
+                dao.Salvar(new Agendamento(Nome, Fone, Email, Modelo, Preco, resposta.IsSuccessStatusCode));
+            }
         }
     }
 }
