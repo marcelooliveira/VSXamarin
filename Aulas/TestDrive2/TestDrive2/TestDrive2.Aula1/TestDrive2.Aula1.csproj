@@ -51,6 +51,7 @@
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\DetalheViewModel.cs" />
     <Compile Include="ViewModels\ListagemViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="Views\AgendamentoView.xaml.cs" />
     <Compile Include="Views\DetalheView.xaml.cs" />
     <Compile Include="Views\ListagemView.xaml.cs" />
