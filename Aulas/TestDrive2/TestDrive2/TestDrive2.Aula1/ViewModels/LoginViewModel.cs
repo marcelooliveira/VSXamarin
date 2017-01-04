@@ -18,13 +18,21 @@ namespace TestDrive.ViewModels
             EntrarCommand = new Command(
                 async () =>
                 {
-                    var loginService = new LoginService();
-                    var resultado = await loginService.DoLogin(new Login(usuario, senha));
+                    try
+                    {
+                        var loginService = new LoginService();
+                        var resultado = await loginService.DoLogin(new Login(usuario, senha));
 
-                    if (resultado.IsSuccessStatusCode)
-                        MessagingCenter.Send<Usuario>(new Usuario(), "SucessoLogin");
-                    else
-                        MessagingCenter.Send<LoginException>(new LoginException(), "FalhaLogin");
+                        if (resultado.IsSuccessStatusCode)
+                            MessagingCenter.Send<Usuario>(new Usuario(), "SucessoLogin");
+                        else
+                            MessagingCenter.Send<LoginException>(new LoginException(), "FalhaLogin");
+                    }
+                    catch (Exception exc)
+                    {
+                        MessagingCenter.Send<LoginException>(new 
+                            LoginException("Erro de comunicação com o servidor.", exc), "FalhaLogin");
+                    }
                 },
             () =>
             {
