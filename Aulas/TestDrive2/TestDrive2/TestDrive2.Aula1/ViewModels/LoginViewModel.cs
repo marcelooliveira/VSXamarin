@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -14,14 +15,21 @@ namespace TestDrive.ViewModels
 
         public LoginViewModel()
         {
-            EntrarCommand = new Command(() =>
-            {
-                MessagingCenter.Send<Usuario>(new Usuario(), "SucessoLogin");
-            },
+            EntrarCommand = new Command(
+                async () =>
+                {
+                    var loginService = new LoginService();
+                    var resultado = await loginService.DoLogin(new Login(usuario, senha));
+
+                    if (resultado.IsSuccessStatusCode)
+                        MessagingCenter.Send<Usuario>(new Usuario(), "SucessoLogin");
+                    else
+                        MessagingCenter.Send<LoginException>(new LoginException(), "FalhaLogin");
+                },
             () =>
             {
                 return !string.IsNullOrEmpty(usuario)
-                && !string.IsNullOrEmpty(senha);
+                    && !string.IsNullOrEmpty(senha);
             });
         }
 
@@ -45,6 +53,16 @@ namespace TestDrive.ViewModels
                 senha = value;
                 ((Command)EntrarCommand).ChangeCanExecute();
             }
+        }
+    }
+
+    public class LoginException : Exception
+    {
+        public LoginException() : base() { }
+
+        public LoginException(string message, Exception innerException) : base(message, innerException)
+        {
+
         }
     }
 }
