@@ -21,7 +21,7 @@ namespace TestDrive.ViewModels
                     try
                     {
                         var loginService = new LoginService();
-                        var resultado = await loginService.DoLogin(new Login(usuario, senha));
+                        var resultado = await loginService.FazerLogin(new Login(usuario, senha));
 
                         if (resultado.IsSuccessStatusCode)
                             MessagingCenter.Send<Usuario>(new Usuario(), "SucessoLogin");

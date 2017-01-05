@@ -10,7 +10,7 @@ namespace TestDrive
 {
     public class LoginService
     {
-        public async Task<HttpResponseMessage> DoLogin(Login login)
+        public async Task<HttpResponseMessage> FazerLogin(Login login)
         {
             using (var cliente = new HttpClient())
             {
