@@ -3,10 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TestDrive.Views.MasterView"
              Title="Dados do Usuário">
-    <StackLayout 
-        HorizontalOptions="Center"
-        VerticalOptions="Center">
-        <Label Text="João da Silva" FontSize="18"></Label>
-        <Label Text="joao@alura.com.br" FontSize="18"></Label>
-    </StackLayout>
+    <Frame 
+        OutlineColor="Silver" 
+        VerticalOptions="CenterAndExpand" 
+        HorizontalOptions="Fill" 
+        Margin="15">
+        <StackLayout 
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Label Text="{Binding Nome}" FontSize="18"></Label>
+            <BoxView Color="Gray" HeightRequest="1" HorizontalOptions="Fill"/>
+            <Label Text="{Binding Email}" FontSize="18"></Label>
+            <BoxView Color="Gray" HeightRequest="1" HorizontalOptions="Fill"/>
+            <Button Text="Perfil" Command="{Binding EditarPerfilCommand}"/>
+        </StackLayout>
+    </Frame>
 </ContentPage>
