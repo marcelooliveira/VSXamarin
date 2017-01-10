@@ -38,6 +38,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\NegativoConverter.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="LoginService.cs" />
     <Compile Include="MainPage.xaml.cs">
