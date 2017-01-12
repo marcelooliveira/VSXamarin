@@ -19,6 +19,8 @@
                 <StackLayout 
                     HorizontalOptions="Center"
                     VerticalOptions="Center">
+                    <Image Source="{Binding FotoPerfil}">
+                    </Image>
                     <Label Text="{Binding Nome}" FontSize="18" HorizontalTextAlignment="Center"></Label>
                     <BoxView Color="Gray" HeightRequest="1" HorizontalOptions="Fill"/>
                     <Label Text="{Binding Email}" FontSize="18" HorizontalTextAlignment="Center"></Label>
@@ -34,6 +36,9 @@
                 HorizontalOptions="Fill" 
                 Margin="15">
                 <StackLayout>
+                    <Image Source="{Binding FotoPerfil}">
+                    </Image>
+                    <Button Text="Tirar Foto" Command="{Binding TirarFotoCommand}"/>
                     <TableView>
                         <TableRoot>
                             <TableSection Title="Dados Pessoais">

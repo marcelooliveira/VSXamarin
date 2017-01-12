@@ -10,6 +10,18 @@ namespace TestDrive.ViewModels
 {
     public class MasterViewModel : BaseViewModel
     {
+        private ImageSource fotoPerfil = "perfil.png";
+
+        public ImageSource FotoPerfil
+        {
+            get { return fotoPerfil; }
+            set
+            {
+                fotoPerfil = value;
+                OnPropertyChanged(nameof(FotoPerfil));
+            }
+        }
+
         public string Nome
         {
             get
@@ -59,6 +71,7 @@ namespace TestDrive.ViewModels
         public ICommand EditarPerfilCommand { get; private set; }
         public ICommand EditarCommand { get; private set; }
         public ICommand SalvarCommand { get; private set; }
+        public ICommand TirarFotoCommand { get; private set; }
 
         public MasterViewModel(Usuario usuario)
         {
@@ -78,6 +91,11 @@ namespace TestDrive.ViewModels
             {
                 Editando = false;
                 MessagingCenter.Send<Usuario>(usuario, "SucessoSalvarUsuario");
+            });
+
+            TirarFotoCommand = new Command(() =>
+            {
+
             });
         }
     }
