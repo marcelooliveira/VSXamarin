@@ -79,25 +79,12 @@ namespace TestDrive2.Droid
         {
             base.OnActivityResult(requestCode, resultCode, data);
 
-            // Deixa a imagem disponível na galeria de imagens
-            Intent mediaScanIntent = new Intent(Intent.ActionMediaScannerScanFile);
-            Android.Net.Uri contentUri = Android.Net.Uri.FromFile(ImageData.Arquivo);
-            mediaScanIntent.SetData(contentUri);
-            SendBroadcast(mediaScanIntent);
-
-            //Define o tamanho da imagem
-            int height = Resources.DisplayMetrics.HeightPixels;
-            int width = Resources.DisplayMetrics.WidthPixels;
-
             //Obtendo dados da imagem
             var imgFile = new Java.IO.File(ImageData.Arquivo.Path);
             var stream = new Java.IO.FileInputStream(imgFile);
             var bytes = new byte[imgFile.Length()];
             stream.Read(bytes);
             MessagingCenter.Send<byte[]>(bytes, "TirarFoto");
-
-            // Fazendo dispose da imagem no Java
-            GC.Collect();
         }
     }
 }
