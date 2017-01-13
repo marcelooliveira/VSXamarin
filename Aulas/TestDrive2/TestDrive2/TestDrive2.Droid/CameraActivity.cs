@@ -1,27 +1,27 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 using Android.App;
-using Android.Content.PM;
+using Android.Content;
+using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Android.OS;
-using TestDrive;
-using TestDrive.Media;
 using TestDrive2.Droid;
+using TestDrive.Media;
+using Android.Provider;
 using Java.IO;
 using Android.Graphics;
-using Android.Content;
-using System.Collections.Generic;
-using Android.Provider;
 using Xamarin.Forms;
+using Android.Content.PM;
 
-[assembly: Xamarin.Forms.Dependency(typeof(MainActivity))]
+[assembly: Xamarin.Forms.Dependency(typeof(CameraActivity))]
 namespace TestDrive2.Droid
 {
-    [Activity(Label = "TestDrive2", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : 
-        global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    [Activity(Label = "CameraActivity")]
+    public class CameraActivity : Activity
         , ICamera
     {
         public static class ImageData
@@ -40,19 +40,12 @@ namespace TestDrive2.Droid
             ((Activity)Forms.Context).StartActivityForResult(intent, 0);
         }
 
-        protected override void OnCreate(Bundle bundle)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
-            TabLayoutResource = Resource.Layout.Tabbar;
-            ToolbarResource = Resource.Layout.Toolbar;
-
-            base.OnCreate(bundle);
-
-            global::Xamarin.Forms.Forms.Init(this, bundle);
+            base.OnCreate(savedInstanceState);
 
             if (AppPodeTirarFotos())
                 CriaDiretorioParaImagens();
-
-            LoadApplication(new App());
         }
 
         private void CriaDiretorioParaImagens()
@@ -74,12 +67,12 @@ namespace TestDrive2.Droid
             return availableActivities != null && availableActivities.Count > 0;
         }
 
-        protected override void OnActivityResult(int requestCode,
-        [GeneratedEnum] Result resultCode, Intent data)
+        protected override void OnActivityResult(int requestCode, 
+            [GeneratedEnum] Result resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);
 
-            // Deixa a imagem disponível na galeria de imagens
+            // Deixa a imagem dispon�vel na galeria de imagens
             Intent mediaScanIntent = new Intent(Intent.ActionMediaScannerScanFile);
             Android.Net.Uri contentUri = Android.Net.Uri.FromFile(ImageData.Arquivo);
             mediaScanIntent.SetData(contentUri);
@@ -101,4 +94,3 @@ namespace TestDrive2.Droid
         }
     }
 }
-

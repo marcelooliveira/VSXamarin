@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using TestDrive.Media;
 using Xamarin.Forms;
 
 namespace TestDrive.ViewModels
@@ -95,7 +97,14 @@ namespace TestDrive.ViewModels
 
             TirarFotoCommand = new Command(() =>
             {
+                DependencyService.Get<ICamera>().TirarFoto();
+            });
 
+            MessagingCenter.Subscribe<byte[]>(this, "TirarFoto",
+            (imageBytes) =>
+            {
+                var imgSrc = ImageSource.FromStream(() => new MemoryStream(imageBytes));
+                FotoPerfil = imgSrc;
             });
         }
     }
