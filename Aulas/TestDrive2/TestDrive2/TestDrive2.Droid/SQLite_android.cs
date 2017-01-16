@@ -23,9 +23,11 @@ namespace TestDrive2.Droid
         public SQLiteConnection GetConnection()
         {
             var sqliteFilename = "Agendamento.db3";
-            string documentsPath = 
+            string documentsPath =
                 System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            var path = Path.Combine(documentsPath, sqliteFilename);
+
+            var path = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.Path, 
+                sqliteFilename);
 
             return new SQLite.SQLiteConnection(path);
         }
