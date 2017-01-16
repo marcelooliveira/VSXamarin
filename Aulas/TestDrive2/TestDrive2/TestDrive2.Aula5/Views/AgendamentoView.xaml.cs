@@ -13,10 +13,10 @@ namespace TestDrive.Views
     {
         public AgendamentoViewModel ViewModel { get; set; }
 
-        public AgendamentoView(Veiculo veiculo)
+        public AgendamentoView(Veiculo veiculo, Usuario usuario)
         {
             InitializeComponent();
-            this.ViewModel = new AgendamentoViewModel(veiculo);
+            this.ViewModel = new AgendamentoViewModel(veiculo, usuario);
             this.BindingContext = this.ViewModel;
         }
 
