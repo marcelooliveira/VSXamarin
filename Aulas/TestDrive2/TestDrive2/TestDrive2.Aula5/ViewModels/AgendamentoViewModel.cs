@@ -174,7 +174,7 @@ namespace TestDrive.ViewModels
 
         private void SalvarAgendamentoDB()
         {
-            using (SQLiteConnection con = DependencyService.Get<ISQLite>().GetConnection())
+            using (SQLiteConnection con = DependencyService.Get<ISQLite>().PegarConexao())
             {
                 AgendamentoDAO dao = new AgendamentoDAO(con);
                 dao.Salvar(new Agendamento(Nome, Fone, Email, Modelo, Preco));

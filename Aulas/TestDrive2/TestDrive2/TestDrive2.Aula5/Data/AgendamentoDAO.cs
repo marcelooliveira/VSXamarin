@@ -13,24 +13,6 @@ namespace TestDrive.Data
     {
         private readonly SQLiteConnection conexao;
 
-        private List<Agendamento> lista;
-        public List<Agendamento> Lista
-        {
-            get
-            {
-                if (lista == null)
-                {
-                    lista = new List<Agendamento>(conexao.Table<Agendamento>());
-                }
-
-                return lista;
-            }
-            private set
-            {
-                lista = value;
-            }
-        }
-
         public AgendamentoDAO(SQLiteConnection con)
         {
             conexao = con;
@@ -40,7 +22,6 @@ namespace TestDrive.Data
         public void Salvar(Agendamento agendamento)
         {
             conexao.Insert(agendamento);
-            Lista.Add(agendamento);
         }
     }
 }

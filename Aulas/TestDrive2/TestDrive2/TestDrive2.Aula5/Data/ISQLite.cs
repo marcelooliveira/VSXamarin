@@ -9,6 +9,6 @@ namespace TestDrive.Data
 {
     public interface ISQLite
     {
-        SQLiteConnection GetConnection();
+        SQLiteConnection PegarConexao();
     }
 }
