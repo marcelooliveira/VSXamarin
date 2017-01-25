@@ -37,7 +37,8 @@ namespace TestDrive2.Droid
             ImageData.Arquivo = new File(ImageData.Diretorio,
                 String.Format("MinhaFoto_{0}.jpg", Guid.NewGuid()));
             intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(ImageData.Arquivo));
-            ((Activity)Forms.Context).StartActivityForResult(intent, 0);
+            var mainActivity = Forms.Context as Activity;
+            mainActivity.StartActivityForResult(intent, 0);
         }
 
         protected override void OnCreate(Bundle bundle)
