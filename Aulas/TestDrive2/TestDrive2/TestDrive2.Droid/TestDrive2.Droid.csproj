@@ -154,17 +154,13 @@
     <AndroidResource Include="Resources\drawable\aluracar.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TestDrive2.Aula4\TestDrive2.Aula4.csproj">
-      <Project>{b9cffe13-0c13-4912-ab26-cb0e7861f9a2}</Project>
-      <Name>TestDrive2.Aula4</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TestDrive2.Aula5\TestDrive2.Aula5.csproj">
-      <Project>{BA9CF082-6A19-45B4-BC9B-B6FDE95D78E7}</Project>
-      <Name>TestDrive2.Aula5</Name>
-    </ProjectReference>
+    <AndroidResource Include="Resources\drawable\perfil.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\perfil.png" />
+    <ProjectReference Include="..\TestDrive2.Aula6\TestDrive2.Aula6.csproj">
+      <Project>{ff84192c-8f44-4a97-af17-491ec944862f}</Project>
+      <Name>TestDrive2.Aula6</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.3.175\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.175\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
