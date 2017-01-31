@@ -11,14 +11,44 @@ using Xamarin.Forms;
 
 namespace TestDrive.ViewModels
 {
-    class AgendamentosUsuarioViewModel
+    class AgendamentosUsuarioViewModel : BaseViewModel 
     {
-        public ObservableCollection<Agendamento> Lista { get; private set; }
+        public ObservableCollection<Agendamento> lista = new ObservableCollection<Agendamento>();
+        public ObservableCollection<Agendamento> Lista
+        {
+            get { return lista; }
+            set
+            {
+                lista = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Agendamento agendamentoSelecionado;
+        public Agendamento AgendamentoSelecionado
+        {
+            get { return agendamentoSelecionado; }
+            set
+            {
+                agendamentoSelecionado = value;
+
+                if (agendamentoSelecionado?.Confirmado == false)
+                {
+                    MessagingCenter.Send<Agendamento>(agendamentoSelecionado, "AgendamentoSelecionado");
+                }
+
+                OnPropertyChanged(nameof(AgendamentoSelecionado));
+            }
+        }
 
         public AgendamentosUsuarioViewModel()
         {
-            Lista = new ObservableCollection<Agendamento>();
+            AtualizarLista();
+        }
 
+        public void AtualizarLista()
+        {
+            Lista.Clear();
             using (SQLiteConnection con = DependencyService.Get<ISQLite>().PegarConexao())
             {
                 AgendamentoDAO dao = new AgendamentoDAO(con);

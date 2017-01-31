@@ -10,21 +10,24 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <StackLayout Margin="25">
-        <ListView ItemsSource="{Binding Lista}">
+        <ListView ItemsSource="{Binding Lista}"
+                  SelectedItem="{Binding AgendamentoSelecionado}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <ViewCell.View>
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding Modelo}" FontSize="20" 
+                            <Grid>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Modelo}" FontSize="20" 
                                        VerticalTextAlignment="Center"
                                         TextColor="{Binding Confirmado, Converter={StaticResource Key=agendamentoConverter}}"></Label>
-                                <Label Text=" - " VerticalTextAlignment="Center"
+                                    <Label Text=" - " VerticalTextAlignment="Center"
                                         TextColor="{Binding Confirmado, Converter={StaticResource Key=agendamentoConverter}}"></Label>
-                                <Label Text="{Binding PrecoFormatado}" FontAttributes="Bold" 
+                                    <Label Text="{Binding PrecoFormatado}" FontAttributes="Bold" 
                                        VerticalTextAlignment="Center"
                                         TextColor="{Binding Confirmado, Converter={StaticResource Key=agendamentoConverter}}"></Label>
-                            </StackLayout>
+                                </StackLayout>
+                            </Grid>
                         </ViewCell.View>
                     </ViewCell>
                 </DataTemplate>

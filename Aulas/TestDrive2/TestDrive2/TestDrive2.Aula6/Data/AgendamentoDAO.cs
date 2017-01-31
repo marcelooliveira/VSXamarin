@@ -40,7 +40,14 @@ namespace TestDrive.Data
 
         public void Salvar(Agendamento agendamento)
         {
-            conexao.Insert(agendamento);
+            if (conexao.Find<Agendamento>(agendamento.ID) == null)
+            {
+                conexao.Insert(agendamento);
+            }
+            else
+            {
+                conexao.Update(agendamento);
+            }
         }
     }
 }

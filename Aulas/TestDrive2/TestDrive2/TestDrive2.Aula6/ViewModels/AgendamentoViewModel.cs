@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using TestDrive.Data;
 using TestDrive.Models;
+using TestDrive.Services;
 using TestDrive.ViewModels;
 using Xamarin.Forms;
 
@@ -142,43 +143,10 @@ namespace TestDrive.ViewModels
 
         public ICommand AgendarCommand { get; set; }
 
-        public async void SalvarAgendamento()
+        public void SalvarAgendamento()
         {
-            HttpClient cliente = new HttpClient();
-
-            var dataHoraAgendamento = new DateTime(
-                DataAgendamento.Year, DataAgendamento.Month, DataAgendamento.Day,
-                HoraAgendamento.Hours, HoraAgendamento.Minutes, HoraAgendamento.Seconds);
-
-            var json = JsonConvert.SerializeObject(new
-            {
-                nome = Nome,
-                fone = Fone,
-                email = Email,
-                carro = Modelo,
-                preco = Preco,
-                dataAgendamento = dataHoraAgendamento
-            });
-
-            var conteudo = new StringContent(json, Encoding.UTF8, "application/json");
-
-            var resposta = await cliente.PostAsync(URL_POST_AGENDAMENTO, conteudo);
-            
-            SalvarAgendamentoDB(resposta.IsSuccessStatusCode);
-
-            if (resposta.IsSuccessStatusCode)
-                MessagingCenter.Send<Agendamento>(this.Agendamento, "SucessoAgendamento");
-            else
-                MessagingCenter.Send<ArgumentException>(new ArgumentException(), "FalhaAgendamento");
-        }
-
-        private void SalvarAgendamentoDB(bool confirmado)
-        {
-            using (SQLiteConnection con = DependencyService.Get<ISQLite>().PegarConexao())
-            {
-                AgendamentoDAO dao = new AgendamentoDAO(con);
-                dao.Salvar(new Agendamento(Nome, Fone, Email, Modelo, Preco, confirmado));
-            }
+            var agendamentoService = new AgendamentoService();
+            agendamentoService.Post(Agendamento);
         }
     }
 }

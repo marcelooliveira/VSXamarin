@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,8 @@ namespace TestDrive.Models
 {
     public class Agendamento
     {
+        [PrimaryKey, AutoIncrement]
+        public int ID { get; set; }
         public string Nome { get; set; }
         public string Fone { get; set; }
         public string Email { get; set; }
