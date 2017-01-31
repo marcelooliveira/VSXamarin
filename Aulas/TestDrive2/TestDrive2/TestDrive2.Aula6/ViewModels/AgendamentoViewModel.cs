@@ -163,8 +163,8 @@ namespace TestDrive.ViewModels
             var conteudo = new StringContent(json, Encoding.UTF8, "application/json");
 
             var resposta = await cliente.PostAsync(URL_POST_AGENDAMENTO, conteudo);
-
-            SalvarAgendamentoDB();
+            
+            SalvarAgendamentoDB(resposta.IsSuccessStatusCode);
 
             if (resposta.IsSuccessStatusCode)
                 MessagingCenter.Send<Agendamento>(this.Agendamento, "SucessoAgendamento");
@@ -172,12 +172,12 @@ namespace TestDrive.ViewModels
                 MessagingCenter.Send<ArgumentException>(new ArgumentException(), "FalhaAgendamento");
         }
 
-        private void SalvarAgendamentoDB()
+        private void SalvarAgendamentoDB(bool confirmado)
         {
             using (SQLiteConnection con = DependencyService.Get<ISQLite>().PegarConexao())
             {
                 AgendamentoDAO dao = new AgendamentoDAO(con);
-                dao.Salvar(new Agendamento(Nome, Fone, Email, Modelo, Preco));
+                dao.Salvar(new Agendamento(Nome, Fone, Email, Modelo, Preco, confirmado));
             }
         }
     }

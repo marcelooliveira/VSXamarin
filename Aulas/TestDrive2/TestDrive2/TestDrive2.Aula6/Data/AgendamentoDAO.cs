@@ -13,6 +13,25 @@ namespace TestDrive.Data
     {
         private readonly SQLiteConnection conexao;
 
+        private ObservableCollection<Agendamento> lista;
+
+        public ObservableCollection<Agendamento> Lista
+        {
+            get
+            {
+                if (lista == null)
+                {
+                    lista = new ObservableCollection<Agendamento>(conexao.Table<Agendamento>());
+                }
+                return lista;
+            }
+            private set
+            {
+                lista = value;
+            }
+        }
+
+
         public AgendamentoDAO(SQLiteConnection con)
         {
             conexao = con;

@@ -13,6 +13,7 @@ namespace TestDrive.Models
         public string Email { get; set; }
         public string Modelo { get; set; }
         public decimal Preco { get; set; }
+        public bool Confirmado { get; set; }
 
         public Agendamento()
         {
@@ -20,13 +21,14 @@ namespace TestDrive.Models
         }
 
         public Agendamento(string nome, string fone, string email,
-            string modelo, decimal preco)
+            string modelo, decimal preco, bool confirmado)
         {
             this.Nome = nome;
             this.Fone = fone;
             this.Email = email;
             this.Modelo = modelo;
             this.Preco = preco;
+            this.Confirmado = confirmado;
         }
 
         DateTime dataAgendamento = DateTime.Today;
@@ -43,5 +45,10 @@ namespace TestDrive.Models
         }
 
         public TimeSpan HoraAgendamento { get; set; }
+
+        public string PrecoFormatado
+        {
+            get { return string.Format("R$ {0}", Preco); }
+        }
     }
 }
