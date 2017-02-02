@@ -49,9 +49,12 @@ namespace TestDrive.Models
 
         public TimeSpan HoraAgendamento { get; set; }
 
-        public string PrecoFormatado
+        public string DataFormatada
         {
-            get { return string.Format("R$ {0}", Preco); }
+            get {
+                return string.Format("{0} {1}"
+              , DataAgendamento.ToString("dd/MM/yyyy")
+              , DateTime.Today.Add(HoraAgendamento).ToString("HH:mm")); }
         }
     }
 }

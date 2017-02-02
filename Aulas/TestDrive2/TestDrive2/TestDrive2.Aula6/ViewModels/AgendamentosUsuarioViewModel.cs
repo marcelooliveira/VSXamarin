@@ -52,6 +52,11 @@ namespace TestDrive.ViewModels
             using (SQLiteConnection con = DependencyService.Get<ISQLite>().PegarConexao())
             {
                 AgendamentoDAO dao = new AgendamentoDAO(con);
+                var query = dao
+                    .Lista
+                    .OrderBy(a => a.DataAgendamento)
+                    .ThenBy(a => a.HoraAgendamento);
+
                 foreach (var agendamento in dao.Lista)
                 {
                     Lista.Add(agendamento);
