@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using TestDrive.Models;
 using Xamarin.Forms;
 
 namespace TestDrive.ViewModels
