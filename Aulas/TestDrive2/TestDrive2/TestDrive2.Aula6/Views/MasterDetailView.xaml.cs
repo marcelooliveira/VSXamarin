@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using TestDrive.Models;
 using Xamarin.Forms;
 
 namespace TestDrive.Views
@@ -23,17 +23,25 @@ namespace TestDrive.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
+
+            AssinarMensagens();
+        }
+
+        private void AssinarMensagens()
+        {
             MessagingCenter.Subscribe<Usuario>(this, "MeusAgendamentos",
-                (msg) =>
+                (usuario) =>
                 {
-                    this.Detail = new NavigationPage(new AgendamentosUsuarioView());
+                    this.Detail = new NavigationPage(
+                        new AgendamentosUsuarioView());
                     this.IsPresented = false;
                 });
 
             MessagingCenter.Subscribe<Usuario>(this, "NovoAgendamento",
-                (msg) =>
+                (usuario) =>
                 {
-                    this.Detail = new NavigationPage(new ListagemView(usuario));
+                    this.Detail = new NavigationPage(
+                        new ListagemView(usuario));
                     this.IsPresented = false;
                 });
         }
@@ -41,6 +49,12 @@ namespace TestDrive.Views
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
+
+            CancelarAssinaturas();
+        }
+
+        private void CancelarAssinaturas()
+        {
             MessagingCenter.Unsubscribe<Usuario>(this, "MeusAgendamentos");
             MessagingCenter.Unsubscribe<Usuario>(this, "NovoAgendamento");
         }

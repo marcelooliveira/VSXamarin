@@ -23,6 +23,11 @@ namespace TestDrive.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            AssinarMensagens();
+        }
+
+        private void AssinarMensagens()
+        {
             MessagingCenter.Subscribe<Agendamento>(this, "Agendamento",
                 async (msg) =>
                 {

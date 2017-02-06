@@ -10,6 +10,6 @@
         <Image Source="aluracar.png"></Image>
         <Entry Placeholder="Usuário" Text="{Binding Usuario}"></Entry>
         <Entry Placeholder="Senha" Text="{Binding Senha}" IsPassword="True"></Entry>
-        <Button Text="Entrar" Command="{Binding EntrarCommand}"/>
+        <Button Text="Entrar" Command="{Binding EntrarCommand}"></Button>
     </StackLayout>
 </ContentPage>

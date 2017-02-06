@@ -7,7 +7,7 @@
              x:Class="TestDrive.Views.ListagemView">
     <StackLayout Margin="25">
         <ActivityIndicator IsRunning="{Binding Aguarde}"
-                           IsVisible="{Binding Aguarde}">            
+                           IsVisible="{Binding Aguarde}">
         </ActivityIndicator>
         <ListView x:Name="listViewVeiculos" ItemsSource="{Binding Veiculos}" 
                   SelectedItem="{Binding VeiculoSelecionado}">

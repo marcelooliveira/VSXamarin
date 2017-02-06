@@ -3,35 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:converters="clr-namespace:TestDrive.Converters"
              x:Class="TestDrive.Views.AgendamentosUsuarioView"
-             Title="Agendamentos Realizados">
+             Title="Meus Agendamentos">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <converters:AgendamentoConfirmadoConverter x:Key="agendamentoConverter"/>
+            <converters:AgendamentoConfirmadoConverter x:Key="confirmadoConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <StackLayout Margin="25">
-        <ListView ItemsSource="{Binding Lista}"
-                  SelectedItem="{Binding AgendamentoSelecionado}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <ViewCell.View>
-                            <Grid>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="{Binding DataFormatada}" FontSize="20"
-                                       VerticalTextAlignment="Center"
-                                        TextColor="{Binding Confirmado, Converter={StaticResource Key=agendamentoConverter}}"></Label>
-                                    <Label Text=" - " VerticalTextAlignment="Center"
-                                        TextColor="{Binding Confirmado, Converter={StaticResource Key=agendamentoConverter}}"></Label>
-                                    <Label Text="{Binding Modelo}" FontAttributes="Bold" 
-                                       VerticalTextAlignment="Center"
-                                        TextColor="{Binding Confirmado, Converter={StaticResource Key=agendamentoConverter}}"></Label>
-                                </StackLayout>
-                            </Grid>
-                        </ViewCell.View>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+    <ListView ItemsSource="{Binding Lista}" Margin="25"
+              SelectedItem="{Binding AgendamentoSelecionado}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.View>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding DataFormatada}" FontSize="20"
+                                   VerticalOptions="Center"
+                                   TextColor="{Binding Confirmado, Converter={StaticResource Key=confirmadoConverter}}"></Label>
+                            <Label Text=" - "
+                                   VerticalOptions="Center"
+                                   TextColor="{Binding Confirmado, Converter={StaticResource Key=confirmadoConverter}}"></Label>
+                            <Label Text="{Binding Modelo}" FontAttributes="Bold"
+                                   VerticalOptions="Center"
+                                   TextColor="{Binding Confirmado, Converter={StaticResource Key=confirmadoConverter}}"></Label>
+                        </StackLayout>
+                    </ViewCell.View>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>

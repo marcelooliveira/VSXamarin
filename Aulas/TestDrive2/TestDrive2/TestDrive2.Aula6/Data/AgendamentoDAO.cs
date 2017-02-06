@@ -13,15 +13,15 @@ namespace TestDrive.Data
     {
         private readonly SQLiteConnection conexao;
 
-        private ObservableCollection<Agendamento> lista;
+        private List<Agendamento> lista;
 
-        public ObservableCollection<Agendamento> Lista
+        public List<Agendamento> Lista
         {
             get
             {
                 if (lista == null)
                 {
-                    lista = new ObservableCollection<Agendamento>(conexao.Table<Agendamento>());
+                    lista = new List<Agendamento>(conexao.Table<Agendamento>());
                 }
                 return lista;
             }

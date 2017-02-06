@@ -16,15 +16,13 @@ namespace TestDrive.Services
     {
         const string URL_POST_AGENDAMENTO = "https://aluracar.herokuapp.com/salvaragendamento";
 
-        public async Task Post(Agendamento agendamento)
+        public async Task EnviarAgendamento(Agendamento agendamento)
         {
             HttpClient cliente = new HttpClient();
 
             var dataHoraAgendamento = new DateTime(
-                agendamento.DataAgendamento.Year, agendamento.DataAgendamento.Month, 
-                agendamento.DataAgendamento.Day,
-                agendamento.HoraAgendamento.Hours, agendamento.HoraAgendamento.Minutes, 
-                agendamento.HoraAgendamento.Seconds);
+                agendamento.DataAgendamento.Year, agendamento.DataAgendamento.Month, agendamento.DataAgendamento.Day,
+                agendamento.HoraAgendamento.Hours, agendamento.HoraAgendamento.Minutes, agendamento.HoraAgendamento.Seconds);
 
             var json = JsonConvert.SerializeObject(new
             {
@@ -40,10 +38,9 @@ namespace TestDrive.Services
 
             var resposta = await cliente.PostAsync(URL_POST_AGENDAMENTO, conteudo);
             agendamento.Confirmado = resposta.IsSuccessStatusCode;
-
             SalvarAgendamentoDB(agendamento);
 
-            if (resposta.IsSuccessStatusCode)
+            if (agendamento.Confirmado)
                 MessagingCenter.Send<Agendamento>(agendamento, "SucessoAgendamento");
             else
                 MessagingCenter.Send<ArgumentException>(new ArgumentException(), "FalhaAgendamento");
@@ -51,9 +48,9 @@ namespace TestDrive.Services
 
         private void SalvarAgendamentoDB(Agendamento agendamento)
         {
-            using (SQLiteConnection con = DependencyService.Get<ISQLite>().PegarConexao())
+            using (var conexao = DependencyService.Get<ISQLite>().PegarConexao())
             {
-                AgendamentoDAO dao = new AgendamentoDAO(con);
+                AgendamentoDAO dao = new AgendamentoDAO(conexao);
                 dao.Salvar(agendamento);
             }
         }

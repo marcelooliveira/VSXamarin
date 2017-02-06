@@ -16,10 +16,10 @@
                     <TextCell Text="{Binding ValorTotal, Mode=TwoWay}"></TextCell>
                 </TableSection>
             </TableRoot>
-        </TableView>       
-        
+        </TableView>
+
         <Button x:Name="buttonProximo" Text="Próximo" 
         Command="{Binding ProximoCommand}"
         VerticalOptions="End"></Button>
-    </StackLayout>    
+    </StackLayout>
 </ContentPage>

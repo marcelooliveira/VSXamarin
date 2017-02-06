@@ -53,15 +53,14 @@ namespace TestDrive.ViewModels
         public async Task GetVeiculos()
         {
             Aguarde = true;
-            HttpClient cliente = new HttpClient();
-
             try
             {
+                HttpClient cliente = new HttpClient();
+
                 var resultado = await cliente.GetStringAsync(URL_GET_VEICULOS);
 
                 var veiculosJson = JsonConvert.DeserializeObject<VeiculoJson[]>(resultado);
 
-                this.Veiculos.Clear();
                 foreach (var veiculoJson in veiculosJson)
                 {
                     this.Veiculos.Add(new Veiculo
@@ -71,10 +70,11 @@ namespace TestDrive.ViewModels
                     });
                 }
             }
-            catch(Exception exc)
+            catch (Exception exc)
             {
                 MessagingCenter.Send<Exception>(exc, "FalhaListagem");
             }
+
             Aguarde = false;
         }
     }
@@ -84,4 +84,5 @@ namespace TestDrive.ViewModels
         public string nome { get; set; }
         public int preco { get; set; }
     }
+
 }

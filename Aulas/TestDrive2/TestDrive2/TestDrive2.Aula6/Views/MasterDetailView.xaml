@@ -4,5 +4,3 @@
              xmlns:view="clr-namespace:TestDrive.Views"
              x:Class="TestDrive.Views.MasterDetailView">
 </MasterDetailPage>
-    
-    

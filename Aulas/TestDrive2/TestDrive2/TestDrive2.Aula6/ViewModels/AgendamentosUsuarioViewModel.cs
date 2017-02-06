@@ -11,13 +11,16 @@ using Xamarin.Forms;
 
 namespace TestDrive.ViewModels
 {
-    class AgendamentosUsuarioViewModel : BaseViewModel 
+    class AgendamentosUsuarioViewModel : BaseViewModel
     {
-        public ObservableCollection<Agendamento> lista = new ObservableCollection<Agendamento>();
+        private ObservableCollection<Agendamento> lista = new ObservableCollection<Agendamento>();
         public ObservableCollection<Agendamento> Lista
         {
-            get { return lista; }
-            set
+            get
+            {
+                return lista;
+            }
+            private set
             {
                 lista = value;
                 OnPropertyChanged();
@@ -25,21 +28,20 @@ namespace TestDrive.ViewModels
         }
 
         private Agendamento agendamentoSelecionado;
+
         public Agendamento AgendamentoSelecionado
         {
             get { return agendamentoSelecionado; }
             set
             {
-                agendamentoSelecionado = value;
-
-                if (agendamentoSelecionado?.Confirmado == false)
+                if (value != null)
                 {
+                    agendamentoSelecionado = value;
                     MessagingCenter.Send<Agendamento>(agendamentoSelecionado, "AgendamentoSelecionado");
                 }
-
-                OnPropertyChanged(nameof(AgendamentoSelecionado));
             }
         }
+
 
         public AgendamentosUsuarioViewModel()
         {
@@ -48,18 +50,20 @@ namespace TestDrive.ViewModels
 
         public void AtualizarLista()
         {
-            Lista.Clear();
-            using (SQLiteConnection con = DependencyService.Get<ISQLite>().PegarConexao())
+            using (var conexao = DependencyService.Get<ISQLite>().PegarConexao())
             {
-                AgendamentoDAO dao = new AgendamentoDAO(con);
-                var query = dao
-                    .Lista
-                    .OrderBy(a => a.DataAgendamento)
-                    .ThenBy(a => a.HoraAgendamento);
+                AgendamentoDAO dao = new AgendamentoDAO(conexao);
+                var listaDB = dao.Lista;
 
-                foreach (var agendamento in dao.Lista)
+                var query =
+                    listaDB
+                    .OrderBy(l => l.DataAgendamento)
+                    .ThenBy(l => l.HoraAgendamento);
+
+                this.Lista.Clear();
+                foreach (var itemDB in query)
                 {
-                    Lista.Add(agendamento);
+                    this.Lista.Add(itemDB);
                 }
             }
         }

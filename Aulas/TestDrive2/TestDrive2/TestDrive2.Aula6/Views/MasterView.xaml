@@ -3,63 +3,58 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:converters="clr-namespace:TestDrive.Converters"
              x:Class="TestDrive.Views.MasterView"
-             Title="Dados do Usuário">
+             Title="Perfil">
     <TabbedPage.Resources>
         <ResourceDictionary>
-            <converters:NegativoConverter x:Key="negativo"/>
+            <converters:NegativoConverter x:Key="negativo"></converters:NegativoConverter>
         </ResourceDictionary>
     </TabbedPage.Resources>
     <TabbedPage.Children>
         <ContentPage Title="Usuário">
-            <Frame 
-                OutlineColor="Silver" 
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="Fill" 
-                Margin="15">
-                <StackLayout 
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center">
-                    <Image Source="{Binding FotoPerfil}">
-                    </Image>
-                    <Label Text="{Binding Nome}" FontSize="18" HorizontalTextAlignment="Center"></Label>
-                    <BoxView Color="Gray" HeightRequest="1" HorizontalOptions="Fill"/>
-                    <Label Text="{Binding Email}" FontSize="18" HorizontalTextAlignment="Center"></Label>
-                    <BoxView Color="Gray" HeightRequest="1" HorizontalOptions="Fill"/>
-                    <Button Text="Perfil" Command="{Binding EditarPerfilCommand}"/>
-                    <Button Text="Meus Agendamentos" Command="{Binding MeusAgendamentosCommand}"/>
-                    <Button Text="Novo Agendamento" Command="{Binding NovoAgendamentoCommand}"/>
+            <Frame OutlineColor="Silver"
+           VerticalOptions="CenterAndExpand"
+           Margin="15">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <Image Source="{Binding FotoPerfil}"></Image>
+                    <Label Text="{Binding Nome}"></Label>
+                    <BoxView Color="Gray" HeightRequest="1" 
+                     HorizontalOptions="Fill"></BoxView>
+                    <Label Text="{Binding Email}"></Label>
+                    <BoxView Color="Gray" HeightRequest="1" 
+                     HorizontalOptions="Fill"></BoxView>
+                    <Button Text="Perfil" Command="{Binding EditarPerfilCommand}">
+                    </Button>
+                    <Button Text="Meus Agendamentos" Command="{Binding MeusAgendamentosCommand}">
+                    </Button>
+                    <Button Text="Novo Agendamento" Command="{Binding NovoAgendamentoCommand}">
+                    </Button>
                 </StackLayout>
             </Frame>
         </ContentPage>
         <ContentPage Title="Editar">
-            <Frame 
-                OutlineColor="Silver" 
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="Fill" 
-                Margin="15">
-                <StackLayout>
-                    <Image Source="{Binding FotoPerfil}">
-                    </Image>
-                    <Button Text="Tirar Foto" Command="{Binding TirarFotoCommand}"/>
+            <Frame OutlineColor="Silver"
+         VerticalOptions="CenterAndExpand"
+         Margin="15">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <Image Source="{Binding FotoPerfil}"></Image>
+                    <Button Text="Tirar Foto" Command="{Binding TirarFotoCommand}"></Button>
                     <TableView>
                         <TableRoot>
                             <TableSection Title="Dados Pessoais">
-                                <EntryCell Placeholder="Nome" 
-                                    Text="{Binding Nome}" IsEnabled="{Binding Editando}"></EntryCell>
+                                <EntryCell Placeholder="Nome" Text="{Binding Nome}"
+                                           IsEnabled="{Binding Editando}"></EntryCell>
                                 <EntryCell Placeholder="Data de Nascimento" 
-                                    Text="{Binding DataNascimento}" IsEnabled="{Binding Editando}"></EntryCell>
-                                <EntryCell Placeholder="Telefone" Keyboard="Telephone" 
-                                    Text="{Binding Telefone}" IsEnabled="{Binding Editando}"></EntryCell>
-                                <EntryCell Placeholder="E-mail" Keyboard="Email" 
-                                    Text="{Binding Email}" IsEnabled="{Binding Editando}"></EntryCell>
+                                           Text="{Binding DataNascimento}"
+                                           IsEnabled="{Binding Editando}"></EntryCell>
+                                <EntryCell Placeholder="Telefone" Text="{Binding Telefone}"
+                                            IsEnabled="{Binding Editando}"></EntryCell>
+                                <EntryCell Placeholder="E-mail" Text="{Binding Email}"
+                                            IsEnabled="{Binding Editando}"></EntryCell>
                             </TableSection>
                         </TableRoot>
                     </TableView>
-                    <Button Text="Editar" Command="{Binding EditarCommand}"
-                            IsVisible="{Binding Editando, Converter={StaticResource Key=negativo}}">
-                    </Button>
-                    <Button Text="Salvar" Command="{Binding SalvarCommand}" 
-                            IsVisible="{Binding Editando}"></Button>
+                    <Button Text="Salvar" Command="{Binding SalvarCommand}" IsVisible="{Binding Editando}"></Button>
+                    <Button Text="Editar" Command="{Binding EditarCommand}" IsVisible="{Binding Editando, Converter={StaticResource Key=negativo}}"></Button>
                 </StackLayout>
             </Frame>
         </ContentPage>
