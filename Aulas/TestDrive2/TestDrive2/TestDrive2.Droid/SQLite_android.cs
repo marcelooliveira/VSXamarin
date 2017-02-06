@@ -10,9 +10,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using SQLite;
+using System.IO;
 using TestDrive.Data;
 using TestDrive.Droid;
-using System.IO;
 
 [assembly: Xamarin.Forms.Dependency(typeof(SQLite_android))]
 namespace TestDrive.Droid

@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace TestDrive.Converters
 {
-    public class NegativoConverter : IValueConverter
+    class NegativoConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
