@@ -35,7 +35,7 @@ namespace TestDrive.Views
 
         private void AssinarMensagens()
         {
-            MessagingCenter.Subscribe<Agendamento>(this, "AgendamentoSelecionado",
+            MessagingCenter.Subscribe<Agendamento>(this,    "AgendamentoSelecionado",
                 async (agendamentoSelecionado) =>
                 {
                     var reenviar = await DisplayAlert("Reenviar", "Confirma o reenvio do agendamento?", "Sim", "Não");
@@ -44,7 +44,7 @@ namespace TestDrive.Views
                     {
                         //this.viewModel.Aguarde = true;
                         var agendamentoService = new AgendamentoService();
-                        agendamentoService.Post(agendamentoSelecionado);
+                        await agendamentoService.Post(agendamentoSelecionado);
                         //this.viewModel.Aguarde = false;
                     }
                 });
