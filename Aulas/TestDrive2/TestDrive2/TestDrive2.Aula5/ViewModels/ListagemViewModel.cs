@@ -7,7 +7,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using TestDrive.Models;
-using TestDrive.ViewModels;
+using TestDrive2.ViewModels;
 using Xamarin.Forms;
 
 namespace TestDrive.ViewModels
@@ -53,15 +53,14 @@ namespace TestDrive.ViewModels
         public async Task GetVeiculos()
         {
             Aguarde = true;
-            HttpClient cliente = new HttpClient();
-
             try
             {
+                HttpClient cliente = new HttpClient();
+
                 var resultado = await cliente.GetStringAsync(URL_GET_VEICULOS);
 
                 var veiculosJson = JsonConvert.DeserializeObject<VeiculoJson[]>(resultado);
 
-                this.Veiculos.Clear();
                 foreach (var veiculoJson in veiculosJson)
                 {
                     this.Veiculos.Add(new Veiculo
@@ -71,10 +70,11 @@ namespace TestDrive.ViewModels
                     });
                 }
             }
-            catch(Exception exc)
+            catch (Exception exc)
             {
                 MessagingCenter.Send<Exception>(exc, "FalhaListagem");
             }
+
             Aguarde = false;
         }
     }

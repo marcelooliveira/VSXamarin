@@ -11,14 +11,14 @@ namespace TestDrive.Views
 {
     public partial class DetalheView : ContentPage
     {
-        public Veiculo Veiculo { get; set; }
-        private readonly Usuario usuario;
+        public Veiculo Veiculo { get; private set; }
+        public Usuario Usuario { get; private set; }
 
         public DetalheView(Veiculo veiculo, Usuario usuario)
         {
             InitializeComponent();
             this.Veiculo = veiculo;
-            this.usuario = usuario;
+            this.Usuario = usuario;
             this.BindingContext = new DetalheViewModel(veiculo);
         }
 
@@ -27,7 +27,7 @@ namespace TestDrive.Views
             base.OnAppearing();
             MessagingCenter.Subscribe<Veiculo>(this, "Proximo", (veiculo) =>
             {
-                Navigation.PushAsync(new AgendamentoView(veiculo, usuario));
+                Navigation.PushAsync(new AgendamentoView(veiculo, this.Usuario));
             });
         }
 

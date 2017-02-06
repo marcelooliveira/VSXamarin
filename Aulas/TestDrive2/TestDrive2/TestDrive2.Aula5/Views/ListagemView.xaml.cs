@@ -12,8 +12,7 @@ namespace TestDrive.Views
     public partial class ListagemView : ContentPage
     {
         public ListagemViewModel ViewModel { get; set; }
-        private readonly Usuario usuario;
-
+        readonly Usuario usuario;
         public ListagemView(Usuario usuario)
         {
             InitializeComponent();
@@ -25,6 +24,13 @@ namespace TestDrive.Views
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+            AssinarMensagens();
+
+            await this.ViewModel.GetVeiculos();
+        }
+
+        private void AssinarMensagens()
+        {
             MessagingCenter.Subscribe<Veiculo>(this, "VeiculoSelecionado",
                 (veiculo) =>
                 {
@@ -36,14 +42,17 @@ namespace TestDrive.Views
                 {
                     DisplayAlert("Erro", "Ocorreu um erro ao obter a listagem de veículos. Por favor tente novamente mais tarde.", "Ok");
                 });
-
-            await this.ViewModel.GetVeiculos();
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
 
+            CancelarAssinatura();
+        }
+
+        private void CancelarAssinatura()
+        {
             MessagingCenter.Unsubscribe<Veiculo>(this, "VeiculoSelecionado");
             MessagingCenter.Unsubscribe<Exception>(this, "FalhaListagem");
         }

@@ -23,6 +23,11 @@ namespace TestDrive.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            AssinarMensagens();
+        }
+
+        private void AssinarMensagens()
+        {
             MessagingCenter.Subscribe<Agendamento>(this, "Agendamento",
                 async (msg) =>
                 {
@@ -37,15 +42,17 @@ namespace TestDrive.Views
                 });
 
             MessagingCenter.Subscribe<Agendamento>(this, "SucessoAgendamento",
-                (msg) =>
+                async (msg) =>
                 {
-                    DisplayAlert("Agendamento", "Agendamento salvo com sucesso!", "ok");
+                    await DisplayAlert("Agendamento", "Agendamento salvo com sucesso!", "ok");
+                    await Navigation.PopToRootAsync();
                 });
 
             MessagingCenter.Subscribe<ArgumentException>(this, "FalhaAgendamento",
-                (msg) =>
+                async (msg) =>
                 {
-                    DisplayAlert("Agendamento", "Falha ao agendar o test drive! Verifique os dados e tente novamente mais tarde!", "ok");
+                    await DisplayAlert("Agendamento", "Falha ao agendar o test drive! Verifique os dados e tente novamente mais tarde!", "ok");
+                    await Navigation.PopToRootAsync();
                 });
         }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TestDrive.ViewModels;
+using TestDrive.Models;
 using Xamarin.Forms;
 
 namespace TestDrive.Views
@@ -20,11 +20,10 @@ namespace TestDrive.Views
             base.OnAppearing();
 
             MessagingCenter.Subscribe<LoginException>(this, "FalhaLogin",
-            async (exc) =>
-            {
-                await DisplayAlert("Login", @"Falha ao efetuar o login. 
-Verifique os dados e tente novamente mais tarde.", "Ok");
-            });
+                async (exc) =>
+                {
+                    await DisplayAlert("Login", exc.Message, "Ok");
+                });
         }
 
         protected override void OnDisappearing()
